@@ -50,5 +50,54 @@ public class StateMachine<TOwner>
         };
         _states.Add(stateId, newState);
     }
-
+    ///<summary>
+    ///ステート開始処理
+    ///</summary>
+    ///<param name="=stateId">ステートID</param>
+    public void Onstart(int stateId) 
+    {
+        if(!_states.TryGetValue(stateId, out var nextState))
+        {
+            return;
+        }
+        //現在のステートに設定して処理を開始
+        _currentState = nextState;
+        _currentState.OnStart();
+    }
+    ///<summary>
+    ///ステート更新
+    ///</summary>
+   public void OnUpdate()
+    {
+        _currentState.OnUpdate();
+    }
+    ///<summary>
+    ///次のステートに切り替える
+    ///</summary>
+    ///<param name="stateId">切り替えるステートID </param>
+    public void ChangeState(int stateId)
+    {
+        if(!_states.TryGetValue(stateId,out var nextState))
+        {
+            return;
+        }
+        //前のステートを保持
+        _prevState=_currentState;
+        //ステートを切り替える
+        _currentState.OnEnd();
+        _currentState=nextState;
+        _currentState.OnStart();
+    }
+    ///<summary>
+    ///前回のステートに切り替える
+    ///</summary>
+    public void ChangePrevState()
+    {
+        if(_prevState==null)
+        {
+            return;
+        }
+        //前のステートと現在のステートを入れ替える
+        (_prevState, _currentState) = (_currentState, _prevState);
+    }
 }
