@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.UIElements;
 
 public class StatusControllerWindow : EditorWindow
 {
@@ -11,12 +10,23 @@ public class StatusControllerWindow : EditorWindow
         GetWindow<StatusControllerWindow>("Controller Window");
     }
 
-    public void CreateGUI()
+    private void OnGUI()
     {
-        rootVisualElement.Add(new Label("プレイヤー"));
-        
+        GUILayout.Label("編集", EditorStyles.boldLabel);
+        if(Application.isPlaying && test.Instance != null)
+        {
+            int newHp = EditorGUILayout.IntField("敵のHP:", test.Instance.EnemyHp);
+            if (newHp != test.Instance.EnemyHp)
+            {
+                test.Instance.EnemyHp = newHp;
+            }
+        }
+        else
+        {
+            EditorGUILayout.LabelField("ゲームスタッツが初期化されてないゾ");
+            EditorGUILayout.LabelField("ゲームが開始されてないゾ");
+        }
     }
-
     void Start()
     {
         
