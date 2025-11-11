@@ -67,6 +67,7 @@ public class BossEnemy : Enemy
     // Update is called once per frame
     public override void Update()
     {
+        //死亡判定
         base.Update();
         if (currentHP <= 0)
         {
@@ -77,6 +78,7 @@ public class BossEnemy : Enemy
 
     public override void OnAttackSet()
     {
+        //攻撃判定
         attackColliders.ForEach(c => c.enabled = false);
         var state = animator.GetAnimatorTransitionInfo(0);
         foreach (var kv in colliderDict)
@@ -89,8 +91,9 @@ public class BossEnemy : Enemy
         }
 
     }
-
+    //攻撃終了判定
     public override void OnAttackEnd() => attackColliders.ForEach(c => c.enabled = false);
+    //エフェクトかんれん
     private void OnEffects()
     {
         var state = animator.GetAnimatorTransitionInfo(0);
@@ -110,6 +113,7 @@ public class BossEnemy : Enemy
         }
     }
 
+    //各ステートの定義
     private class IdleState : StateMachine<BossEnemy>.StateBase
     {
         float cDis;
@@ -144,7 +148,7 @@ public class BossEnemy : Enemy
             if (Owner.Getdistance() <= Owner.AttackRange)
 
             {
-
+                //確率で各ステートに移行
                 if (Probability(70)) { StateMachine.ChangeState((int)EnemyState.Attack); }
                 if (Probability(30)) { StateMachine.ChangeState(((int)EnemyState.Rotate)); }
 
@@ -177,6 +181,7 @@ public class BossEnemy : Enemy
         {
             if (time > mTime)
             {
+                //確率で各ステートに移行
                 time = 0;
                 if (Probability(60)) { StateMachine.ChangeState((int)EnemyState.Sumon); }
                 if (Probability(40)) { StateMachine.ChangeState((int)EnemyState.Rotate); }
@@ -236,6 +241,7 @@ public class BossEnemy : Enemy
         {
             if (Owner.AnimationEnd("Sumon"))
             {
+                //確率で各ステートに移行
                 if (Probability(20)) { StateMachine.ChangeState((int)EnemyState.Vigilance); }
                 if (Probability(80))
                 {
@@ -275,6 +281,7 @@ public class BossEnemy : Enemy
         }
     }
 
+    //被弾処理
     public override int TakeDamage(DamageData dmg)
     {
         int damageTaken = base.TakeDamage(dmg);
