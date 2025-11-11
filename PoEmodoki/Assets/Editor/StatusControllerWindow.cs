@@ -35,6 +35,9 @@ public class StatusControllerWindow : EditorWindow
     // Update is called once per frame
     void Update()
     {
-        
+        if (Application.isPlaying)
+        {
+            Repaint();
+        }
     }
 }
