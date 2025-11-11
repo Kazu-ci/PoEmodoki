@@ -17,16 +17,18 @@ public class Enemy : MonoBehaviour
 {
     //各ステータス
     [Header("ステータス")]
-    [SerializeField] protected float MaxHP;//最大HP
-    [SerializeField] protected float Strength;//攻撃力
-    [SerializeField] protected float AttackSpeed;//攻撃速度
-    [SerializeField] protected float AttackRange;//攻撃射程
-    [SerializeField ] protected float AttackRate;//攻撃感覚
+     protected float MaxHP;//最大HP
+     protected float Strength;//攻撃力
+    protected float AttackSpeed;//攻撃速度
+     protected float AttackRange;//攻撃射程
+     protected float AttackRate;//攻撃感覚
+    protected float MoveSpeed;//移動速度
     [SerializeField] protected Texture[] textures;//テクスチャ
-    [SerializeField] protected float fov;//視野角
+    protected float fov;//視野角
     [SerializeField] protected GameObject thisobj;//テクスチャ変更用
     [SerializeField] protected GameObject playerpos;
     protected float currentHP;//現在のHP
+    protected NavMeshAgent navMeshAgent;
     protected float Distance;//プレイヤーとの距離
     protected GameObject weapon;//ドロップアイテム
     protected Animator animator;//アニメーション
@@ -38,6 +40,10 @@ public class Enemy : MonoBehaviour
     public virtual void OnAttackSet() { }
     public virtual void OnAttackEnd() { }
     public virtual void OnSumon() { }
+    public virtual void Update()
+    {
+       // playerpos = EventBus.PlayerEvents.GetPlayerObject?.Invoke();
+    }
 
     public float Getdistance()
     {
@@ -78,5 +84,21 @@ public class Enemy : MonoBehaviour
         }
 
         return false;
+    }
+    public static bool Probability(float fPersent)//確立判定用メソッド
+    {
+        float fProbabilityRate = UnityEngine.Random.value * 100;
+        if (fPersent == 100f && fProbabilityRate == fPersent)
+        {
+            return true;
+        }
+        else if (fPersent > fProbabilityRate)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
