@@ -12,6 +12,7 @@ public class BossEnemy : Enemy
     [SerializeField] EnemyStatus BossStatus;
     StateMachine<BossEnemy> stateMachine;
     [SerializeField] GameObject[] mobEnemy;
+    
     [SerializeField] private List<string> attackStates;
     [SerializeField] private List<GameObject> effects;
     [SerializeField] private List<Collider> attackColliders;
@@ -53,7 +54,7 @@ public class BossEnemy : Enemy
         AttackRange = BossStatus.EnemyLength;
         MoveSpeed= BossStatus.EnemySpeed;
         fov = BossStatus.EnemyFov;
-
+        name= BossStatus.EnemyName;
         navMeshAgent = GetComponent<NavMeshAgent>();
         
         stateMachine = new StateMachine<BossEnemy>(this);

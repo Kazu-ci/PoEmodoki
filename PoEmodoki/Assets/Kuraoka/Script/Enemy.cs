@@ -15,6 +15,8 @@ public struct DamageData
 
 public class Enemy : MonoBehaviour
 {
+    [Header("名前")]
+    protected string name;//名前
     //各ステータス
     [Header("ステータス")]
      protected float MaxHP;//最大HP
