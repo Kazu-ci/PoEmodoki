@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using System.Collections;
 using static UnityEngine.UI.GridLayoutGroup;
 using Unity.VisualScripting;
+using UnityEditor;
 
 public class BossEnemy : Enemy
 {
     [SerializeField] EnemyStatus BossStatus;
+    private SerializedObject seliarizeBossStatus;       //S0をキャッシュする用
     StateMachine<BossEnemy> stateMachine;
     [SerializeField] GameObject[] mobEnemy;
     [SerializeField] private List<string> attackStates;
@@ -28,6 +30,8 @@ public class BossEnemy : Enemy
         Dead,//死亡
         Rotate,//回転
     }
+
+
 
     private void Awake()
     {
@@ -291,6 +295,28 @@ public class BossEnemy : Enemy
            
         }
         return damageTaken;
+    }
+
+    public void DrawRunningStatusGUI()
+    {
+        EditorGUILayout.FloatField("現在のHP:", currentHP);
+        EditorGUILayout.FloatField("HPの最大値:",MaxHP);
+        EditorGUILayout.FloatField("移動速度:",MoveSpeed);
+        EditorGUILayout.FloatField("攻撃力:", Strength);
+    }
+
+    public SerializedObject GetSerializedBaseStatus()
+    {
+        if(BossStatus == null)
+        {
+            return null;
+        }
+
+        if(seliarizeBossStatus == null || seliarizeBossStatus.targetObject != BossStatus)
+        {
+            seliarizeBossStatus = new SerializedObject(BossStatus);
+        }
+        return seliarizeBossStatus;
     }
 
 }

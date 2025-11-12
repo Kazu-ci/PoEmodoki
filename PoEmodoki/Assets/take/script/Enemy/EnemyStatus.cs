@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new EnemyStatus", menuName = "Enemy/Status")]
 public class EnemyStatus : ScriptableObject
 {
+    [Header("“G‚ÌƒXƒe[ƒ^ƒX")]
     public int EnemyHp;                 //“G‚ÌHP
     public int EnemyAtk;                //“G‚ÌUŒ‚—Í
     public int EnemyDefense;            //“G‚Ì–hŒä—Í
