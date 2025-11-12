@@ -13,4 +13,5 @@ public class EnemyStatus : ScriptableObject
     public float EnemyLength;           //“G‚ÌË’ö
     public float EnemyElementDefense;   //“G‚Ì‘®«‘Ï«
     public float EnemyFov;              //“G‚Ì‹–ìŠp
+    public string EnemyName;            //“G‚Ì–¼‘O
 }
