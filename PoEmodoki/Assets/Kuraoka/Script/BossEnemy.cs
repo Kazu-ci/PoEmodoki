@@ -45,7 +45,7 @@ public class BossEnemy : Enemy
         colliderDict = new Dictionary<string, Collider>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-     void Start()
+    private void Start()
     {
         MaxHP = BossStatus.EnemyHp;
         Strength = BossStatus.EnemyAtk;
