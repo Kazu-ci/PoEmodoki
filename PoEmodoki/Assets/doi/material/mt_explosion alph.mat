@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: mt_explosion alph
-  m_Shader: {fileID: -6465566751694194690, guid: 82022835beb4b944aada1e608612b9fc, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 00a6fb5d5a2e6d54582d678fc986d01e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
