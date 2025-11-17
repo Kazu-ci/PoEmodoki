@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f712dd0d800e443aa0346caae53df0, type: 3}
   m_Name: zombie
   m_EditorClassIdentifier: 
-  EnemyHp: 0
-  EnemyAtk: 0
-  EnemyDefense: 0
-  EnemySpeed: 0
-  EnemyAtkSpeed: 0
-  EnemyCastSpeed: 0
-  EnemyLength: 0
-  EnemyElementDefense: 0
+  EnemyHp: 50
+  EnemyAtk: 50
+  EnemyDefense: 50
+  EnemySpeed: 50
+  EnemyAtkSpeed: 50
+  EnemyCastSpeed: 50
+  EnemyLength: 50
+  EnemyElementDefense: 50
+  EnemyFov: 50
+  EnemyName: teruoka
