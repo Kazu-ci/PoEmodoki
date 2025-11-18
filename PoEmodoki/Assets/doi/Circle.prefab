@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8322259090659327496}
   - component: {fileID: 7452416343324428634}
   - component: {fileID: -2444138117405368289}
-  - component: {fileID: -946659529001816900}
   m_Layer: 6
   m_Name: Circle
   m_TagString: skill
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 801883243057692660}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.36999995, y: 0.58000475, z: 0.15370375}
+  m_LocalPosition: {x: -1.8207601, y: 0.5320043, z: -6.2722497}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -140,16 +139,3 @@ CapsuleCollider:
   m_Height: 1.0000002
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-946659529001816900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801883243057692660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41caa1061abda848b71c10c07013ee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj: {fileID: 2737740537538535882, guid: c97a674b8d524b544b8cd081b656e0d0, type: 3}

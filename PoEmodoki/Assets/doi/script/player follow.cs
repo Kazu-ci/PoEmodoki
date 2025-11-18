@@ -3,21 +3,62 @@ using UnityEngine;
 
 public class playerfollow : MonoBehaviour
 {
-    private const float Y_OFFSET = 0.1f;
-    public GameObject obj;
-    Rigidbody rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField]  GameObject objprefab;
+    [SerializeField] GameObject player;
+    private GameObject obj;
+    public float smoothSpeed = 5f;
+    public KeyCode spawnKey = KeyCode.Q;
+    Vector3 ppp;
+    Vector3 playerPosition;
+    int count = 0;
+    bool alive = false; 
+    private void Start()
     {
-     rb = GetComponent<Rigidbody>();
+        
+       
+       
     }
-
-    // Update is called once per frame
     void Update()
     {
-        Vector3 playerPosition = obj.transform.position;
-        Vector3 targetPosition = new Vector3(playerPosition.x, Y_OFFSET, playerPosition.z);
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.MovePosition(targetPosition);
+        ppp = new(playerPosition.x, 0.1f, playerPosition.z);
+        if (Input.GetKeyDown(spawnKey) && alive == false)
+        {
+            obj = Instantiate(objprefab, ppp, Quaternion.Euler(90, 0, 0));
+           
+        }
+        if (count > 10*60)
+        {
+            Destroy(obj);
+            count = 0;
+        }
+        Debug.Log(alive);
+    }
+    void LateUpdate()
+    {
+        PlayerPositionget();
+        if(obj != null)
+        {
+            alive = true;
+            Debug.Log("objの位置" + obj.transform.position);
+            Vector3 targetPosition = new Vector3(playerPosition.x, 0.1f, playerPosition.z);
+
+            Vector3 smoothedPosition = Vector3.Lerp(
+                obj.transform.position, // 現在の位置 (A)
+                targetPosition,     // 目標の位置 (B)
+                smoothSpeed * Time.deltaTime // 補間率 (t)
+            );
+            obj.transform.position = smoothedPosition;
+            ++count;
+        }
+        else
+        {
+            alive = false;
+
+        }
+    }
+
+     void PlayerPositionget()
+    {
+        playerPosition = player.transform.position;
     }
 }
