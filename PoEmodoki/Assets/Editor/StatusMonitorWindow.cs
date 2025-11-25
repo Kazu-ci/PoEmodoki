@@ -1,6 +1,6 @@
-using UnityEngine;
-using UnityEditor;
 using System.Xml.Serialization;      //Unityのエディター機能を使うため
+using UnityEditor;
+using UnityEngine;
 
 public class StatusMonitorWindow : EditorWindow
 {
@@ -20,11 +20,11 @@ public class StatusMonitorWindow : EditorWindow
 
     private void OnSelectionChange()
     {
-        
+        UpDateTarget();
     }
     private void OnFocus()
     {
-
+        UpDateTarget();
     }
 
     private void UpDateTarget()
@@ -51,46 +51,42 @@ public class StatusMonitorWindow : EditorWindow
         //タイトルラベルの設定
         GUILayout.Label("GameStatus",EditorStyles.boldLabel);
 
-        //ゲームが実行中か確認
-        //シングルトンがあるか確認
-        //if(Application.isPlaying && test.Instance != null)
-        //{
-        //    //ステータスを表示
-        //    //敵
-        //    EditorGUILayout.IntField("敵のHP:", test.Instance.EnemyHp);
-        //    EditorGUILayout.IntField("敵の攻撃力:", test.Instance.EnemyAtk);
-        //    EditorGUILayout.IntField("敵の防御力:", test.Instance.EnemyDefense);
-        //    EditorGUILayout.FloatField("敵の移動速度:", test.Instance.EnemySpeed);
-        //    EditorGUILayout.FloatField("敵の攻撃速度:", test.Instance.EnemyAtkSpeed);
-        //    EditorGUILayout.FloatField("敵の詠唱速度:", test.Instance.EnemyCastSpeed);
-        //    EditorGUILayout.FloatField("敵の射程:", test.Instance.EnemyLength);
-        //    //プレイヤー
-        //    EditorGUILayout.IntField("プレイヤーのHP:", test.Instance.PlayerHp);
-        //    EditorGUILayout.IntField("プレイヤーの防御力:", test.Instance.PlayerDefense);
-        //    EditorGUILayout.IntField("プレイヤーのMP:", test.Instance.PlayerMp);
-        //    EditorGUILayout.FloatField("プレイヤーの移動速度:", test.Instance.PlayerSpeed);
-        //    EditorGUILayout.FloatField("プレイヤーの攻撃速度:", test.Instance.PlayerAtkSpeed);
-        //    EditorGUILayout.FloatField("プレイヤーの詠唱速度:", test.Instance.PlayerCastSpeed);
-        //    EditorGUILayout.FloatField("プレイヤーの射程:", test.Instance.PlayerLength);
-        //    EditorGUILayout.FloatField("プレイヤーの属性耐性:", test.Instance.PlayerElementDefense);
-        //    EditorGUILayout.FloatField("プレイヤーのクリティカル:", test.Instance.PlayerCritical);
-        //    //スキル
-        //    EditorGUILayout.FloatField("スキルの攻撃力:", test.Instance.SkillAtk);
-        //    EditorGUILayout.FloatField("スキルの移動速度:", test.Instance.SkillSpeed);
-        //    EditorGUILayout.FloatField("スキルのクールタイム:", test.Instance.SkillCoolTime);
-        //    EditorGUILayout.IntField("スキルの属性ダメージ:", test.Instance.SkillElementDmg);
-        //    //武器
-        //    EditorGUILayout.IntField("武器の攻撃力:", test.Instance.WeponAtk);
-        //    EditorGUILayout.IntField("武器の属性ダメージ:", test.Instance.WeponElementDmg);
-        //}
-        //else
-        //{
-        //    EditorGUILayout.LabelField("ゲームスタッツが初期化されてないゾ");
-        //    EditorGUILayout.LabelField("ゲームが開始されてないゾ");
-        //}
+        if(selectedTarget == null)
+        {
+            EditorGUILayout.LabelField("対象を選択してください");
+            return;
+        }
+        //-----------------------------------------------------------------------------
+        //読み取り専用
+        EditorGUI.BeginDisabledGroup(true);
+
+        if(Application.isPlaying)
+        {
+            selectedTarget.DrawRunningStatusGUI();
+        }
+        else
+        {
+            EditorGUILayout.LabelField("実行されてないお");
+        }
+
+        EditorGUILayout.Space(15);
+
+        //基礎設計値を表示
+        if(serializeStatus != null)
+        {
+            //＄これ便利
+            GUILayout.Label($"基本設計値: {serializeStatus.targetObject.name} (監視のみ)", EditorStyles.boldLabel);
+
+            SerializedProperty iterator = serializeStatus.GetIterator();
+            iterator.NextVisible(true);
+            while(iterator.NextVisible(false))
+            {
+                EditorGUILayout.PropertyField(iterator,true);
+            }
+        }
+        EditorGUI.EndDisabledGroup();
 
 
-        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

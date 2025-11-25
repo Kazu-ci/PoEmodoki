@@ -14,8 +14,6 @@ public class StateMachine<TOwner>
         public virtual void OnUpdate() { }
         public virtual void OnEnd() { }
 
-
-
     }
     private TOwner Owner;
     private StateBase _currentState; // 現在のステート

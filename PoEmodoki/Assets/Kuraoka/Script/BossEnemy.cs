@@ -8,7 +8,7 @@ using static UnityEngine.UI.GridLayoutGroup;
 using Unity.VisualScripting;
 using UnityEditor;
 
-public class BossEnemy : Enemy
+public class BossEnemy : Enemy,IStatusView
 {
     [SerializeField] EnemyStatus BossStatus;
     private SerializedObject seliarizeBossStatus;       //S0をキャッシュする用
@@ -53,6 +53,7 @@ public class BossEnemy : Enemy
     private void Start()
     {
         MaxHP = BossStatus.EnemyHp;
+        currentHP = MaxHP;
         Strength = BossStatus.EnemyAtk;
         AttackSpeed= BossStatus.EnemyAtkSpeed;
         AttackRange = BossStatus.EnemyLength;
@@ -67,6 +68,7 @@ public class BossEnemy : Enemy
         stateMachine.Add<VigilanceState>((int)EnemyState.Vigilance);
         stateMachine.Add<SumonState>((int)EnemyState.Sumon);
         stateMachine.Add<DeadState>((int)EnemyState.Dead);
+        stateMachine.Onstart((int)EnemyState.Idle);
     }
 
     // Update is called once per frame
@@ -78,7 +80,7 @@ public class BossEnemy : Enemy
         {
             stateMachine.ChangeState((int)EnemyState.Dead);
         }
-        stateMachine.OnUpdate();
+        //stateMachine.OnUpdate();
     }
 
     public override void OnAttackSet()
@@ -124,7 +126,7 @@ public class BossEnemy : Enemy
         float cDis;
         public override void OnStart()
         {
-            Owner.animator.SetTrigger("Idle");
+            //Owner.animator.SetTrigger("Idle");
             cDis = Owner.Distance;//プレイヤーを見つけられる距離
         }
         public override void OnUpdate()
@@ -133,7 +135,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            Owner.animator.ResetTrigger("Idle");
+            //Owner.animator.ResetTrigger("Idle");
         }
     }
 
@@ -142,7 +144,7 @@ public class BossEnemy : Enemy
         NavMeshAgent navMeshAgent;
         public override void OnStart()
         {
-            Owner.animator.SetTrigger("Chase");
+            //Owner.animator.SetTrigger("Chase");
             navMeshAgent = Owner.navMeshAgent;
             navMeshAgent.isStopped = false;
         }
@@ -161,7 +163,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            Owner.animator.ResetTrigger("Chase");
+            //Owner.animator.ResetTrigger("Chase");
         }
     }
     private class VigilanceState : StateMachine<BossEnemy>.StateBase
@@ -177,7 +179,7 @@ public class BossEnemy : Enemy
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = false;
-            Owner.animator.SetTrigger("Idle");
+            //Owner.animator.SetTrigger("Idle");
             time = 0;
             mTime = Random.Range(4, 6);
             PickNewRoamPosition();
@@ -223,7 +225,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            Owner.animator.ResetTrigger("Idle");
+            //Owner.animator.ResetTrigger("Idle");
         }
         void PickNewRoamPosition()
         {
@@ -239,7 +241,7 @@ public class BossEnemy : Enemy
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
-            Owner.animator.SetTrigger("Sumon");
+            //Owner.animator.SetTrigger("Sumon");
 
         }
         public override void OnUpdate()
@@ -264,14 +266,14 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            Owner.animator.ResetTrigger("Sumon");
+            //Owner.animator.ResetTrigger("Sumon");
         }
     }
     private class DeadState : StateMachine<BossEnemy>.StateBase
     {
         public override void OnStart()
         {
-            Owner.animator.SetTrigger("Dead");
+           // Owner.animator.SetTrigger("Dead");
         }
         public override void OnUpdate()
         {
@@ -282,7 +284,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            Owner.animator.ResetTrigger("Dead");
+           // Owner.animator.ResetTrigger("Dead");
         }
     }
 
