@@ -5,6 +5,7 @@ public class playerfollow : MonoBehaviour
 {
     [SerializeField]  GameObject objprefab;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject Particle;
     private GameObject obj;
     public float smoothSpeed = 5f;
     public KeyCode spawnKey = KeyCode.Q;
@@ -24,7 +25,7 @@ public class playerfollow : MonoBehaviour
         if (Input.GetKeyDown(spawnKey) && alive == false)
         {
             obj = Instantiate(objprefab, ppp, Quaternion.Euler(90, 0, 0));
-           
+            Instantiate(Particle);
         }
         if (count > 10*60)
         {
