@@ -11,11 +11,11 @@ using UnityEngine.InputSystem;
 public class PlayerCon : MonoBehaviour,IStatusView
 {
     [SerializeField]PlayerStatus player;
-    [SerializeField]SerializedObject sPlayerStatus;
+    private SerializedObject sPlayerStatus;
     [SerializeField]PlayerInput PlayerInput;
-    [SerializeField]SkillStatus skill;//仮   
+    [SerializeField]SkillStatus skill;//仮
     InputAction move;
-    InputAction skill1;
+    InputAction skill1,skill2,skill3,skill4;
 
     public List<SkillStatus> mySkills = new List<SkillStatus>();
     private Vector2 moveVec = default;
@@ -57,6 +57,9 @@ public class PlayerCon : MonoBehaviour,IStatusView
 
         move = PlayerInput.actions["Move"];
         skill1 = PlayerInput.actions["Skill1"];
+        skill2 = PlayerInput.actions["Skill2"];
+        skill3 = PlayerInput.actions["Skill3"];
+        skill4 = PlayerInput.actions["Skill4"];
 
         stateMachine = new StateMachine<PlayerCon>(this);
         stateMachine.Add<MoveState>((int)state.Move);
@@ -67,7 +70,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         stateMachine.Add<DeadState>((int)state.Dead);
         stateMachine.Add<PoseState>((int)state.pose);
         stateMachine.Onstart((int)state.Idol);
-
+        //デバッグ用スキル
         mySkills.Add(skill);
     }
     void Update()
@@ -83,7 +86,9 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         public override void OnUpdate()
         {
-            //Owner.MovePlayer();
+            Owner.gameObject.transform.Translate
+                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed);
+
             if (Owner.move.ReadValue<Vector2>() == new Vector2(0, 0))
             {
                 StateMachine.ChangeState((int)state.Idol);
@@ -162,7 +167,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         public override void OnUpdate()
         {
-            if (Owner.OnSkill == false)
+            if (Owner.OnSkill == false)//デバッグ用スキル
             {
                 StateMachine.ChangeState((int)(state.Idol));
             }
@@ -208,18 +213,54 @@ public class PlayerCon : MonoBehaviour,IStatusView
     public void MovePlayer(InputAction.CallbackContext context)
     {
         moveVec = context.ReadValue<Vector2>();
-        //transform.Translate(new Vector3(input.x, 0, input.y) * MoveSpeed);
+        
 
     }
-
+    //デバッグ用スキル
     public void OnSkillQ(InputAction.CallbackContext context)
     {
         if(context.started)
         {
             OnSkill = true;
-            UseSkill(0);
+            UseSkill(0);//デバッグ用スキル
         }
         else if(context.canceled)
+        {
+            OnSkill = false;
+        }
+    }
+    public void OnSkillE(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnSkill = true;
+            UseSkill(0);//デバッグ用スキル
+        }
+        else if (context.canceled)
+        {
+            OnSkill = false;
+        }
+    }
+    public void OnSkillR(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnSkill = true;
+            UseSkill(0);//デバッグ用スキル
+        }
+        else if (context.canceled)
+        {
+            OnSkill = false;
+        }
+    }
+    public void OnSkillC(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnSkill = true;
+            UseSkill(0);//デバッグ用スキル
+        }
+        else if (context.canceled)
         {
             OnSkill = false;
         }
