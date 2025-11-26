@@ -23,6 +23,7 @@ public class StatusControllerWindow : EditorWindow
         UpDateTarget();
     }
 
+    //ヒエラルキーで選択したオブジェクトを更新
     private void UpDateTarget()
     {
         selectedTarget = null;
