@@ -14,10 +14,10 @@ public class MiniBoss1 : Enemy
 {
     [SerializeField] EnemyStatus Miniboss1Status;
     private SerializedObject serializeminibossStatus;
-    StateMachine<MiniBoss1> statemachine;
+    StateMachine<MiniBoss1> stateMachine;
     [SerializeField] private List<string> attackStates;
     [SerializeField] private List<GameObject> effects;
-    [SerializeField] private List<Collider> attackColliders
+    [SerializeField] private List<Collider> attackColliders;
     private Dictionary<string, Collider> colliderDict;
     private Dictionary<string, GameObject> effectDict;
 
@@ -64,13 +64,13 @@ public class MiniBoss1 : Enemy
         name = Miniboss1Status.EnemyName;
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        stateMachine = new StateMachine<BossEnemy>(this);
-        stateMachine.Add<IdleState>((int)EnemyState.Idle);
-        stateMachine.Add<ChaseState>((int)EnemyState.Chase);
-        stateMachine.Add<VigilanceState>((int)EnemyState.Vigilance);
-        stateMachine.Add<SumonState>((int)EnemyState.Sumon);
-        stateMachine.Add<DeadState>((int)EnemyState.Dead);
-        stateMachine.Onstart((int)EnemyState.Idle);
+        //stateMachine = new StateMachine<MiniBoss1>(this);
+        //stateMachine.Add<IdleState>((int)EnemyState.Idle);
+        //stateMachine.Add<ChaseState>((int)EnemyState.Chase);
+        //stateMachine.Add<VigilanceState>((int)EnemyState.Vigilance);
+        //stateMachine.Add<SumonState>((int)EnemyState.Sumon);
+        //stateMachine.Add<DeadState>((int)EnemyState.Dead);
+        //stateMachine.Onstart((int)EnemyState.Idle);
     }
 
     protected override void Update()
@@ -78,9 +78,9 @@ public class MiniBoss1 : Enemy
         base.Update();
         if(currentHP<=0)
         {
-            statemachine.ChangeState((int)EnemyState.Dead);
+            stateMachine.ChangeState((int)EnemyState.Dead);
 
         }
-        statemachine.OnUpdate();
+        stateMachine.OnUpdate();
     }
 }
