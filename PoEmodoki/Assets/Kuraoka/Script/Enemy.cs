@@ -3,83 +3,132 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using System;
 using UnityEngine.AI;
+
 [Serializable]
 public struct DamageData
 {
-    public float damageAmount;
+    public float damageAmount;   // ダメージ量を格納する変数
+
     public DamageData(float damage)
     {
-        damageAmount = damage;
+        damageAmount = damage;   // 値をセット
     }
 }
 
 public class Enemy : MonoBehaviour
 {
     [Header("名前")]
-    protected string name;//名前
-    //各ステータス
+    protected string name;                 // 敵の名前
+
+    // 各ステータス
     [Header("ステータス")]
-     protected float MaxHP;//最大HP
-     protected float Strength;//攻撃力
-    protected float AttackSpeed;//攻撃速度
-     protected float AttackRange;//攻撃射程
-     protected float AttackRate;//攻撃感覚
-    protected float MoveSpeed;//移動速度
-    [SerializeField] protected Texture[] textures;//テクスチャ
-    protected float fov;//視野角
-    [SerializeField] protected GameObject thisobj;//テクスチャ変更用
-    [SerializeField] protected GameObject playerpos;
-    protected float currentHP;//現在のHP
-    protected NavMeshAgent navMeshAgent;
-    protected float Distance;//プレイヤーとの距離
-    protected GameObject weapon;//ドロップアイテム
-    protected Animator animator;//アニメーション
-    protected bool animationEnd;//アニメーション終了用フラグ
-    private bool _isDead; // 重複死亡防止フラグ
+    protected float MaxHP;                 // 最大HP
+    protected float Strength;              // 攻撃力
+    protected float AttackSpeed;           // 攻撃速度
+    protected float AttackRange;           // 攻撃射程
+    protected float AttackRate;            // 攻撃間隔
+    protected float MoveSpeed;             // 移動速度
 
+    [SerializeField] protected PlayerAnchor playerAnchor;
+    [SerializeField] protected Texture[] textures;  // テクスチャ（見た目変更用）
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    protected float fov;                   // 視野角（プレイヤーを見つける範囲）
+
+    [SerializeField] protected GameObject thisobj;  // テクスチャ変更用オブジェクト
+
+    [SerializeField] protected GameObject player; // プレイヤーのオブジェクトを保持
+    protected Vector3 playerpos;
+
+    protected float currentHP;             // 現在のHP
+
+    protected NavMeshAgent navMeshAgent;   // NavMeshAgent（移動AI）
+
+    protected float Distance;              // プレイヤーとの距離
+
+    protected GameObject weapon;           // ドロップアイテム
+
+    protected Animator animator;           // アニメーション制御用
+
+    protected bool animationEnd;           // アニメーション終了フラグ
+
+    private bool _isDead;                  // 死亡済みフラグ（二重で死なないように）
+
+    // 攻撃アニメーション開始時に呼ばれる（子クラスで上書き用）
     public virtual void OnAttackSet() { }
+
+    // 攻撃アニメーション終了時に呼ばれる（子クラスで上書き用）
     public virtual void OnAttackEnd() { }
+
+    // 召喚アニメーション時…などに使う用（子クラスで上書き）
     public virtual void OnSumon() { }
+
     protected virtual void Update()
     {
-       // playerpos = EventBus.PlayerEvents.GetPlayerObject?.Invoke();
+        playerpos = playerAnchor.Value.position;
+        player.transform.position = playerpos;
     }
 
     public float Getdistance()
     {
-        //プレイヤーとの距離をさんしょう
-        Vector3 offset=playerpos.transform.position-transform.position;
-        return offset.magnitude;
+        // プレイヤーとの距離を Vector3 で計算して返す
+        Vector3 offset = player.transform.position - transform.position;
+        return offset.magnitude; // ベクトルの長さ = 距離
     }
 
-    
+    // NavMesh 内のランダムな地点を取得するメソッド
+    public Vector3 GetRandomNavMeshPoint(Vector3 center, float radius)
+    {
+        for (int i = 0; i < 50; i++)
+        {
+            // 半径内でランダムな位置を生成
+            Vector3 rand = center + new Vector3(
+                UnityEngine.Random.Range(-radius, radius),
+                0,
+                UnityEngine.Random.Range(-radius, radius)
+            );
+
+            rand.y = center.y; // 高さを一定にする
+
+            NavMeshHit hit;
+
+            // 生成したランダム点を NavMesh 上にスナップ
+            if (NavMesh.SamplePosition(rand, out hit, radius, NavMesh.AllAreas))
+                return hit.position;
+        }
+
+        // 見つからない場合は中心を返す
+        return center;
+    }
+
     public virtual int TakeDamage(DamageData dmg)
     {
+        // ダメージを受け取り、現在HPを減らす
         currentHP -= (int)dmg.damageAmount;
-        return (int)dmg.damageAmount;
+        return (int)dmg.damageAmount; // 実際に受けたダメージ量を返す
     }
+
     public virtual void OnDead()
     {
-        if (_isDead) return;
-        _isDead = true;
-        Destroy(gameObject);
+        if (_isDead) return; // すでに死んでいたら処理しない
+
+        _isDead = true;      // 死亡フラグを立てる
+        Destroy(gameObject); // 敵のオブジェクトを破壊
     }
 
     public float Getdaamge()
     {
-        return Strength;
+        return Strength;     // 敵の攻撃力を返す
     }
+
     public bool AnimationEnd(string stateName)
     {
-        // 現在のステート情報を取得
+        // 現在のアニメーション状態を取得
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
-        // ステート名をハッシュ化して比較
+        // アニメーションステート名をハッシュに変換
         int stateHash = Animator.StringToHash("Base Layer." + stateName);
 
-        // 該当ステートでかつ normalizedTime >=1 なら終了とみなす
+        // 該当ステートで、かつ アニメーションが最後まで再生されたら true を返す
         if (stateInfo.fullPathHash == stateHash && stateInfo.normalizedTime >= 1f)
         {
             return true;
@@ -87,9 +136,14 @@ public class Enemy : MonoBehaviour
 
         return false;
     }
-    public static bool Probability(float fPersent)//確立判定用メソッド
+
+    // 確率判定用メソッド（%で判定する）
+    public static bool Probability(float fPersent)
     {
+        // 0?100 のランダム値
         float fProbabilityRate = UnityEngine.Random.value * 100;
+
+        // 100% のときだけ例外処理をしてる（仕様に合わせて残してる）
         if (fPersent == 100f && fProbabilityRate == fPersent)
         {
             return true;
