@@ -10,6 +10,7 @@ using UnityEditor;
 
 public class Miniboss2 : Enemy, IStatusView
 {
+    [SerializeField] SkillStatus skills;
     [SerializeField] EnemyStatus BossStatus;
     private SerializedObject seliarizeBossStatus;       //S0をキャッシュする用
     StateMachine<Miniboss2> stateMachine;
@@ -156,8 +157,9 @@ public class Miniboss2 : Enemy, IStatusView
 
             {
                 //確率で各ステートに移行
-                if (Probability(70)) { StateMachine.ChangeState((int)EnemyState.Attack); }
-                if (Probability(30)) { StateMachine.ChangeState(((int)EnemyState.Rotate)); }
+                if (Probability(60)) { StateMachine.ChangeState((int)EnemyState.Attack); }
+                if (Probability(20)) { StateMachine.ChangeState(((int)EnemyState.Rotate)); }
+                if (Probability(20)) { StateMachine.ChangeState(((int)EnemyState.Skill)); }
 
             }
         }
@@ -241,6 +243,7 @@ public class Miniboss2 : Enemy, IStatusView
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
+            
             //Owner.animator.SetTrigger("Sumon");
 
         }
