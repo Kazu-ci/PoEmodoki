@@ -7,6 +7,7 @@ using System.Collections;
 using static UnityEngine.UI.GridLayoutGroup;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEngine.InputSystem.Interactions;
 
 public class BossEnemy : Enemy,IStatusView
 {
@@ -14,7 +15,7 @@ public class BossEnemy : Enemy,IStatusView
     private SerializedObject seliarizeBossStatus;       //S0をキャッシュする用
     StateMachine<BossEnemy> stateMachine;
     [SerializeField] GameObject[] mobEnemy;
-    
+    [SerializeField] SkillStatus skills;
     [SerializeField] private List<string> attackStates;
     [SerializeField] private List<GameObject> effects;
     [SerializeField] private List<Collider> attackColliders;
@@ -27,6 +28,7 @@ public class BossEnemy : Enemy,IStatusView
         Vigilance,//攻撃前の警戒ステート
         Attack,//攻撃仮
         Hit,//被弾
+        Skill,//スキル
         Sumon,//モブ召喚
         Dead,//死亡
         Rotate,//回転
@@ -68,7 +70,9 @@ public class BossEnemy : Enemy,IStatusView
         stateMachine.Add<VigilanceState>((int)EnemyState.Vigilance);
         stateMachine.Add<SumonState>((int)EnemyState.Sumon);
         stateMachine.Add<DeadState>((int)EnemyState.Dead);
+        stateMachine.Add<SkillState>((int)EnemyState.Skill);
         stateMachine.Onstart((int)EnemyState.Idle);
+        
     }
 
     // Update is called once per frame
@@ -285,6 +289,25 @@ public class BossEnemy : Enemy,IStatusView
         public override void OnEnd()
         {
            // Owner.animator.ResetTrigger("Dead");
+        }
+    }
+    private class SkillState : StateMachine<BossEnemy>.StateBase
+    {
+        public override void OnStart()
+        {
+            //Owner.animator.SetTrigger("Skill");
+            Owner.Strength = Owner.skills.atk;
+            Owner.AttackRange = Owner.skills.lenge;
+        }
+        public override void OnUpdate()
+        {
+            if (Probability(20)) { StateMachine.ChangeState((int)EnemyState.Attack); }
+            if (Probability(80)) { StateMachine.ChangeState((int)EnemyState.Vigilance); }
+        }
+
+        public override void OnEnd()
+        {
+            //Owner.animator.ResetTrigger("Skill");
         }
     }
 
