@@ -152,7 +152,7 @@ public class Miniboss2 : Enemy, IStatusView
 
         public override void OnUpdate()
         {
-            Vector3 playerpos = Owner.playerpos.transform.position;
+            Vector3 playerpos = Owner.player.transform.position;
             if (Owner.Getdistance() <= Owner.AttackRange)
 
             {
@@ -201,8 +201,8 @@ public class Miniboss2 : Enemy, IStatusView
 
             if (distance < Owner.AttackRange)
             {
-                Vector3 dir = (Owner.transform.position - Owner.playerpos.transform.position).normalized;
-                Vector3 retreatPos = Owner.playerpos.transform.position + dir * Owner.AttackRange * 2;
+                Vector3 dir = (Owner.transform.position - Owner.player.transform.position).normalized;
+                Vector3 retreatPos = Owner.player.transform.position + dir * Owner.AttackRange * 2;
                 Owner.navMeshAgent.SetDestination(retreatPos);
             }
             else
@@ -218,7 +218,7 @@ public class Miniboss2 : Enemy, IStatusView
                 Owner.navMeshAgent.SetDestination(roamTarget);
             }
 
-            Vector3 lookDir = Owner.playerpos.transform.position - Owner.transform.position;
+            Vector3 lookDir = Owner.player.transform.position - Owner.transform.position;
             lookDir.y = 0;
             if (lookDir.sqrMagnitude > 0.01f)
             {
@@ -235,7 +235,7 @@ public class Miniboss2 : Enemy, IStatusView
             float angle = Random.Range(0f, Mathf.PI * 2f);
             float r = Random.Range(0f, roamRadius);
             Vector3 offset = new Vector3(Mathf.Cos(angle) * r, 0, Mathf.Sin(angle) * r);
-            roamTarget = Owner.playerpos.transform.position + offset;
+            roamTarget = Owner.player.transform.position + offset;
         }
     }
     private class SkillState : StateMachine<Miniboss2>.StateBase
