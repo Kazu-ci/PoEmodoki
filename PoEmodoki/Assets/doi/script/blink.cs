@@ -1,8 +1,10 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-public class blink : MonoBehaviour
+public class blink : MonoBehaviour,IStatusView
 {
     [SerializeField] SkillStatus data;
+    private SerializedObject sSkill;
     [SerializeField] CharacterController pc;
     float speed;
     float ct;
@@ -55,5 +57,23 @@ public class blink : MonoBehaviour
         Vector3 moveVector = worldMoveDirection* speed;
         pc.Move(moveVector);
         On = false;
+    }
+
+    public void DrawRunningStatusGUI()
+    {
+        EditorGUILayout.FloatField("åªç›ÇÃÉuÉäÉìÉNë¨ìx:", speed);
+    }
+    public SerializedObject GetSerializedBaseStatus()
+    {
+        if (data == null)
+        {
+            return null;
+        }
+
+        if (sSkill == null || sSkill.targetObject != data)
+        {
+            sSkill = new SerializedObject(data);
+        }
+        return sSkill;
     }
 }

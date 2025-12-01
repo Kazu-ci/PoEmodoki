@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     public virtual void OnAttackSet() { }
     public virtual void OnAttackEnd() { }
     public virtual void OnSumon() { }
-    public virtual void Update()
+    protected virtual void Update()
     {
        // playerpos = EventBus.PlayerEvents.GetPlayerObject?.Invoke();
     }

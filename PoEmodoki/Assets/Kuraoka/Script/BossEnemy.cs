@@ -76,7 +76,7 @@ public class BossEnemy : Enemy,IStatusView
     }
 
     // Update is called once per frame
-    public override void Update()
+    protected override void Update()
     {
         //Ž€–S”»’è
         base.Update();
@@ -84,7 +84,7 @@ public class BossEnemy : Enemy,IStatusView
         {
             stateMachine.ChangeState((int)EnemyState.Dead);
         }
-        //stateMachine.OnUpdate();
+        stateMachine.OnUpdate();
     }
 
     public override void OnAttackSet()
