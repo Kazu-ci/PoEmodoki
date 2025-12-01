@@ -13,6 +13,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     [SerializeField]PlayerStatus player;
     private SerializedObject sPlayerStatus;
     [SerializeField]PlayerInput PlayerInput;
+    [SerializeField]PlayerAnchor playerAnchor;
     [SerializeField]SkillStatus skill;//仮
     InputAction move;
     InputAction skill1,skill2,skill3,skill4;
@@ -182,11 +183,12 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
         public override void OnStart()
         {
-
+            Debug.Log("Dead");
         }
         public override void OnUpdate()
         {
-
+            //シーン遷移
+            //アニメーション
         }
         public override void OnEnd()
         {
@@ -213,8 +215,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
     public void MovePlayer(InputAction.CallbackContext context)
     {
         moveVec = context.ReadValue<Vector2>();
-        
-
     }
     //デバッグ用スキル
     public void OnSkillQ(InputAction.CallbackContext context)
@@ -303,5 +303,14 @@ public class PlayerCon : MonoBehaviour,IStatusView
                 GameObject skillObj = Instantiate(skill.skillPre, spawnPos, transform.rotation);
             }
         }
+    }
+    private void OnEnable()
+    {
+        //プレイヤーのトランスフォームを登録
+        playerAnchor.Value = this.transform;
+    }
+    private void OnDisable()
+    {
+        playerAnchor = null;
     }
 }
