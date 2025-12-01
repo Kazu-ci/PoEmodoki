@@ -43,30 +43,39 @@
                 },
                 {
                     "name": "Skill2",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "ab36d6f3-a2e9-48dd-b487-de9bf7f0158d",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Skill3",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "6f421ed0-4f8c-4eae-9cc8-f06863119660",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Skill4",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "f55975e6-43e9-48a5-9cc3-712d4676b643",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Attack",
+                    "type": "Value",
+                    "id": "0e364571-e161-456a-aab9-15dc802c4f08",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -331,6 +340,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Skill4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21b372d1-53af-464b-8535-b93280e6f84a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

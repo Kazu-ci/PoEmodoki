@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
 
 
 
@@ -15,12 +16,14 @@ public class PlayerCon : MonoBehaviour,IStatusView
     [SerializeField]PlayerInput PlayerInput;
     [SerializeField]PlayerAnchor playerAnchor;
     [SerializeField]SkillStatus skill;//仮
+    [SerializeField]BossEnemy bossEnemy;
     InputAction move;
     InputAction skill1,skill2,skill3,skill4;
 
     public List<SkillStatus> mySkills = new List<SkillStatus>();
     private Vector2 moveVec = default;
     bool OnSkill = false;
+    bool OnAttack = false;
 
     int MaxHP;
     int Defense;
@@ -73,12 +76,14 @@ public class PlayerCon : MonoBehaviour,IStatusView
         stateMachine.Onstart((int)state.Idol);
         //デバッグ用スキル
         mySkills.Add(skill);
+
+        bossEnemy = GetComponent<BossEnemy>();
     }
     void Update()
     {
         stateMachine.OnUpdate();
     }
-
+   　
     public class MoveState : StateMachine<PlayerCon>.StateBase
     {
         public override void OnStart()
@@ -98,6 +103,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             {
                 StateMachine.ChangeState((int)state.SkillAttack);
             }
+            
         }
         public override void OnEnd()
         {
@@ -113,13 +119,17 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         public override void OnUpdate()
         {
-            if(Owner.moveVec != Vector2.zero) 
+            if(Owner.moveVec != Vector2.zero)
             {
                 StateMachine.ChangeState((int)state.Move);
             }
             if(Owner.OnSkill)
             {
                 StateMachine.ChangeState((int)state.SkillAttack);
+            }
+            if (Owner.OnAttack)
+            {
+                StateMachine.ChangeState((int)state.Attack);
             }
         }
         public override void OnEnd()
@@ -132,11 +142,14 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
         public override void OnStart()
         {
-            
+            Debug.Log("Attack");
         }
         public override void OnUpdate()
         {
-
+            if(Owner.OnAttack == false)
+            {
+                StateMachine.ChangeState((int)(state.Idol));
+            }
         }
         public override void OnEnd()
         {
@@ -255,6 +268,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     }
     public void OnSkillC(InputAction.CallbackContext context)
     {
+        
         if (context.started)
         {
             OnSkill = true;
@@ -263,6 +277,21 @@ public class PlayerCon : MonoBehaviour,IStatusView
         else if (context.canceled)
         {
             OnSkill = false;
+        }
+    }
+
+    public void OnAttackL(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnAttack = true;
+            DamageData dmgdata = new DamageData();
+            dmgdata.damageAmount = 10;
+            bossEnemy.TakeDamage(dmgdata);
+        }
+        else if( context.canceled)
+        {
+            OnAttack = false;
         }
     }
 
