@@ -10,6 +10,7 @@ using UnityEditor;
 
 public class Miniboss2 : Enemy, IStatusView
 {
+    [SerializeField] SkillStatus skills;
     [SerializeField] EnemyStatus BossStatus;
     private SerializedObject seliarizeBossStatus;       //S0をキャッシュする用
     StateMachine<Miniboss2> stateMachine;
@@ -72,7 +73,7 @@ public class Miniboss2 : Enemy, IStatusView
     }
 
     // Update is called once per frame
-    public override void Update()
+    protected override void Update()
     {
         //死亡判定
         base.Update();
@@ -151,13 +152,14 @@ public class Miniboss2 : Enemy, IStatusView
 
         public override void OnUpdate()
         {
-            Vector3 playerpos = Owner.playerpos.transform.position;
+            Vector3 playerpos = Owner.player.transform.position;
             if (Owner.Getdistance() <= Owner.AttackRange)
 
             {
                 //確率で各ステートに移行
-                if (Probability(70)) { StateMachine.ChangeState((int)EnemyState.Attack); }
-                if (Probability(30)) { StateMachine.ChangeState(((int)EnemyState.Rotate)); }
+                if (Probability(60)) { StateMachine.ChangeState((int)EnemyState.Attack); }
+                if (Probability(20)) { StateMachine.ChangeState(((int)EnemyState.Rotate)); }
+                if (Probability(20)) { StateMachine.ChangeState(((int)EnemyState.Skill)); }
 
             }
         }
@@ -199,8 +201,8 @@ public class Miniboss2 : Enemy, IStatusView
 
             if (distance < Owner.AttackRange)
             {
-                Vector3 dir = (Owner.transform.position - Owner.playerpos.transform.position).normalized;
-                Vector3 retreatPos = Owner.playerpos.transform.position + dir * Owner.AttackRange * 2;
+                Vector3 dir = (Owner.transform.position - Owner.player.transform.position).normalized;
+                Vector3 retreatPos = Owner.player.transform.position + dir * Owner.AttackRange * 2;
                 Owner.navMeshAgent.SetDestination(retreatPos);
             }
             else
@@ -216,7 +218,7 @@ public class Miniboss2 : Enemy, IStatusView
                 Owner.navMeshAgent.SetDestination(roamTarget);
             }
 
-            Vector3 lookDir = Owner.playerpos.transform.position - Owner.transform.position;
+            Vector3 lookDir = Owner.player.transform.position - Owner.transform.position;
             lookDir.y = 0;
             if (lookDir.sqrMagnitude > 0.01f)
             {
@@ -233,7 +235,7 @@ public class Miniboss2 : Enemy, IStatusView
             float angle = Random.Range(0f, Mathf.PI * 2f);
             float r = Random.Range(0f, roamRadius);
             Vector3 offset = new Vector3(Mathf.Cos(angle) * r, 0, Mathf.Sin(angle) * r);
-            roamTarget = Owner.playerpos.transform.position + offset;
+            roamTarget = Owner.player.transform.position + offset;
         }
     }
     private class SkillState : StateMachine<Miniboss2>.StateBase
@@ -241,6 +243,7 @@ public class Miniboss2 : Enemy, IStatusView
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
+            
             //Owner.animator.SetTrigger("Sumon");
 
         }

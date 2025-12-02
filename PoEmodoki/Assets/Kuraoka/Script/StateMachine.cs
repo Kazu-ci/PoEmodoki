@@ -85,6 +85,7 @@ public class StateMachine<TOwner>
         _currentState.OnEnd();
         _currentState=nextState;
         _currentState.OnStart();
+        Debug.Log("現在のステート"+_currentState.ToString());
     }
     ///<summary>
     ///前回のステートに切り替える

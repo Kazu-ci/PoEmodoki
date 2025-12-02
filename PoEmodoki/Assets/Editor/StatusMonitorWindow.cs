@@ -26,7 +26,7 @@ public class StatusMonitorWindow : EditorWindow
     {
         UpDateTarget();
     }
-
+    //ヒエラルキーで選択したオブジェクトを更新
     private void UpDateTarget()
     {
         selectedTarget = null;
