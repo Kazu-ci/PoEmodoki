@@ -1,0 +1,9 @@
+インタラクトを実装したい場合は、必ずIIteractableを継承して,
+void OnInteract()を実装してください。
+
+正確な使い方がわからない場合は、藤澤のInteract.cs と PlayerCon.csを見てください。
+
+エネミーやスキル.csを書いた場合は必ずIStatusViewを継承して、
+void DrawRunningStatusGUI()とSerializedObject GetSerializedBaseStatus()を実装してください。
+
+正確な使い方がわからない場合は、藤澤のPlayerCon.cs か 倉岡のBossEnemy.csを見てください。

@@ -17,6 +17,10 @@ public class PlayerCon : MonoBehaviour,IStatusView
     [SerializeField]PlayerAnchor playerAnchor;
     [SerializeField]SkillStatus skill;//仮
     [SerializeField]BossEnemy bossEnemy;
+    //インタラクト可能な半径
+    [SerializeField] private float InteractRange = 3f;
+    //インタラクト対象レイヤー
+    [SerializeField] private LayerMask InteractLayer;
     InputAction move;
     InputAction skill1,skill2,skill3,skill4;
 
@@ -65,6 +69,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         skill3 = PlayerInput.actions["Skill3"];
         skill4 = PlayerInput.actions["Skill4"];
 
+
         stateMachine = new StateMachine<PlayerCon>(this);
         stateMachine.Add<MoveState>((int)state.Move);
         stateMachine.Add<IdolState>((int)state.Idol);
@@ -92,14 +97,14 @@ public class PlayerCon : MonoBehaviour,IStatusView
         {
             Vector3 direction = new Vector3(Owner.moveVec.x,0, Owner.moveVec.y);
             //移動処理
-            if(direction != Vector3.zero)
+            if (direction != Vector3.zero)
             {
                 Owner.gameObject.transform.Translate
-                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed,Space.World);
+                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed, Space.World);
+                //回転処理
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                Owner.transform.rotation = Quaternion.Slerp(Owner.transform.rotation, targetRotation, 10f * Time.deltaTime);
             }
-            //回転処理
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            Owner.transform.rotation = Quaternion.Slerp(Owner.transform.rotation,targetRotation,10f * Time.deltaTime);
 
             if (Owner.move.ReadValue<Vector2>() == new Vector2(0, 0))
             {
@@ -300,6 +305,13 @@ public class PlayerCon : MonoBehaviour,IStatusView
             OnAttack = false;
         }
     }
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            TryInteract();
+        }
+    }
 
     public void DrawRunningStatusGUI()
     {
@@ -339,6 +351,22 @@ public class PlayerCon : MonoBehaviour,IStatusView
             }
         }
     }
+    public void TryInteract()
+    {
+        //インタラクト可能な物を探す
+        Collider[] hitColls = Physics.OverlapSphere(transform.position, InteractRange, InteractLayer);
+        //チェックする
+        foreach (var hitCollider in hitColls)
+        {
+            //そのオブジェクトがIInteractableを継承しているか確認
+            if(hitCollider.TryGetComponent<IInteractable>(out var interactable))
+            {
+                //実行
+                interactable.OnInteract();
+                return;
+            }
+        }
+    }
     private void OnEnable()
     {
         //プレイヤーのトランスフォームを登録
@@ -347,5 +375,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
     private void OnDisable()
     {
         playerAnchor = null;
+    }
+    //デバッグ用：インタラクト範囲を可視化
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, InteractRange);
     }
 }
