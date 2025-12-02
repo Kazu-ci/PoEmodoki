@@ -76,8 +76,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
         stateMachine.Onstart((int)state.Idol);
         //デバッグ用スキル
         mySkills.Add(skill);
-
-        bossEnemy = GetComponent<BossEnemy>();
     }
     void Update()
     {
@@ -92,8 +90,16 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         public override void OnUpdate()
         {
-            Owner.gameObject.transform.Translate
-                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed);
+            Vector3 direction = new Vector3(Owner.moveVec.x,0, Owner.moveVec.y);
+            //移動処理
+            if(direction != Vector3.zero)
+            {
+                Owner.gameObject.transform.Translate
+                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed,Space.World);
+            }
+            //回転処理
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            Owner.transform.rotation = Quaternion.Slerp(Owner.transform.rotation,targetRotation,10f * Time.deltaTime);
 
             if (Owner.move.ReadValue<Vector2>() == new Vector2(0, 0))
             {
