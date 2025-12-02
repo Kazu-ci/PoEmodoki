@@ -26,6 +26,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
 
     public List<SkillStatus> mySkills = new List<SkillStatus>();
     private Vector2 moveVec = default;
+    private IUseSkill[] skills = new IUseSkill[10];
     bool OnSkill = false;
     bool OnAttack = false;
 
@@ -284,7 +285,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
         if (context.started)
         {
             OnSkill = true;
+
             UseSkill(0);//デバッグ用スキル
+
+            // いちのしん
+            skills[0]?.skillAction.Invoke(this.gameObject);            
         }
         else if (context.canceled)
         {
@@ -349,6 +354,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
                 //プレイヤーの前方に生成
                 Vector3 spawnPos = transform.position + transform.forward * 1.5f;
                 GameObject skillObj = Instantiate(skill.skillPre, spawnPos, transform.rotation);
+                skills[index] = skillObj.GetComponent<BaseSkill>();
             }
         }
     }
@@ -377,12 +383,4 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
         playerAnchor = null;
     }
-    //デバッグ用：インタラクト範囲を可視化
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, InteractRange);
-    }
-
-    
 }
