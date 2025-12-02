@@ -1,0 +1,37 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class AOE : MonoBehaviour
+{
+    [SerializeField] SkillStatus data;
+    [SerializeField] GameObject Donut;
+    [SerializeField] GameObject player;
+    public KeyCode spawnKey = KeyCode.V;
+    public float Distance;
+    Vector3 forwardDirection;
+    Vector3 offset;
+    Vector3 point;
+    Image Icon;
+    float Ct;
+    float h, v;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        Icon = data.Icon;
+        Ct = data.ct;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       forwardDirection = player.transform.forward;
+       offset = forwardDirection * Distance;
+        point = player.transform.position + offset;
+        point.y = 0;
+        if (Input.GetKeyDown(spawnKey))
+        {
+            Instantiate(Donut, point, Quaternion.Euler(-90, 0, 0));
+        }
+    }
+}
+ 

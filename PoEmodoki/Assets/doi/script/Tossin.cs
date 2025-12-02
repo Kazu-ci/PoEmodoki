@@ -8,6 +8,7 @@ public class Tossin : MonoBehaviour
     [SerializeField] SkillStatus skill;
     [SerializeField] CharacterController CC;
     float speed;
+    public KeyCode SpawnKey = KeyCode.F;
     public float dashDuration = 0.2f;
     float dashTimer;
     bool ISDASH = false;
@@ -22,7 +23,7 @@ public class Tossin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(SpawnKey))
         {
             isDash();
             h = Input.GetAxisRaw("Horizontal");
