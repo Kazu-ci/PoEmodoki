@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHp: 0
   PlayerDefense: 0
-  PlayerSpeed: 0
+  PlayerSpeed: 0.1
   PlayerMp: 0
   PlayerAtkSpeed: 0
   PlayerCastSpeed: 0

@@ -4,7 +4,7 @@ using static UnityEngine.GraphicsBuffer;
 public class circleskill : MonoBehaviour
 {
     public GameObject objectToSpawn;
-
+    public GameObject obj;
     private const float Y_OFFSET = 0.1f;
     public KeyCode spawnKey = KeyCode.Q;
 
@@ -13,6 +13,7 @@ public class circleskill : MonoBehaviour
         if (Input.GetKeyDown(spawnKey))
         {
             Spawn();
+            Instantiate(obj);
         }
        
     }

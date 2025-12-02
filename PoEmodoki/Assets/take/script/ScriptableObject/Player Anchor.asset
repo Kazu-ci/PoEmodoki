@@ -9,16 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881b11d6712ccf342a83c740c7ef92ad, type: 3}
-  m_Name: blink
+  m_Script: {fileID: 11500000, guid: 9bfbfd3ad03d31d44b7624e08912c53c, type: 3}
+  m_Name: Player Anchor
   m_EditorClassIdentifier: 
-  atk: 0
-  def: 0
-  time: 0
-  ct: 600
-  speed: 5
-  lenge: 0
-  length: 0
-  Icon: {fileID: 0}
-  name: blink
-  skillPre: {fileID: 7587689979162469237, guid: 1dc79594a28680c4da10db494124e84c, type: 3}
+  Value: {fileID: 0}

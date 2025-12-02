@@ -7,17 +7,16 @@ using System.Collections;
 using static UnityEngine.UI.GridLayoutGroup;
 using Unity.VisualScripting;
 using UnityEditor;
-using UnityEngine.InputSystem.Interactions;
 
-public class BossEnemy : Enemy,IStatusView
+public class Miniboss2 : Enemy, IStatusView
 {
+    [SerializeField] SkillStatus skills;
     [SerializeField] EnemyStatus BossStatus;
     private SerializedObject seliarizeBossStatus;       //S0をキャッシュする用
-    StateMachine<BossEnemy> stateMachine;
+    StateMachine<Miniboss2> stateMachine;
     [SerializeField] GameObject[] mobEnemy;
-    [SerializeField] SkillStatus skills;
+
     [SerializeField] private List<string> attackStates;
-    protected NavMeshAgent navMeshAgent;
     [SerializeField] private List<GameObject> effects;
     [SerializeField] private List<Collider> attackColliders;
     private Dictionary<string, Collider> colliderDict;
@@ -29,8 +28,7 @@ public class BossEnemy : Enemy,IStatusView
         Vigilance,//攻撃前の警戒ステート
         Attack,//攻撃仮
         Hit,//被弾
-        Skill,//スキル
-        Sumon,//モブ召喚
+        Skill,//特殊能力
         Dead,//死亡
         Rotate,//回転
     }
@@ -55,27 +53,23 @@ public class BossEnemy : Enemy,IStatusView
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
         MaxHP = BossStatus.EnemyHp;
         currentHP = MaxHP;
         Strength = BossStatus.EnemyAtk;
-        AttackSpeed= BossStatus.EnemyAtkSpeed;
+        AttackSpeed = BossStatus.EnemyAtkSpeed;
         AttackRange = BossStatus.EnemyLength;
-        MoveSpeed= BossStatus.EnemySpeed;
+        MoveSpeed = BossStatus.EnemySpeed;
         fov = BossStatus.EnemyFov;
-        name= BossStatus.EnemyName;
+        name = BossStatus.EnemyName;
         navMeshAgent = GetComponent<NavMeshAgent>();
-        
-        stateMachine = new StateMachine<BossEnemy>(this);
+
+        stateMachine = new StateMachine<Miniboss2>(this);
         stateMachine.Add<IdleState>((int)EnemyState.Idle);
         stateMachine.Add<ChaseState>((int)EnemyState.Chase);
-        stateMachine.Add<AttackState>((int)EnemyState.Attack);
         stateMachine.Add<VigilanceState>((int)EnemyState.Vigilance);
-        stateMachine.Add<SumonState>((int)EnemyState.Sumon);
-        stateMachine.Add<DeadState>((int)EnemyState.Dead);
         stateMachine.Add<SkillState>((int)EnemyState.Skill);
+        stateMachine.Add<DeadState>((int)EnemyState.Dead);
         stateMachine.Onstart((int)EnemyState.Idle);
-        
     }
 
     // Update is called once per frame
@@ -87,7 +81,7 @@ public class BossEnemy : Enemy,IStatusView
         {
             stateMachine.ChangeState((int)EnemyState.Dead);
         }
-        stateMachine.OnUpdate();
+        //stateMachine.OnUpdate();
     }
 
     public override void OnAttackSet()
@@ -128,7 +122,7 @@ public class BossEnemy : Enemy,IStatusView
     }
 
     //各ステートの定義
-    private class IdleState : StateMachine<BossEnemy>.StateBase
+    private class IdleState : StateMachine<Miniboss2>.StateBase
     {
         float cDis;
         public override void OnStart()
@@ -146,33 +140,26 @@ public class BossEnemy : Enemy,IStatusView
         }
     }
 
-    private class ChaseState : StateMachine<BossEnemy>.StateBase
+    private class ChaseState : StateMachine<Miniboss2>.StateBase
     {
         NavMeshAgent navMeshAgent;
         public override void OnStart()
         {
             //Owner.animator.SetTrigger("Chase");
             navMeshAgent = Owner.navMeshAgent;
-           
-                navMeshAgent.isStopped = false;
-            
-
+            navMeshAgent.isStopped = false;
         }
 
         public override void OnUpdate()
         {
-
-
             Vector3 playerpos = Owner.player.transform.position;
-            navMeshAgent.SetDestination(playerpos);
             if (Owner.Getdistance() <= Owner.AttackRange)
 
-
             {
-                navMeshAgent.isStopped = true;
                 //確率で各ステートに移行
-                if (Probability(70)) { StateMachine.ChangeState((int)EnemyState.Attack); }
-                if (Probability(30)) { StateMachine.ChangeState(((int)EnemyState.Rotate)); }
+                if (Probability(60)) { StateMachine.ChangeState((int)EnemyState.Attack); }
+                if (Probability(20)) { StateMachine.ChangeState(((int)EnemyState.Rotate)); }
+                if (Probability(20)) { StateMachine.ChangeState(((int)EnemyState.Skill)); }
 
             }
         }
@@ -181,40 +168,8 @@ public class BossEnemy : Enemy,IStatusView
             //Owner.animator.ResetTrigger("Chase");
         }
     }
-       
-    private class AttackState:StateMachine<BossEnemy>.StateBase
-    {
-        public override void OnStart()
-        {
-            Owner.transform.LookAt(Owner.player.transform.position);
-            //Owner.enemyAnimation.SetTrigger("Combo");
-            Owner.navMeshAgent.isStopped = true;
-        }
-        public override void OnUpdate()
-        {
-           
-            
-                if (Owner.Getdistance() <= Owner.AttackRange)
-                {
-                    if (Probability(30)) { StateMachine.ChangeState((int)EnemyState.Attack); }
-                    if (Probability(50)) { StateMachine.ChangeState((int)EnemyState.Rotate); }
-                    if (Probability(20)) { StateMachine.ChangeState((int)EnemyState.Vigilance); }
-                }
-                else
-                {
-                    if (Probability(20)) { StateMachine.ChangeState((int)EnemyState.Idle); }
-                    if (Probability(30)) { StateMachine.ChangeState((int)EnemyState.Vigilance); }
-                    if (Probability(50)) { StateMachine.ChangeState((int)EnemyState.Chase); }
-                }
-            
-        }
-        public override void OnEnd()
-        {
-            //Owner.enemyAnimation.ResetTrigger("Combo");
-        }
-    }
-    private class VigilanceState : StateMachine<BossEnemy>.StateBase
-    {
+    private class VigilanceState : StateMachine<Miniboss2>.StateBase
+    {   
         float time;
         float mTime;
 
@@ -237,7 +192,7 @@ public class BossEnemy : Enemy,IStatusView
             {
                 //確率で各ステートに移行
                 time = 0;
-                if (Probability(60)) { StateMachine.ChangeState((int)EnemyState.Sumon); }
+                if (Probability(60)) { StateMachine.ChangeState((int)EnemyState.Skill); }
                 if (Probability(40)) { StateMachine.ChangeState((int)EnemyState.Rotate); }
             }
             time += Time.deltaTime;
@@ -283,17 +238,18 @@ public class BossEnemy : Enemy,IStatusView
             roamTarget = Owner.player.transform.position + offset;
         }
     }
-    private class SumonState : StateMachine<BossEnemy>.StateBase
+    private class SkillState : StateMachine<Miniboss2>.StateBase
     {
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
+            
             //Owner.animator.SetTrigger("Sumon");
 
         }
         public override void OnUpdate()
         {
-            //if (Owner.AnimationEnd("Sumon"))
+            if (Owner.AnimationEnd("Sumon"))
             {
                 //確率で各ステートに移行
                 if (Probability(20)) { StateMachine.ChangeState((int)EnemyState.Vigilance); }
@@ -306,7 +262,7 @@ public class BossEnemy : Enemy,IStatusView
                     }
                     else
                     {
-                        
+
                     }
                 }
             }
@@ -316,41 +272,22 @@ public class BossEnemy : Enemy,IStatusView
             //Owner.animator.ResetTrigger("Sumon");
         }
     }
-    private class DeadState : StateMachine<BossEnemy>.StateBase
+    private class DeadState : StateMachine<Miniboss2>.StateBase
     {
         public override void OnStart()
         {
-           // Owner.animator.SetTrigger("Dead");
+            // Owner.animator.SetTrigger("Dead");
         }
         public override void OnUpdate()
         {
-            //if (Owner.AnimationEnd("Dead"))
+            if (Owner.AnimationEnd("Dead"))
             {
                 Owner.OnDead();
             }
         }
         public override void OnEnd()
         {
-           // Owner.animator.ResetTrigger("Dead");
-        }
-    }
-    private class SkillState : StateMachine<BossEnemy>.StateBase
-    {
-        public override void OnStart()
-        {
-            //Owner.animator.SetTrigger("Skill");
-            Owner.Strength = Owner.skills.atk;
-            Owner.AttackRange = Owner.skills.lenge;
-        }
-        public override void OnUpdate()
-        {
-            if (Probability(20)) { StateMachine.ChangeState((int)EnemyState.Attack); }
-            if (Probability(80)) { StateMachine.ChangeState((int)EnemyState.Vigilance); }
-        }
-
-        public override void OnEnd()
-        {
-            //Owner.animator.ResetTrigger("Skill");
+            // Owner.animator.ResetTrigger("Dead");
         }
     }
 
@@ -361,7 +298,7 @@ public class BossEnemy : Enemy,IStatusView
 
         if (currentHP <= 0)
         {
-           
+
         }
         return damageTaken;
     }
@@ -369,19 +306,19 @@ public class BossEnemy : Enemy,IStatusView
     public void DrawRunningStatusGUI()
     {
         EditorGUILayout.FloatField("現在のHP:", currentHP);
-        EditorGUILayout.FloatField("HPの最大値:",MaxHP);
-        EditorGUILayout.FloatField("移動速度:",MoveSpeed);
+        EditorGUILayout.FloatField("HPの最大値:", MaxHP);
+        EditorGUILayout.FloatField("移動速度:", MoveSpeed);
         EditorGUILayout.FloatField("攻撃力:", Strength);
     }
 
     public SerializedObject GetSerializedBaseStatus()
     {
-        if(BossStatus == null)
+        if (BossStatus == null)
         {
             return null;
         }
 
-        if(seliarizeBossStatus == null || seliarizeBossStatus.targetObject != BossStatus)
+        if (seliarizeBossStatus == null || seliarizeBossStatus.targetObject != BossStatus)
         {
             seliarizeBossStatus = new SerializedObject(BossStatus);
         }
