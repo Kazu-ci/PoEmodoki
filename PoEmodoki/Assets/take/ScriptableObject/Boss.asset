@@ -18,7 +18,7 @@ MonoBehaviour:
   EnemySpeed: 10
   EnemyAtkSpeed: 20
   EnemyCastSpeed: 321
-  EnemyLength: 20
+  EnemyLength: 5
   EnemyElementDefense: 1
   EnemyFov: 41
   EnemyName: Boss
