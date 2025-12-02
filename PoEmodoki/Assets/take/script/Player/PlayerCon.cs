@@ -63,6 +63,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         ElementDefense = player.PlayerElementDefense;
         Critical = player.PlayerCritical;
 
+
         move = PlayerInput.actions["Move"];
         skill1 = PlayerInput.actions["Skill1"];
         skill2 = PlayerInput.actions["Skill2"];
@@ -382,4 +383,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, InteractRange);
     }
+
+    
 }

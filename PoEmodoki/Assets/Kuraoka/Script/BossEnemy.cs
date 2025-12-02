@@ -17,7 +17,7 @@ public class BossEnemy : Enemy,IStatusView
     [SerializeField] GameObject[] mobEnemy;
     [SerializeField] SkillStatus skills;
     [SerializeField] private List<string> attackStates;
-    protected NavMeshAgent navMeshAgent;
+    //protected NavMeshAgent navMeshAgent;
     [SerializeField] private List<GameObject> effects;
     [SerializeField] private List<Collider> attackColliders;
     private Dictionary<string, Collider> colliderDict;
