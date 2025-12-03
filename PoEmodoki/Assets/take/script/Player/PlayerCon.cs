@@ -19,7 +19,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
 #endif
     [SerializeField]PlayerInput PlayerInput;
     [SerializeField]PlayerAnchor playerAnchor;
-    [SerializeField]SkillStatus skill;//仮
+    //[SerializeField]SkillStatus skill;//仮
     [SerializeField]BossEnemy bossEnemy;
     //インタラクト可能な半径
     [SerializeField] private float InteractRange = 3f;
@@ -86,7 +86,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         stateMachine.Add<PoseState>((int)state.pose);
         stateMachine.Onstart((int)state.Idol);
         //デバッグ用スキル
-        mySkills.Add(skill);
+        //mySkills.Add(skill);
     }
     void Update()
     {
@@ -252,7 +252,8 @@ public class PlayerCon : MonoBehaviour,IStatusView
         if(context.started)
         {
             OnSkill = true;
-            UseSkill(0);//デバッグ用スキル
+            UseSkill(0);
+            skills[0]?.skillAction.Invoke(this.gameObject);
         }
         else if(context.canceled)
         {
@@ -264,7 +265,8 @@ public class PlayerCon : MonoBehaviour,IStatusView
         if (context.started)
         {
             OnSkill = true;
-            UseSkill(0);//デバッグ用スキル
+            UseSkill(1);
+            skills[1]?.skillAction.Invoke(this.gameObject);
         }
         else if (context.canceled)
         {
@@ -276,7 +278,8 @@ public class PlayerCon : MonoBehaviour,IStatusView
         if (context.started)
         {
             OnSkill = true;
-            UseSkill(0);//デバッグ用スキル
+            UseSkill(2);
+            skills[2]?.skillAction.Invoke(this.gameObject);
         }
         else if (context.canceled)
         {
@@ -290,10 +293,10 @@ public class PlayerCon : MonoBehaviour,IStatusView
         {
             OnSkill = true;
 
-            UseSkill(0);//デバッグ用スキル
+            UseSkill(3);
 
             // いちのしん
-            skills[0]?.skillAction.Invoke(this.gameObject);
+            skills[3]?.skillAction.Invoke(this.gameObject);
         }
         else if (context.canceled)
         {
