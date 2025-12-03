@@ -385,7 +385,6 @@ MonoBehaviour:
   player: {fileID: 11400000, guid: 87d7f51ec38e7f8489ffb9722f9fc8e5, type: 2}
   PlayerInput: {fileID: 1083796655}
   playerAnchor: {fileID: 11400000, guid: f6aa36185c0c4104d90f6790c5e9e13b, type: 2}
-  skill: {fileID: 11400000, guid: e2d84cba82228e54d8020fe03014518f, type: 2}
   bossEnemy: {fileID: 1284074577}
   InteractRange: 0
   InteractLayer:
@@ -1168,7 +1167,7 @@ GameObject:
   - component: {fileID: 1694498847}
   - component: {fileID: 1694498846}
   - component: {fileID: 1694498845}
-  - component: {fileID: 1694498844}
+  - component: {fileID: 1694498850}
   m_Layer: 8
   m_Name: Soul
   m_TagString: Untagged
@@ -1176,20 +1175,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1694498844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694498843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac997f6182d9e24f82e4e9944c761d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SoulColl: {fileID: 1694498846}
-  InteractColl: {fileID: 1694498845}
 --- !u!135 &1694498845
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1300,6 +1285,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1694498850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694498843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855e3e0c8ca988846919edcb556ca7fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: e2d84cba82228e54d8020fe03014518f, type: 2}
+  Donut: {fileID: 5419782520459956681, guid: 571aed2c96cd15140b98c643bf8ef923, type: 3}
+  player: {fileID: 1083796648}
+  ObjColl: {fileID: 1694498846}
+  InteractColl: {fileID: 1694498845}
+  spawnKey: 118
+  Distance: 0
 --- !u!1 &1723369264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,6 +1316,7 @@ GameObject:
   - component: {fileID: 1723369267}
   - component: {fileID: 1723369266}
   - component: {fileID: 1723369265}
+  - component: {fileID: 1723369269}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1437,6 +1442,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 62.087, y: 0, z: 0}
+--- !u!114 &1723369269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723369264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9692773aa3cae5348b9c85329c42cde4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 1083796654}
+  offset: {x: 0, y: 5, z: -4.5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
