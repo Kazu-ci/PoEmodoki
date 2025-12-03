@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    void OnInteract(/*PlayerController player*/);
+    void OnInteract(PlayerCon player);
 }

@@ -373,7 +373,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             if(hitCollider.TryGetComponent<IInteractable>(out var interactable))
             {
                 //é¿çs
-                interactable.OnInteract();
+                interactable.OnInteract(this);
                 return;
             }
         }
