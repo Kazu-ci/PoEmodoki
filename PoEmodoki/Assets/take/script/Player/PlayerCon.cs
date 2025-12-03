@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
@@ -12,7 +14,9 @@ using UnityEngine.XR;
 public class PlayerCon : MonoBehaviour,IStatusView
 {
     [SerializeField]PlayerStatus player;
+#if UNITY_EDITOR
     private SerializedObject sPlayerStatus;
+#endif
     [SerializeField]PlayerInput PlayerInput;
     [SerializeField]PlayerAnchor playerAnchor;
     [SerializeField]SkillStatus skill;//仮
@@ -102,7 +106,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             if (direction != Vector3.zero)
             {
                 Owner.gameObject.transform.Translate
-                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed, Space.World);
+                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed * Time.deltaTime, Space.World);
                 //回転処理
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 Owner.transform.rotation = Quaternion.Slerp(Owner.transform.rotation, targetRotation, 10f * Time.deltaTime);
@@ -289,7 +293,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             UseSkill(0);//デバッグ用スキル
 
             // いちのしん
-            skills[0]?.skillAction.Invoke(this.gameObject);            
+            skills[0]?.skillAction.Invoke(this.gameObject);
         }
         else if (context.canceled)
         {
@@ -323,7 +327,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
 
     }
-
+#if UNITY_EDITOR
     public SerializedObject GetSerializedBaseStatus()
     {
         if (player == null)
@@ -337,7 +341,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         return sPlayerStatus;
     }
-
+#endif
     public void AddSkill(SkillStatus data)
     {
         mySkills.Add(data);
