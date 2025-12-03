@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,8 +17,9 @@ public class AOE : BaseSkill,IStatusView
     Image Icon;
     float Ct;
     float h, v;
-
+#if UNITY_EDITOR
     private SerializedObject sSkill;
+#endif
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,7 +44,7 @@ public class AOE : BaseSkill,IStatusView
     {
 
     }
-
+#if UNITY_EDITOR
     public SerializedObject GetSerializedBaseStatus()
     {
         if (data == null)
@@ -55,7 +58,7 @@ public class AOE : BaseSkill,IStatusView
         }
         return sSkill;
     }
-
+#endif
     protected override void UseSkill(GameObject obj)
     {
         forwardDirection = obj.transform.forward;

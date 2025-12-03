@@ -6,14 +6,18 @@ using System.Collections.Generic;
 using System.Collections;
 using static UnityEngine.UI.GridLayoutGroup;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEditorInternal;
 
 public class MiniBoss1 : Enemy
 
 {
     [SerializeField] EnemyStatus Miniboss1Status;
+#if UNITY_EDITOR
     private SerializedObject serializeminibossStatus;
+#endif
     StateMachine<MiniBoss1> stateMachine;
     [SerializeField] private List<string> attackStates;
     [SerializeField] private List<GameObject> effects;

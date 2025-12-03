@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Collections;
 using static UnityEngine.UI.GridLayoutGroup;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class Miniboss2 : Enemy, IStatusView
 {
@@ -310,7 +312,7 @@ public class Miniboss2 : Enemy, IStatusView
         EditorGUILayout.FloatField("à⁄ìÆë¨ìx:", MoveSpeed);
         EditorGUILayout.FloatField("çUåÇóÕ:", Strength);
     }
-
+#if UNITY_EDITOR
     public SerializedObject GetSerializedBaseStatus()
     {
         if (BossStatus == null)
@@ -324,5 +326,5 @@ public class Miniboss2 : Enemy, IStatusView
         }
         return seliarizeBossStatus;
     }
-
+#endif
 }

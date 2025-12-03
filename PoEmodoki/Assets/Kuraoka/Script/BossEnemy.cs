@@ -6,13 +6,17 @@ using System.Collections.Generic;
 using System.Collections;
 using static UnityEngine.UI.GridLayoutGroup;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine.InputSystem.Interactions;
 
 public class BossEnemy : Enemy,IStatusView
 {
     [SerializeField] EnemyStatus BossStatus;
+#if UNITY_EDITOR
     private SerializedObject seliarizeBossStatus;       //S0をキャッシュする用
+#endif
     StateMachine<BossEnemy> stateMachine;
     [SerializeField] GameObject[] mobEnemy;
     [SerializeField] SkillStatus skills;
@@ -373,7 +377,7 @@ public class BossEnemy : Enemy,IStatusView
         EditorGUILayout.FloatField("移動速度:",MoveSpeed);
         EditorGUILayout.FloatField("攻撃力:", Strength);
     }
-
+#if UNITY_EDITOR
     public SerializedObject GetSerializedBaseStatus()
     {
         if(BossStatus == null)
@@ -387,5 +391,5 @@ public class BossEnemy : Enemy,IStatusView
         }
         return seliarizeBossStatus;
     }
-
+#endif
 }
