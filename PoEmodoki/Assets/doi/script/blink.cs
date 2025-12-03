@@ -62,12 +62,12 @@ public class blink : MonoBehaviour,IStatusView
         pc.Move(moveVector);
         On = false;
     }
-
+#if UNITY_EDITOR
     public void DrawRunningStatusGUI()
     {
         EditorGUILayout.FloatField("åªç›ÇÃÉuÉäÉìÉNë¨ìx:", speed);
     }
-#if UNITY_EDITOR
+
     public SerializedObject GetSerializedBaseStatus()
     {
         if (data == null)
