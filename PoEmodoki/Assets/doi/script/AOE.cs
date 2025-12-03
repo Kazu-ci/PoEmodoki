@@ -40,11 +40,12 @@ public class AOE : BaseSkill,IStatusView
        // }
 
     }
+#if UNITY_EDITOR
     public void DrawRunningStatusGUI()
     {
 
     }
-#if UNITY_EDITOR
+
     public SerializedObject GetSerializedBaseStatus()
     {
         if (data == null)

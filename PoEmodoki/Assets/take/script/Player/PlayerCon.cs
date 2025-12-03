@@ -322,12 +322,12 @@ public class PlayerCon : MonoBehaviour,IStatusView
             TryInteract();
         }
     }
-
+#if UNITY_EDITOR
     public void DrawRunningStatusGUI()
     {
 
     }
-#if UNITY_EDITOR
+
     public SerializedObject GetSerializedBaseStatus()
     {
         if (player == null)
