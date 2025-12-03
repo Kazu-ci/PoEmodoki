@@ -65,7 +65,6 @@ public class Enemy : MonoBehaviour
     protected virtual void Update()
     {
         playerpos = playerAnchor.Value.position;
-        player.transform.position = playerpos;
     }
 
     public float Getdistance()
