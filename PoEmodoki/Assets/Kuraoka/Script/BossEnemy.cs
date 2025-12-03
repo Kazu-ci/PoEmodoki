@@ -148,12 +148,13 @@ public class BossEnemy : Enemy,IStatusView
 
     private class ChaseState : StateMachine<BossEnemy>.StateBase
     {
+        NavMeshAgent navMeshAgent;
         public override void OnStart()
         {
             //Owner.animator.SetTrigger("Chase");
-            Owner.navMeshAgent = Owner.navMeshAgent;
-
-            Owner.navMeshAgent.isStopped = false;
+            navMeshAgent = Owner.navMeshAgent;
+           
+                navMeshAgent.isStopped = false;
             
 
         }
@@ -163,10 +164,12 @@ public class BossEnemy : Enemy,IStatusView
 
 
             Vector3 playerpos = Owner.player.transform.position;
-            Owner.navMeshAgent.SetDestination(playerpos);
+            navMeshAgent.SetDestination(playerpos);
             if (Owner.Getdistance() <= Owner.AttackRange)
+
+
             {
-                Owner.navMeshAgent.isStopped = true;
+                navMeshAgent.isStopped = true;
                 //確率で各ステートに移行
                 if (Probability(70)) { StateMachine.ChangeState((int)EnemyState.Attack); }
                 if (Probability(30)) { StateMachine.ChangeState(((int)EnemyState.Rotate)); }

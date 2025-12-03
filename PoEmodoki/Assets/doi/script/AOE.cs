@@ -1,7 +1,8 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AOE : MonoBehaviour
+public class AOE : BaseSkill,IStatusView
 {
     [SerializeField] SkillStatus data;
     [SerializeField] GameObject Donut;
@@ -14,6 +15,8 @@ public class AOE : MonoBehaviour
     Image Icon;
     float Ct;
     float h, v;
+
+    private SerializedObject sSkill;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,14 +27,43 @@ public class AOE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       forwardDirection = player.transform.forward;
-       offset = forwardDirection * Distance;
-        point = player.transform.position + offset;
-        point.y = 0;
-        if (Input.GetKeyDown(spawnKey))
-        {
-            Instantiate(Donut, point, Quaternion.Euler(-90, 0, 0));
-        }
+       //forwardDirection = player.transform.forward;
+       //offset = forwardDirection * Distance;
+       // point = player.transform.position + offset;
+       // point.y = 0;
+       // if (Input.GetKeyDown(spawnKey))
+       // {
+       //     Instantiate(Donut, point, Quaternion.Euler(-90, 0, 0));
+       // }
+
     }
+    public void DrawRunningStatusGUI()
+    {
+
+    }
+
+    public SerializedObject GetSerializedBaseStatus()
+    {
+        if (data == null)
+        {
+            return null;
+        }
+
+        if (sSkill == null || sSkill.targetObject != data)
+        {
+            sSkill = new SerializedObject(data);
+        }
+        return sSkill;
+    }
+
+    protected override void UseSkill(GameObject obj)
+    {
+        forwardDirection = obj.transform.forward;
+        offset = forwardDirection * Distance;
+        point = obj.transform.position /*+ offset*/;
+        point.y = 0;
+        Instantiate(Donut, point, Quaternion.Euler(-90, 0, 0));
+    }
+
 }
  
