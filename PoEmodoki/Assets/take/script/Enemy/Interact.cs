@@ -13,7 +13,7 @@ public class Interact : MonoBehaviour, IInteractable
         
     }
 
-    public void OnInteract()
+    public void OnInteract(PlayerCon player)
     {
         Debug.Log("プレイヤーが魂を拾った。");
         //プレイヤーが拾ったらアイテムを消す

@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
@@ -12,10 +14,12 @@ using UnityEngine.XR;
 public class PlayerCon : MonoBehaviour,IStatusView
 {
     [SerializeField]PlayerStatus player;
+#if UNITY_EDITOR
     private SerializedObject sPlayerStatus;
+#endif
     [SerializeField]PlayerInput PlayerInput;
     [SerializeField]PlayerAnchor playerAnchor;
-    [SerializeField]SkillStatus skill;//仮
+    //[SerializeField]SkillStatus skill;//仮
     [SerializeField]BossEnemy bossEnemy;
     //インタラクト可能な半径
     [SerializeField] private float InteractRange = 3f;
@@ -82,7 +86,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         stateMachine.Add<PoseState>((int)state.pose);
         stateMachine.Onstart((int)state.Idol);
         //デバッグ用スキル
-        mySkills.Add(skill);
+        //mySkills.Add(skill);
     }
     void Update()
     {
@@ -102,7 +106,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             if (direction != Vector3.zero)
             {
                 Owner.gameObject.transform.Translate
-                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed, Space.World);
+                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed * Time.deltaTime, Space.World);
                 //回転処理
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 Owner.transform.rotation = Quaternion.Slerp(Owner.transform.rotation, targetRotation, 10f * Time.deltaTime);
@@ -248,7 +252,8 @@ public class PlayerCon : MonoBehaviour,IStatusView
         if(context.started)
         {
             OnSkill = true;
-            UseSkill(0);//デバッグ用スキル
+            UseSkill(0);
+            skills[0]?.skillAction.Invoke(this.gameObject);
         }
         else if(context.canceled)
         {
@@ -260,7 +265,8 @@ public class PlayerCon : MonoBehaviour,IStatusView
         if (context.started)
         {
             OnSkill = true;
-            UseSkill(0);//デバッグ用スキル
+            UseSkill(1);
+            skills[1]?.skillAction.Invoke(this.gameObject);
         }
         else if (context.canceled)
         {
@@ -272,7 +278,8 @@ public class PlayerCon : MonoBehaviour,IStatusView
         if (context.started)
         {
             OnSkill = true;
-            UseSkill(0);//デバッグ用スキル
+            UseSkill(2);
+            skills[2]?.skillAction.Invoke(this.gameObject);
         }
         else if (context.canceled)
         {
@@ -286,10 +293,10 @@ public class PlayerCon : MonoBehaviour,IStatusView
         {
             OnSkill = true;
 
-            UseSkill(0);//デバッグ用スキル
+            UseSkill(3);
 
             // いちのしん
-            skills[0]?.skillAction.Invoke(this.gameObject);            
+            skills[3]?.skillAction.Invoke(this.gameObject);
         }
         else if (context.canceled)
         {
@@ -318,7 +325,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             TryInteract();
         }
     }
-
+#if UNITY_EDITOR
     public void DrawRunningStatusGUI()
     {
 
@@ -337,7 +344,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         return sPlayerStatus;
     }
-
+#endif
     public void AddSkill(SkillStatus data)
     {
         mySkills.Add(data);
@@ -369,7 +376,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             if(hitCollider.TryGetComponent<IInteractable>(out var interactable))
             {
                 //実行
-                interactable.OnInteract();
+                interactable.OnInteract(this);
                 return;
             }
         }
