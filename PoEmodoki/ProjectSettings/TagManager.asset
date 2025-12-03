@@ -6,6 +6,7 @@ TagManager:
   tags:
   - boll
   - skill
+  - Soul
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - skill
   - player
-  - 
+  - Interact
   - 
   - 
   - 

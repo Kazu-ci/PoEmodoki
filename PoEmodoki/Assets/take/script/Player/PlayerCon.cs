@@ -17,11 +17,16 @@ public class PlayerCon : MonoBehaviour,IStatusView
     [SerializeField]PlayerAnchor playerAnchor;
     [SerializeField]SkillStatus skill;//仮
     [SerializeField]BossEnemy bossEnemy;
+    //インタラクト可能な半径
+    [SerializeField] private float InteractRange = 3f;
+    //インタラクト対象レイヤー
+    [SerializeField] private LayerMask InteractLayer;
     InputAction move;
     InputAction skill1,skill2,skill3,skill4;
 
     public List<SkillStatus> mySkills = new List<SkillStatus>();
     private Vector2 moveVec = default;
+    private IUseSkill[] skills = new IUseSkill[10];
     bool OnSkill = false;
     bool OnAttack = false;
 
@@ -59,11 +64,13 @@ public class PlayerCon : MonoBehaviour,IStatusView
         ElementDefense = player.PlayerElementDefense;
         Critical = player.PlayerCritical;
 
+
         move = PlayerInput.actions["Move"];
         skill1 = PlayerInput.actions["Skill1"];
         skill2 = PlayerInput.actions["Skill2"];
         skill3 = PlayerInput.actions["Skill3"];
         skill4 = PlayerInput.actions["Skill4"];
+
 
         stateMachine = new StateMachine<PlayerCon>(this);
         stateMachine.Add<MoveState>((int)state.Move);
@@ -92,14 +99,14 @@ public class PlayerCon : MonoBehaviour,IStatusView
         {
             Vector3 direction = new Vector3(Owner.moveVec.x,0, Owner.moveVec.y);
             //移動処理
-            if(direction != Vector3.zero)
+            if (direction != Vector3.zero)
             {
                 Owner.gameObject.transform.Translate
-                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed,Space.World);
+                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed, Space.World);
+                //回転処理
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                Owner.transform.rotation = Quaternion.Slerp(Owner.transform.rotation, targetRotation, 10f * Time.deltaTime);
             }
-            //回転処理
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            Owner.transform.rotation = Quaternion.Slerp(Owner.transform.rotation,targetRotation,10f * Time.deltaTime);
 
             if (Owner.move.ReadValue<Vector2>() == new Vector2(0, 0))
             {
@@ -278,7 +285,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
         if (context.started)
         {
             OnSkill = true;
+
             UseSkill(0);//デバッグ用スキル
+
+            // いちのしん
+            skills[0]?.skillAction.Invoke(this.gameObject);            
         }
         else if (context.canceled)
         {
@@ -298,6 +309,13 @@ public class PlayerCon : MonoBehaviour,IStatusView
         else if( context.canceled)
         {
             OnAttack = false;
+        }
+    }
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            TryInteract();
         }
     }
 
@@ -336,6 +354,23 @@ public class PlayerCon : MonoBehaviour,IStatusView
                 //プレイヤーの前方に生成
                 Vector3 spawnPos = transform.position + transform.forward * 1.5f;
                 GameObject skillObj = Instantiate(skill.skillPre, spawnPos, transform.rotation);
+                skills[index] = skillObj.GetComponent<BaseSkill>();
+            }
+        }
+    }
+    public void TryInteract()
+    {
+        //インタラクト可能な物を探す
+        Collider[] hitColls = Physics.OverlapSphere(transform.position, InteractRange, InteractLayer);
+        //チェックする
+        foreach (var hitCollider in hitColls)
+        {
+            //そのオブジェクトがIInteractableを継承しているか確認
+            if(hitCollider.TryGetComponent<IInteractable>(out var interactable))
+            {
+                //実行
+                interactable.OnInteract();
+                return;
             }
         }
     }
