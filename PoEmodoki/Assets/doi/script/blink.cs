@@ -3,7 +3,7 @@ using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.UI;
-public class blink : MonoBehaviour,IStatusView
+public class blink : BaseSkill,IStatusView,IInteractable
 {
     [SerializeField] SkillStatus data;
 #if UNITY_EDITOR
@@ -28,26 +28,7 @@ public class blink : MonoBehaviour,IStatusView
     // Update is called once per frame
     void Update()
     {
-       if (ct <count) {
-            On = true;
-        }
-        if (Input.GetKeyDown(KeyCode.E)&&On == true)
-        {
-            Blink();
-            used = true;
-        }
-        else
-        {
-            used = false;
-        }
-        if(used == true)
-        {
-            ct = data.ct;
-        }
-        else
-        {
-            --ct;
-        }
+      
         
     }
     void Blink()
@@ -61,6 +42,15 @@ public class blink : MonoBehaviour,IStatusView
         Vector3 moveVector = worldMoveDirection* speed;
         pc.Move(moveVector);
         On = false;
+    }
+    public void OnInteract(PlayerCon player)
+    {
+        if (data != null)
+        {
+            player.AddSkill(data);
+            Debug.Log(data + "“üŽè");
+            Destroy(gameObject);
+        }
     }
 #if UNITY_EDITOR
     public void DrawRunningStatusGUI()
@@ -82,4 +72,24 @@ public class blink : MonoBehaviour,IStatusView
         return sSkill;
     }
 #endif
+    protected override void UseSkill(GameObject obj)
+    {
+        if ( On == true)
+        {
+            Blink();
+            used = true;
+        }
+        else
+        {
+            used = false;
+        }
+        /*if (used == true)
+        {
+            ct = data.ct;
+        }
+        else
+        {
+            --ct;
+        }*/
+    }
 }

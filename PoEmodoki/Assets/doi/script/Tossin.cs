@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
-public class Tossin : BaseSkill,IStatusView
+public class Tossin : BaseSkill,IStatusView, IInteractable
 {
     [SerializeField] SkillStatus data;
     [SerializeField] GameObject obj;
@@ -58,7 +58,15 @@ public class Tossin : BaseSkill,IStatusView
     {
 
     }
-
+    public void OnInteract(PlayerCon player)
+    {
+        if (data != null)
+        {
+            player.AddSkill(data);
+            Debug.Log(data + "“üŽè");
+            Destroy(gameObject);
+        }
+    }
     public SerializedObject GetSerializedBaseStatus()
     {
         if (data == null)
