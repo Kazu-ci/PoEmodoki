@@ -7,9 +7,6 @@ using UnityEngine.UI;
 
 public abstract class BaseSkill : MonoBehaviour, IUseSkill
 {
-#if UNITY_EDITOR
-    private SerializedObject sSkill;
-#endif
     public Action<GameObject> skillAction => UseSkill;
 
     abstract protected void UseSkill(GameObject obj);
