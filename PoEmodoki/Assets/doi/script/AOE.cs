@@ -4,11 +4,13 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AOE : BaseSkill,IStatusView
+public class AOE : BaseSkill,IStatusView,IInteractable
 {
     [SerializeField] SkillStatus data;
     [SerializeField] GameObject Donut;
     [SerializeField] GameObject player;
+    [SerializeField] Collider ObjColl;
+    [SerializeField] Collider InteractColl;
     public KeyCode spawnKey = KeyCode.V;
     public float Distance;
     Vector3 forwardDirection;
@@ -39,6 +41,15 @@ public class AOE : BaseSkill,IStatusView
        //     Instantiate(Donut, point, Quaternion.Euler(-90, 0, 0));
        // }
 
+    }
+    public void OnInteract(PlayerCon player)
+    {
+        if(data != null)
+        {
+            player.AddSkill(data);
+            Debug.Log(data + "“üŽè");
+            Destroy(gameObject);
+        }
     }
 #if UNITY_EDITOR
     public void DrawRunningStatusGUI()
