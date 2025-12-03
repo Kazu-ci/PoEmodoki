@@ -369,14 +369,16 @@ public class BossEnemy : Enemy,IStatusView
         }
         return damageTaken;
     }
+#if UNITY_EDITOR
 
     public void DrawRunningStatusGUI()
     {
         EditorGUILayout.FloatField("現在のHP:", currentHP);
-        EditorGUILayout.FloatField("HPの最大値:",MaxHP);
-        EditorGUILayout.FloatField("移動速度:",MoveSpeed);
+        EditorGUILayout.FloatField("HPの最大値:", MaxHP);
+        EditorGUILayout.FloatField("移動速度:", MoveSpeed);
         EditorGUILayout.FloatField("攻撃力:", Strength);
     }
+#endif
 #if UNITY_EDITOR
     public SerializedObject GetSerializedBaseStatus()
     {

@@ -9,7 +9,7 @@ using Unity.VisualScripting;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-using UnityEditorInternal;
+
 
 public class MiniBoss1 : Enemy
 
