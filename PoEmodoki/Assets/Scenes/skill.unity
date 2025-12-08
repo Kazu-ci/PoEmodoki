@@ -153,8 +153,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: 110}
-  m_SizeDelta: {x: 70, y: 70}
+  m_AnchoredPosition: {x: -380, y: 120}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &98905614
 MonoBehaviour:
@@ -799,7 +799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 200}
+  m_AnchoredPosition: {x: 100, y: 200}
   m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &788469116
@@ -1347,6 +1347,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageRect: {fileID: 962854570}
+  slot0: {fileID: 1056356850}
+  slot1: {fileID: 98905613}
+  slot3: {fileID: 1230267260}
 --- !u!4 &1179935215
 Transform:
   m_ObjectHideFlags: 0
@@ -1396,8 +1399,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140, y: 110}
-  m_SizeDelta: {x: 70, y: 70}
+  m_AnchoredPosition: {x: -80, y: 120}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1230267261
 MonoBehaviour:
@@ -1826,12 +1829,12 @@ RectTransform:
   - {fileID: 630551735}
   - {fileID: 1076575832}
   - {fileID: 320225841}
-  - {fileID: 962854570}
   - {fileID: 1629496074}
   - {fileID: 1407384316}
   - {fileID: 98905613}
   - {fileID: 1828817033}
   - {fileID: 1230267260}
+  - {fileID: 962854570}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2011,8 +2014,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220, y: 110}
-  m_SizeDelta: {x: 70, y: 70}
+  m_AnchoredPosition: {x: -230, y: 120}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1828817034
 MonoBehaviour:
