@@ -10,6 +10,7 @@ public class EnemyStatus : ScriptableObject
     public float EnemySpeed;            //“G‚ÌˆÚ“®‘¬“x
     public float EnemyAtkSpeed;         //“G‚ÌUŒ‚‘¬“x
     public float EnemyCastSpeed;        //“G‚Ì‰r¥‘¬“x
+    public float EnemySens;
     public float EnemyLength;           //“G‚ÌË’ö
     public float EnemyElementDefense;   //“G‚Ì‘®«‘Ï«
     public float EnemyFov;              //“G‚Ì‹–ìŠp
