@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     protected float AttackRange;           // 攻撃射程
     protected float AttackRate;            // 攻撃間隔
     protected float MoveSpeed;             // 移動速度
+    protected float lookPlayerDir;
 
     [SerializeField] protected PlayerAnchor playerAnchor;
     [SerializeField] protected Texture[] textures;  // テクスチャ（見た目変更用）
