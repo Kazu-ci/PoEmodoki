@@ -390,6 +390,9 @@ MonoBehaviour:
   InteractLayer:
     serializedVersion: 2
     m_Bits: 256
+  lockonTarget: {fileID: 0}
+  lockon: {fileID: 0}
+  playerObj: {fileID: 0}
   mySkills: []
 --- !u!54 &1083796650
 Rigidbody:
@@ -944,7 +947,7 @@ GameObject:
   - component: {fileID: 1284074582}
   m_Layer: 0
   m_Name: Ennemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1174,7 +1177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1694498845
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1409,7 +1412,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

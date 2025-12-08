@@ -17,7 +17,9 @@ public class PlayerCon : MonoBehaviour,IStatusView
 #if UNITY_EDITOR
     private SerializedObject sPlayerStatus;
 #endif
+    //プレイヤーのステータス管理
     [SerializeField]PlayerInput PlayerInput;
+    //プレイヤーの座標管理
     [SerializeField]PlayerAnchor playerAnchor;
     //[SerializeField]SkillStatus skill;//仮
     [SerializeField]BossEnemy bossEnemy;
@@ -27,6 +29,10 @@ public class PlayerCon : MonoBehaviour,IStatusView
     [SerializeField] private LayerMask InteractLayer;
     InputAction move;
     InputAction skill1,skill2,skill3,skill4;
+    //ロックオン
+    [SerializeField] private GameObject lockonTarget;
+    [SerializeField]protected RockOnCon lockon;
+    [SerializeField] private GameObject playerObj;
 
     public List<SkillStatus> mySkills = new List<SkillStatus>();
     private Vector2 moveVec = default;
@@ -87,6 +93,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
         stateMachine.Onstart((int)state.Idol);
         //デバッグ用スキル
         //mySkills.Add(skill);
+        
+    }
+    void Start()
+    {
+        
     }
     void Update()
     {
@@ -389,5 +400,14 @@ public class PlayerCon : MonoBehaviour,IStatusView
     private void OnDisable()
     {
         playerAnchor = null;
+    }
+
+    private void OnLockon()
+    {
+        transform.position = playerObj.transform.position;
+        if(lockonTarget == null)
+        {
+            //GameObject target = a
+        }
     }
 }

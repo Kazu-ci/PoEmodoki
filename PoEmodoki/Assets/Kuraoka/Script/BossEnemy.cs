@@ -15,7 +15,7 @@ public class BossEnemy : Enemy,IStatusView
 {
     [SerializeField] EnemyStatus BossStatus;
 #if UNITY_EDITOR
-    private SerializedObject seliarizeBossStatus;       //S0をキャッシュする用
+    private SerializedObject seliarizeBossStatus;       //SOをキャッシュする用
 #endif
     StateMachine<BossEnemy> stateMachine;
     [SerializeField] GameObject[] mobEnemy;

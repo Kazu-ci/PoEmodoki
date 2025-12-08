@@ -7,6 +7,9 @@ TagManager:
   - boll
   - skill
   - Soul
+  - Enemy
+  - midBoss
+  - lustboss
   layers:
   - Default
   - TransparentFX
