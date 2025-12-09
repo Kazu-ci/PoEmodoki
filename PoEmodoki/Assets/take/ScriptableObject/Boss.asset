@@ -18,6 +18,7 @@ MonoBehaviour:
   EnemySpeed: 10
   EnemyAtkSpeed: 20
   EnemyCastSpeed: 321
+  EnemySens: 200
   EnemyLength: 20
   EnemyElementDefense: 1
   EnemyFov: 41
