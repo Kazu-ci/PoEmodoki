@@ -13,6 +13,6 @@ public class SkillStatus : ScriptableObject
     public float length;
     public Image Icon;
     public string name;
-
+    public Sprite sprite;
     public GameObject skillPre;
 }

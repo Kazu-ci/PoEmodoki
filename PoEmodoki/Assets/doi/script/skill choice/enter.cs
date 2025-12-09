@@ -1,24 +1,30 @@
+using Fungus;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CursorSelectImage : MonoBehaviour
 {
     public Image cursorImage;         // カーソル用のImage
-    public Image[] targetImages;      // 判定対象のImageたち
+    public Image[] targetImages; // 判定対象のImageたち
     public Image[] targetslots;
-   
+    [SerializeField] Slots slotData;
     private Sprite selectedSprite;     // 保存した Sprite
     private bool hasSelected = false;
-    
+    void Start()
+    {
+        // ★ Scene 読み込み時に ScriptableObject から UI へ復元
+        if (slotData.slot1 != null) targetslots[0].sprite = slotData.slot1.sprite;
+        if (slotData.slot2 != null) targetslots[1].sprite = slotData.slot2.sprite;
+        if (slotData.slot3 != null) targetslots[2].sprite = slotData.slot3.sprite;
+    }
     void Update()
     {
        
         if (Input.GetKeyDown(KeyCode.Return))
         {
 
-            Image selectedImage = null;
-            Image sloted = null;
-            Sprite s = null;
+       
 
             foreach (var img in targetImages)
             {
@@ -38,7 +44,13 @@ public class CursorSelectImage : MonoBehaviour
                     {
                         slot.sprite = selectedSprite;
                         Debug.Log("スロットに画像をセットしました: " + slot.name);
-                        hasSelected = false; // 使ったらリセット
+                        if (slot.name == "slot1" )
+                            slotData.slot1.sprite = selectedSprite;
+                        if (slot.name == "slot2" )
+                            slotData.slot2.sprite = selectedSprite;
+                        if (slot.name == "slot3" )
+                            slotData.slot3.sprite = selectedSprite;
+                        hasSelected = false; 
                         break;
                     }
                 }

@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2120ff2eebe5cdc40b04104972b3bf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 11400000, guid: 395c28558edca6a478ab0f1816577246, type: 2}
-  CC: {fileID: 0}
+  data: {fileID: 11400000, guid: 395c28558edca6a478ab0f1816577246, type: 2}
+  obj: {fileID: 0}
+  SpawnKey: 102
   dashDuration: 0.2
