@@ -5,31 +5,45 @@ public class CursorSelectImage : MonoBehaviour
 {
     public Image cursorImage;         // カーソル用のImage
     public Image[] targetImages;      // 判定対象のImageたち
-
+    public Image[] targetslots;
+   
+    private Sprite selectedSprite;     // 保存した Sprite
+    private bool hasSelected = false;
+    
     void Update()
     {
+       
         if (Input.GetKeyDown(KeyCode.Return))
         {
+
             Image selectedImage = null;
+            Image sloted = null;
+            Sprite s = null;
 
             foreach (var img in targetImages)
             {
                 if (IsRectOverlapping(cursorImage.rectTransform, img.rectTransform))
                 {
-                    selectedImage = img;
-                    break; // 最初に重なったImageだけ取得
+                    selectedSprite = img.sprite;
+                    hasSelected = true;
+                    Debug.Log("画像を選択しました: " + img.name);
+                    break; 
                 }
             }
-
-            if (selectedImage != null)
+            if (hasSelected)
             {
-                Debug.Log("カーソルが重なっているImage: " + selectedImage.name);
-                selectedImage.color = Color.yellow; // 例: 色を変える
+                foreach (var slot in targetslots)
+                {
+                    if (IsRectOverlapping(cursorImage.rectTransform, slot.rectTransform))
+                    {
+                        slot.sprite = selectedSprite;
+                        Debug.Log("スロットに画像をセットしました: " + slot.name);
+                        hasSelected = false; // 使ったらリセット
+                        break;
+                    }
+                }
             }
-            else
-            {
-                Debug.Log("カーソルが重なるImageはありません。");
-            }
+            
         }
     }
 

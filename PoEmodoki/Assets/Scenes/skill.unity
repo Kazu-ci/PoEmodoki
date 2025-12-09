@@ -750,6 +750,10 @@ MonoBehaviour:
   - {fileID: 1076575833}
   - {fileID: 320225842}
   - {fileID: 500674033}
+  targetslots:
+  - {fileID: 98905614}
+  - {fileID: 1828817034}
+  - {fileID: 1230267261}
 --- !u!4 &688462930
 Transform:
   m_ObjectHideFlags: 0
@@ -1074,7 +1078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ef25f07019b652647be45b82f1793c46, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
