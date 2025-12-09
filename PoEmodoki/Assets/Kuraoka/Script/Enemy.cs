@@ -1,7 +1,5 @@
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.Rendering;
 using System;
+using UnityEngine;
 using UnityEngine.AI;
 
 [Serializable]
@@ -123,18 +121,18 @@ public class Enemy : MonoBehaviour
     public bool AnimationEnd(string stateName)
     {
         // 現在のアニメーション状態を取得
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+       // AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
         // アニメーションステート名をハッシュに変換
         int stateHash = Animator.StringToHash("Base Layer." + stateName);
 
         // 該当ステートで、かつ アニメーションが最後まで再生されたら true を返す
-        if (stateInfo.fullPathHash == stateHash && stateInfo.normalizedTime >= 1f)
-        {
+        //if (stateInfo.fullPathHash == stateHash && stateInfo.normalizedTime >= 1f)
+        //{
             return true;
-        }
+        //}
 
-        return false;
+        //return false;
     }
 
     // 確率判定用メソッド（%で判定する）
