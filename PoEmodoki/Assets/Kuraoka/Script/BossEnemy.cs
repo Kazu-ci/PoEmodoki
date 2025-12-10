@@ -372,7 +372,6 @@ public class BossEnemy : Enemy
 
         private void FireSkill()
         {
-            return;
             if (skill.effect == null)
             {
                 Debug.LogWarning("Skill prefab is null for skill: " + skill.name);
