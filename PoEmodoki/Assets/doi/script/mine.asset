@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881b11d6712ccf342a83c740c7ef92ad, type: 3}
   m_Name: mine
   m_EditorClassIdentifier: 
+  skillId: 0
   atk: 0
   def: 0
   time: 0
@@ -21,4 +22,5 @@ MonoBehaviour:
   length: 0
   Icon: {fileID: 0}
   name: 
-  skillPre: {fileID: 2776477274695729763, guid: a6bb73b579e32f54580f0938e6aef45d, type: 3}
+  sprite: {fileID: 0}
+  effect: {fileID: 0}

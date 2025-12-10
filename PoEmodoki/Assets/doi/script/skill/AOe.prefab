@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5563123445406589110}
-  - component: {fileID: 708034819784890178}
+  - component: {fileID: 322722677598936163}
   m_Layer: 0
   m_Name: AOe
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &708034819784890178
+--- !u!114 &322722677598936163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7236463517348118092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 855e3e0c8ca988846919edcb556ca7fd, type: 3}
+  m_Script: {fileID: 11500000, guid: c2be5e6bb97e2f640befe52dbbb50b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: e2d84cba82228e54d8020fe03014518f, type: 2}
-  Donut: {fileID: 5419782520459956681, guid: 571aed2c96cd15140b98c643bf8ef923, type: 3}
-  player: {fileID: 0}
-  spawnKey: 118
-  Distance: -10

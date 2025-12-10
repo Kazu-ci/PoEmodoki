@@ -372,7 +372,8 @@ public class BossEnemy : Enemy
 
         private void FireSkill()
         {
-            if (skill.skillPre == null)
+            return;
+            if (skill.effect == null)
             {
                 Debug.LogWarning("Skill prefab is null for skill: " + skill.name);
                 return;
@@ -385,7 +386,7 @@ public class BossEnemy : Enemy
                 Vector3.up * 1.2f;
 
             GameObject proj =
-                GameObject.Instantiate(skill.skillPre, spawnPos, Owner.transform.rotation);
+                GameObject.Instantiate(skill.effect, spawnPos, Owner.transform.rotation);
 
             // Rigidbody があれば速度を付与
             Rigidbody rb = proj.GetComponent<Rigidbody>();

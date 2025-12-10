@@ -1,9 +1,19 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+
+[Serializable]
+public enum SKILL
+{
+    None = -1,
+    AOE,
+    Blink,
+}
 
 [CreateAssetMenu(menuName =("skills"))]
 public class SkillStatus : ScriptableObject
 {
+    public SKILL skillId;
     public float atk;
     public float def;
     public float time;
@@ -14,5 +24,5 @@ public class SkillStatus : ScriptableObject
     public Image Icon;
     public string name;
     public Sprite sprite;
-    public GameObject skillPre;
+    public GameObject effect;
 }

@@ -264,7 +264,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         {
             OnSkill = true;
             UseSkill(0);
-            skills[0]?.skillAction.Invoke(this.gameObject);
+            skills[0]?.UseSkill(this);
         }
         else if(context.canceled)
         {
@@ -277,7 +277,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         {
             OnSkill = true;
             UseSkill(1);
-            skills[1]?.skillAction.Invoke(this.gameObject);
+            skills[1]?.UseSkill(this);
         }
         else if (context.canceled)
         {
@@ -290,7 +290,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         {
             OnSkill = true;
             UseSkill(2);
-            skills[2]?.skillAction.Invoke(this.gameObject);
+            skills[2]?.UseSkill(this);
         }
         else if (context.canceled)
         {
@@ -307,7 +307,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             UseSkill(3);
 
             // いちのしん
-            skills[3]?.skillAction.Invoke(this.gameObject);
+            skills[3]?.UseSkill(this);
         }
         else if (context.canceled)
         {
@@ -336,6 +336,12 @@ public class PlayerCon : MonoBehaviour,IStatusView
             TryInteract();
         }
     }
+
+    public void InstanciateSkillEffect(GameObject go, Vector3 pos, Quaternion rotation)
+    {
+        Instantiate(go, pos, rotation);
+    }
+
 #if UNITY_EDITOR
     public void DrawRunningStatusGUI()
     {
@@ -363,18 +369,23 @@ public class PlayerCon : MonoBehaviour,IStatusView
     }
     public void UseSkill(int index)
     {
-        SkillStatus skill = mySkills[index];
+        SkillStatus status = mySkills[index];
+        IUseSkill skill = null;
         if(index < mySkills.Count)
         {
-            //ここでプレハブを生成
-            if(skill.skillPre!= null)
+            switch (status.skillId)
             {
-                //プレイヤーの前方に生成
-                Vector3 spawnPos = transform.position + transform.forward * 1.5f;
-                GameObject skillObj = Instantiate(skill.skillPre, spawnPos, transform.rotation);
-                skills[index] = skillObj.GetComponent<BaseSkill>();
+                case SKILL.None: return;
+                case SKILL.AOE:
+                    skill = new AOE();
+                    break;
+                case SKILL.Blink:
+                    skill = new blink();
+                    break;
             }
         }
+        skill.Setup(status);
+        skills[index] = skill;
     }
     public void TryInteract()
     {

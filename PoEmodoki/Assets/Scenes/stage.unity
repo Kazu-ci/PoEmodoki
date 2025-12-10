@@ -1003,7 +1003,8 @@ MonoBehaviour:
   attackColliders: []
   rushSpeed: 0
   stiffnessTime: 0
-  skills: []
+  skills:
+  - {fileID: 11400000, guid: e2d84cba82228e54d8020fe03014518f, type: 2}
 --- !u!65 &1284074578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1202,7 +1203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &1694498845
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1322,16 +1323,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1694498843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 855e3e0c8ca988846919edcb556ca7fd, type: 3}
+  m_Script: {fileID: 11500000, guid: c2be5e6bb97e2f640befe52dbbb50b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: e2d84cba82228e54d8020fe03014518f, type: 2}
-  Donut: {fileID: 5419782520459956681, guid: 571aed2c96cd15140b98c643bf8ef923, type: 3}
-  player: {fileID: 1083796648}
-  ObjColl: {fileID: 1694498846}
-  InteractColl: {fileID: 1694498845}
-  spawnKey: 118
-  Distance: 0
 --- !u!1 &1723369264
 GameObject:
   m_ObjectHideFlags: 0

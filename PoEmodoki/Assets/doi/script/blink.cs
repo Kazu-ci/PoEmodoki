@@ -3,80 +3,34 @@ using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.UI;
-public class blink : BaseSkill,IStatusView,IInteractable
+public class blink : BaseSkill
 {
-    [SerializeField] SkillStatus data;
-#if UNITY_EDITOR
-    private SerializedObject sSkill;
-#endif
-    [SerializeField] CharacterController pc;
     float speed;
-    float ct;
-    Image Icon;
     bool On=true;
     bool used = false;
-    float count = 0;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        speed = data.speed;
-        ct = data.ct;
-        Icon = data.Icon;
-        Icon = GetComponent<Image>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-      
-        
-    }
-    void Blink()
+    void Blink(PlayerCon con)
     {
         float h = Input.GetAxisRaw("Horizontal"); 
 
         float v = Input.GetAxisRaw("Vertical");
         Vector3 inputDirection = new Vector3(h, 0, v).normalized;
-        Quaternion characterRotation = pc.transform.rotation;
+        Quaternion characterRotation = con.transform.rotation;
         Vector3 worldMoveDirection = characterRotation * inputDirection;
         Vector3 moveVector = worldMoveDirection* speed;
-        pc.Move(moveVector);
+        // TODO: 移動させる方法を考えて.
+        //pc.Move(moveVector);
         On = false;
     }
-    public void OnInteract(PlayerCon player)
+    public override void Setup(SkillStatus status)
     {
-        if (data != null)
-        {
-            player.AddSkill(data);
-            Debug.Log(data + "入手");
-            Destroy(gameObject);
-        }
-    }
-#if UNITY_EDITOR
-    public void DrawRunningStatusGUI()
-    {
-        EditorGUILayout.FloatField("現在のブリンク速度:", speed);
     }
 
-    public SerializedObject GetSerializedBaseStatus()
-    {
-        if (data == null)
-        {
-            return null;
-        }
-
-        if (sSkill == null || sSkill.targetObject != data)
-        {
-            sSkill = new SerializedObject(data);
-        }
-        return sSkill;
-    }
-#endif
-    protected override void UseSkill(GameObject obj)
+    public override void UseSkill(PlayerCon con)
     {
         if ( On == true)
         {
-            Blink();
+            Blink(con);
             used = true;
         }
         else
