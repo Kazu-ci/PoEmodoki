@@ -29,12 +29,6 @@ public class BossEnemy : Enemy
     private SerializedObject seliarizeBossStatus;
 #endif
 
-    private enum BossSkillType
-    {
-        CloseAoE,       // 近距離範囲攻撃
-        AreaWide,       // エリア全体攻撃
-        Projectile      // 遠距離魔法
-    }
 
     private enum EnemyState
     {
@@ -130,75 +124,8 @@ public class BossEnemy : Enemy
             Instantiate(mobEnemy[i], spawnPos, Quaternion.identity);
         }
     }
-    private BossSkillType GetSkillType(SkillStatus skill)
-    {
-        string n = skill.name.ToLower();
-
-        if (n.Contains("aoe")) return BossSkillType.CloseAoE;
-        if (n.Contains("area")) return BossSkillType.AreaWide;
-        if (n.Contains("magic") || n.Contains("projectile")) return BossSkillType.Projectile;
-
-        return BossSkillType.Projectile;
-    }
-    public void BossSkill_CloseAoE(SkillStatus skill)
-    {
-        float radius = skill.length;
-
-        Collider[] hits = Physics.OverlapSphere(this.transform.position, radius);
-        foreach (var hit in hits)
-        {
-            if (hit.CompareTag("Player"))
-            {
-                var player = hit.GetComponent<PlayerCon>();
-                //player?.TakeDamage((int)skill.atk);
-            }
-        }
-
-        if (skill.skillPre != null)
-            Instantiate(skill.skillPre, transform.position, Quaternion.identity);
-    }
-
-    public void BossSkill_AreaWide(SkillStatus skill)
-    {
-        float radius = skill.length * 3f;
-
-        Collider[] hits = Physics.OverlapSphere(this.transform.position, radius);
-        foreach (var hit in hits)
-        {
-            if (hit.CompareTag("Player"))
-            {
-                var player = hit.GetComponent<PlayerCon>();
-                //player?.TakeDamage((int)skill.atk);
-            }
-        }
-
-        if (skill.skillPre != null)
-            Instantiate(skill.skillPre, transform.position, Quaternion.identity);
-    }
 
 
-    public void BossSkill_Projectile(SkillStatus skill)
-    {
-        if (skill.skillPre == null) return;
-
-        Vector3 spawnPos =
-            transform.position +
-            transform.forward * 1.5f +
-            Vector3.up * 1.2f;
-
-        GameObject proj = Instantiate(skill.skillPre, spawnPos, transform.rotation);
-
-        Rigidbody rb = proj.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            Vector3 dir = (player.transform.position - transform.position).normalized;
-            rb.linearVelocity = dir * skill.speed;
-        }
-
-        // 消滅時間（射程 / 弾速）
-        if (skill.speed > 0 && skill.length > 0)
-            Destroy(proj, skill.length / skill.speed);
-    }
     private class IdleState : StateMachine<BossEnemy>.StateBase
     {
         float cDis;
@@ -406,8 +333,7 @@ public class BossEnemy : Enemy
     }
     private class SkillState : StateMachine<BossEnemy>.StateBase
     {
-        private SkillStatus skill;
-        private BossSkillType skillType;
+        private SkillStatus skill;      // 選択されたスキル
         private float timer;
         private float originalAtk;
 
@@ -415,66 +341,103 @@ public class BossEnemy : Enemy
         {
             Owner.navMeshAgent.isStopped = true;
 
-            // スキルをランダム選択
+            // ================================
+            //  スキル選択（ランダム）
+            // ================================
             skill = Owner.skills[Random.Range(0, Owner.skills.Count)];
             Owner.currentSkill = skill;
 
-            // ボス専用スキルタイプ判定
-            skillType = Owner.GetSkillType(skill);
-
-            // 攻撃力をスキル用に差し替え
+            // ================================
+            //  スキル攻撃力を適用
+            // ================================
             originalAtk = Owner.Strength;
             Owner.Strength = (int)skill.atk;
 
-            // プレイヤーの方向へ向く
+            // プレイヤーに向ける
             Vector3 lookPos = Owner.player.transform.position;
             lookPos.y = Owner.transform.position.y;
             Owner.transform.LookAt(lookPos);
 
-            Owner.animator.SetTrigger("Skill");
+            // スキルアニメ再生
+           // Owner.animator.SetTrigger("Skill");
 
-            // スキル使用
-            switch (skillType)
-            {
-                case BossSkillType.CloseAoE:
-                    Owner.BossSkill_CloseAoE(skill);
-                    break;
 
-                case BossSkillType.AreaWide:
-                    Owner.BossSkill_AreaWide(skill);
-                    break;
-
-                case BossSkillType.Projectile:
-                    Owner.BossSkill_Projectile(skill);
-                    break;
-            }
+            // ================================
+            // スキル発射
+            // ================================
+            FireSkill();
 
             timer = 0f;
+        }
+
+        private void FireSkill()
+        {
+            if (skill.effect == null)
+            {
+                Debug.LogWarning("Skill prefab is null for skill: " + skill.name);
+                return;
+            }
+
+            // 発射位置（少し前方 & 上）
+            Vector3 spawnPos =
+                Owner.transform.position +
+                Owner.transform.forward * 1.5f +
+                Vector3.up * 1.2f;
+
+            GameObject proj =
+                GameObject.Instantiate(skill.effect, spawnPos, Owner.transform.rotation);
+
+            // Rigidbody があれば速度を付与
+            Rigidbody rb = proj.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Owner.transform.forward * skill.speed;
+            }
+
+            // ================================
+            // 射程による自動消滅
+            // ================================
+            // lenge と length のどちらか大きい方を射程とする
+            float range = Mathf.Max(skill.lenge, skill.length);
+            if (range > 0 && skill.speed > 0)
+            {
+                float lifetime = range / skill.speed;
+                GameObject.Destroy(proj, lifetime);
+            }
         }
 
         public override void OnUpdate()
         {
             timer += Time.deltaTime;
 
-            // アニメーション終了 または スキル硬直終了
+            // スキルアニメ終了 ＆ 硬直終了
             if (Owner.AnimationEnd("Skill") && timer >= skill.time)
             {
+                // ================================
+                // 次ステートへ遷移
+                // ================================
                 if (Owner.Getdistance() <= Owner.AttackRange)
+                {
                     StateMachine.ChangeState((int)EnemyState.Vigilance);
+                }
                 else
+                {
                     StateMachine.ChangeState((int)EnemyState.Chase);
+                }
             }
         }
 
         public override void OnEnd()
         {
-            Owner.animator.ResetTrigger("Skill");
+            //Owner.animator.ResetTrigger("Skill");
 
-            // 攻撃力を戻す
+            // ================================
+            //  攻撃力を元に戻す
+            // ================================
             Owner.Strength = originalAtk;
         }
-    }
 
+    }
     private class StiffnessState : StateMachine<BossEnemy>.StateBase
     {
         float time;

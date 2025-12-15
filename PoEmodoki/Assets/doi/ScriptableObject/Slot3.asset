@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 881b11d6712ccf342a83c740c7ef92ad, type: 3}
-  m_Name: AOE
+  m_Name: Slot3
   m_EditorClassIdentifier: 
   atk: 0
   def: 0
@@ -21,4 +21,5 @@ MonoBehaviour:
   length: 0
   Icon: {fileID: 0}
   name: 
-  skillPre: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
+  sprite: {fileID: 21300000, guid: 9bdedfa4650174106a3115624f193b99, type: 3}
+  skillPre: {fileID: 0}

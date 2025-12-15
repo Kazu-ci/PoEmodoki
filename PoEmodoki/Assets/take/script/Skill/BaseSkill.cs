@@ -5,15 +5,15 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class BaseSkill : MonoBehaviour, IUseSkill
+public abstract class BaseSkill : IUseSkill
 {
-    public Action<GameObject> skillAction => UseSkill;
-
-    abstract protected void UseSkill(GameObject obj);
+    abstract public void Setup(SkillStatus status);
+    abstract public void UseSkill(PlayerCon con);
 }
 
 public interface IUseSkill 
 {
+    void Setup(SkillStatus status);
     //Ç±Ç¢Ç¬ÇÕï÷óòÇ≈Ç∑ÅB
-    public Action<GameObject> skillAction { get; }
+    void UseSkill(PlayerCon con);
 }
