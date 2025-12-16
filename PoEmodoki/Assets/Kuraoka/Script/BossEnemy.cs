@@ -174,7 +174,7 @@ public class BossEnemy : Enemy
         float time;
         float mTime;
 
-        public float roamRadius = 5f;      // プレイヤーを中心とした円の半径
+        public float roamRadius = 2f;      // プレイヤーを中心とした円の半径
         public float roamChangeInterval = 2f;// ランダム位置を更新する間隔
 
         private Vector3 roamTarget;      // 今の円内ターゲット位置

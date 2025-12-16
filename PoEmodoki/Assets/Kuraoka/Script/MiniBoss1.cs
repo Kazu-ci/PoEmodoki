@@ -128,75 +128,8 @@ public class MiniBoss1 : Enemy
             Instantiate(mobEnemy[i], spawnPos, Quaternion.identity);
         }
     }
-    private BossSkillType GetSkillType(SkillStatus skill)
-    {
-        string n = skill.name.ToLower();
-
-        if (n.Contains("aoe")) return BossSkillType.CloseAoE;
-        if (n.Contains("area")) return BossSkillType.AreaWide;
-        if (n.Contains("magic") || n.Contains("projectile")) return BossSkillType.Projectile;
-
-        return BossSkillType.Projectile;
-    }
-    public void BossSkill_CloseAoE(SkillStatus skill)
-    {
-        float radius = skill.length;
-
-        Collider[] hits = Physics.OverlapSphere(this.transform.position, radius);
-        foreach (var hit in hits)
-        {
-            if (hit.CompareTag("Player"))
-            {
-                var player = hit.GetComponent<PlayerCon>();
-                //player?.TakeDamage((int)skill.atk);
-            }
-        }
-
-        if (skill.skillPre != null)
-            Instantiate(skill.skillPre, transform.position, Quaternion.identity);
-    }
-
-    public void BossSkill_AreaWide(SkillStatus skill)
-    {
-        float radius = skill.length * 3f;
-
-        Collider[] hits = Physics.OverlapSphere(this.transform.position, radius);
-        foreach (var hit in hits)
-        {
-            if (hit.CompareTag("Player"))
-            {
-                var player = hit.GetComponent<PlayerCon>();
-                //player?.TakeDamage((int)skill.atk);
-            }
-        }
-
-        if (skill.skillPre != null)
-            Instantiate(skill.skillPre, transform.position, Quaternion.identity);
-    }
-
-
-    public void BossSkill_Projectile(SkillStatus skill)
-    {
-        if (skill.skillPre == null) return;
-
-        Vector3 spawnPos =
-            transform.position +
-            transform.forward * 1.5f +
-            Vector3.up * 1.2f;
-
-        GameObject proj = Instantiate(skill.skillPre, spawnPos, transform.rotation);
-
-        Rigidbody rb = proj.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            Vector3 dir = (player.transform.position - transform.position).normalized;
-            rb.linearVelocity = dir * skill.speed;
-        }
-
-        // 消滅時間（射程 / 弾速）
-        if (skill.speed > 0 && skill.length > 0)
-            Destroy(proj, skill.length / skill.speed);
-    }
+  
+    
     private class IdleState : StateMachine<MiniBoss1>.StateBase
     {
         float cDis;
@@ -387,7 +320,7 @@ public class MiniBoss1 : Enemy
             Owner.currentSkill = skill;
 
             // ボス専用スキルタイプ判定
-            skillType = Owner.GetSkillType(skill);
+            
 
             // 攻撃力をスキル用に差し替え
             originalAtk = Owner.Strength;
@@ -401,22 +334,6 @@ public class MiniBoss1 : Enemy
             Owner.animator.SetTrigger("Skill");
 
             // スキル使用
-            switch (skillType)
-            {
-                case BossSkillType.CloseAoE:
-                    Owner.BossSkill_CloseAoE(skill);
-                    break;
-
-                case BossSkillType.AreaWide:
-                    Owner.BossSkill_AreaWide(skill);
-                    break;
-
-                case BossSkillType.Projectile:
-                    Owner.BossSkill_Projectile(skill);
-                    break;
-            }
-
-            timer = 0f;
         }
 
         public override void OnUpdate()
