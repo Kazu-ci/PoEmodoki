@@ -29,4 +29,9 @@ public class skillbomb : BaseSkill
             --ct;
         }
     }
+
+    public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
+    {
+        throw new System.NotImplementedException();
+    }
 }

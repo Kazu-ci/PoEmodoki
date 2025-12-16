@@ -13,8 +13,9 @@ public enum SKILL
 [CreateAssetMenu(menuName =("skills"))]
 public class SkillStatus : ScriptableObject
 {
-    public SKILL skillId;
+    public BaseSkill skill;//“G—p
     public float atk;
+    public SKILL skillId;
     public float def;
     public float time;
     public float ct;//cooltime
