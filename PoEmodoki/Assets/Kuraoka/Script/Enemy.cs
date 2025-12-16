@@ -15,6 +15,7 @@ public struct DamageData
 
 public class Enemy : MonoBehaviour
 {
+    private GameCon gameCon;
     [Header("–¼‘O")]
     protected string name;                 // “G‚Ì–¼‘O
 
@@ -63,6 +64,15 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (gameCon == null)
+        {
+            gameCon = GameCon.Instance;
+            if (gameCon == null) return;
+        }
+        if (gameCon.currentState == GameCon.State.Talk)
+        {
+            return;
+        }
         playerpos = playerAnchor.Value.position;
     }
 
