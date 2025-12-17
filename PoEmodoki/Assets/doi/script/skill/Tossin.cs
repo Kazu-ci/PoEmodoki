@@ -27,6 +27,10 @@ public class Tossin : BaseSkill
     {
         hp = Estatus.EnemyHp;
     }
+    public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
+    {
+
+    }
     public override void UseSkill(PlayerCon con)
     {
             isDash();
