@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -15,6 +16,7 @@ public struct DamageData
 
 public class Enemy : MonoBehaviour
 {
+    private GameCon gameCon;
     [Header("名前")]
     protected string name;                 // 敵の名前
 
@@ -27,7 +29,7 @@ public class Enemy : MonoBehaviour
     protected float AttackRate;            // 攻撃間隔
     protected float MoveSpeed;             // 移動速度
     protected float lookPlayerDir;
-
+    protected BaseSkill currentSkill;
     [SerializeField] protected PlayerAnchor playerAnchor;
     [SerializeField] protected Texture[] textures;  // テクスチャ（見た目変更用）
 
@@ -35,7 +37,10 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected GameObject thisobj;  // テクスチャ変更用オブジェクト
 
-    [SerializeField] protected GameObject player; // プレイヤーのオブジェクトを保持
+    [SerializeField] protected  GameObject player; // プレイヤーのオブジェクトを保持
+    [SerializeField] protected   List<SkillStatus> skills;
+    public NavMeshAgent Agent => navMeshAgent;
+    public GameObject Player => player;
     protected Vector3 playerpos;
 
     protected float currentHP;             // 現在のHP
@@ -63,6 +68,15 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (gameCon == null)
+        {
+            gameCon = GameCon.Instance;
+            if (gameCon == null) return;
+        }
+        if (gameCon.currentState == GameCon.State.Talk)
+        {
+            return;
+        }
         playerpos = playerAnchor.Value.position;
     }
 
@@ -118,6 +132,32 @@ public class Enemy : MonoBehaviour
         return Strength;     // 敵の攻撃力を返す
     }
 
+    public void UseSkill(int index)
+    {
+        if (index < 0 || index >= skills.Count) return;
+
+        SkillStatus status = skills[index];
+        BaseSkill skill = CreateSkillInstance(status.skillId);
+
+        if (skill == null) return;
+
+        skill.Setup(status);
+        skill.EnemyUseSkill(this, status);
+       currentSkill = skill;
+    }
+
+    protected BaseSkill CreateSkillInstance(SKILL id)
+    {
+        switch (id)
+        {
+            case SKILL.AOE:
+                return new AOE();
+            case SKILL.Blink:
+                return new blink();
+            default:
+                return null;
+        }
+    }
     public bool AnimationEnd(string stateName)
     {
         // 現在のアニメーション状態を取得

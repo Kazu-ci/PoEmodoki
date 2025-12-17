@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections;
 using static UnityEngine.UI.GridLayoutGroup;
 using Unity.VisualScripting;
+using System;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -23,8 +24,7 @@ public class BossEnemy : Enemy
     [SerializeField] float stiffnessTime;
     private Dictionary<string, Collider> colliderDict;
     private Dictionary<string, GameObject> effectDict;
-    [SerializeField] private List<SkillStatus> skills;
-    private SkillStatus currentSkill;
+
 #if UNITY_EDITOR
     private SerializedObject seliarizeBossStatus;
 #endif
@@ -117,7 +117,7 @@ public class BossEnemy : Enemy
         for (int i = 0; i < mobEnemy.Length; i++)
         {
             if (mobEnemy[i] == null) continue; // nullチェック
-            float angle = Random.Range(-90, 90);
+            float angle = UnityEngine.Random.Range(-90, 90);
             Quaternion rot = Quaternion.Euler(0, angle, 0);
             Vector3 dir = rot * transform.forward;
             Vector3 spawnPos = transform.position + dir.normalized * 5;
@@ -174,7 +174,7 @@ public class BossEnemy : Enemy
         float time;
         float mTime;
 
-        public float roamRadius = 5f;      // プレイヤーを中心とした円の半径
+        public float roamRadius = 2f;      // プレイヤーを中心とした円の半径
         public float roamChangeInterval = 2f;// ランダム位置を更新する間隔
 
         private Vector3 roamTarget;      // 今の円内ターゲット位置
@@ -184,7 +184,7 @@ public class BossEnemy : Enemy
             Owner.navMeshAgent.isStopped = false;
            // Owner.animator.SetTrigger("Idle");
             time = 0;
-            mTime = Random.Range(4, 6);
+            mTime = UnityEngine.Random.Range(4, 6);
             PickNewRoamPosition();
         }
         public override void OnUpdate()
@@ -232,8 +232,8 @@ public class BossEnemy : Enemy
         void PickNewRoamPosition()
         {
             roamTimer = roamChangeInterval;
-            float angle = Random.Range(0f, Mathf.PI * 2f);
-            float r = Random.Range(0f, roamRadius);
+            float angle = UnityEngine.Random.Range(0f, Mathf.PI * 2f);
+            float r = UnityEngine.Random.Range(0f, roamRadius);
             Vector3 offset = new Vector3(Mathf.Cos(angle) * r, 0, Mathf.Sin(angle) * r);
             roamTarget = Owner.player.transform.position + offset;
         }
@@ -333,110 +333,38 @@ public class BossEnemy : Enemy
     }
     private class SkillState : StateMachine<BossEnemy>.StateBase
     {
-        private SkillStatus skill;      // 選択されたスキル
-        private float timer;
-        private float originalAtk;
+        private SkillStatus skill;
 
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
 
-            // ================================
-            //  スキル選択（ランダム）
-            // ================================
-            skill = Owner.skills[Random.Range(0, Owner.skills.Count)];
-            Owner.currentSkill = skill;
+            // ボスだけ複数スキルから選ぶ
+            int index = UnityEngine.Random.Range(0, Owner.skills.Count);
+           
 
-            // ================================
-            //  スキル攻撃力を適用
-            // ================================
-            originalAtk = Owner.Strength;
-            Owner.Strength = (int)skill.atk;
-
-            // プレイヤーに向ける
+            // 向きを合わせる
             Vector3 lookPos = Owner.player.transform.position;
             lookPos.y = Owner.transform.position.y;
             Owner.transform.LookAt(lookPos);
 
-            // スキルアニメ再生
-           // Owner.animator.SetTrigger("Skill");
+            //Owner.animator.SetTrigger("Skill");
 
 
-            // ================================
-            // スキル発射
-            // ================================
-            FireSkill();
-
-            timer = 0f;
-        }
-
-        private void FireSkill()
-        {
-            if (skill.effect == null)
-            {
-                Debug.LogWarning("Skill prefab is null for skill: " + skill.name);
-                return;
-            }
-
-            // 発射位置（少し前方 & 上）
-            Vector3 spawnPos =
-                Owner.transform.position +
-                Owner.transform.forward * 1.5f +
-                Vector3.up * 1.2f;
-
-            GameObject proj =
-                GameObject.Instantiate(skill.effect, spawnPos, Owner.transform.rotation);
-
-            // Rigidbody があれば速度を付与
-            Rigidbody rb = proj.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.linearVelocity = Owner.transform.forward * skill.speed;
-            }
-
-            // ================================
-            // 射程による自動消滅
-            // ================================
-            // lenge と length のどちらか大きい方を射程とする
-            float range = Mathf.Max(skill.lenge, skill.length);
-            if (range > 0 && skill.speed > 0)
-            {
-                float lifetime = range / skill.speed;
-                GameObject.Destroy(proj, lifetime);
-            }
+            Owner.UseSkill(index);
         }
 
         public override void OnUpdate()
         {
-            timer += Time.deltaTime;
-
-            // スキルアニメ終了 ＆ 硬直終了
-            if (Owner.AnimationEnd("Skill") && timer >= skill.time)
+            if (Owner.AnimationEnd("Skill"))
             {
-                // ================================
-                // 次ステートへ遷移
-                // ================================
-                if (Owner.Getdistance() <= Owner.AttackRange)
-                {
-                    StateMachine.ChangeState((int)EnemyState.Vigilance);
-                }
-                else
-                {
-                    StateMachine.ChangeState((int)EnemyState.Chase);
-                }
+                StateMachine.ChangeState((int)EnemyState.Chase);
             }
         }
-
         public override void OnEnd()
         {
             //Owner.animator.ResetTrigger("Skill");
-
-            // ================================
-            //  攻撃力を元に戻す
-            // ================================
-            Owner.Strength = originalAtk;
         }
-
     }
     private class StiffnessState : StateMachine<BossEnemy>.StateBase
     {
