@@ -13,7 +13,7 @@ public abstract class BaseSkill : IUseSkill
     abstract public void UseSkill(PlayerCon con);
 
     //“G—p
-  abstract public  void EnemyUseSkill(Enemy enemy, SkillStatus status);
+   public abstract  void EnemyUseSkill(Enemy enemy, SkillStatus status);
 
 }
 
