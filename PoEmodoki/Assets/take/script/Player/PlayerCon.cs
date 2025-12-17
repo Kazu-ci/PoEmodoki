@@ -335,6 +335,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
 
     public void InstanciateSkillEffect(GameObject go, Vector3 pos, Quaternion rotation)
     {
+        Debug.Log("InsatntiateSkill");
         Instantiate(go, pos, rotation);
     }
 
@@ -382,6 +383,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         skill.Setup(status);
         skills[index] = skill;
+        Debug.Log("statau" + status);
     }
     public void TryInteract()
     {
