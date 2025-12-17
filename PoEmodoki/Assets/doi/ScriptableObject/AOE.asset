@@ -23,4 +23,4 @@ MonoBehaviour:
   Icon: {fileID: 0}
   name: AoE
   sprite: {fileID: 0}
-  effect: {fileID: 5419782520459956681, guid: 571aed2c96cd15140b98c643bf8ef923, type: 3}
+  effect: {fileID: 0}

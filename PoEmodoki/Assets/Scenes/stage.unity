@@ -391,7 +391,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   lockonTarget: {fileID: 0}
-  lockon: {fileID: 0}
   playerObj: {fileID: 0}
   mySkills: []
 --- !u!54 &1083796650

@@ -31,9 +31,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     InputAction skill1,skill2,skill3,skill4;
     //ÉçÉbÉNÉIÉì
     [SerializeField] private GameObject lockonTarget;
-    [SerializeField]protected RockOnCon lockon;
     [SerializeField] private GameObject playerObj;
-
     public List<SkillStatus> mySkills = new List<SkillStatus>();
     private Vector2 moveVec = default;
     private IUseSkill[] skills = new IUseSkill[10];
@@ -305,8 +303,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
             OnSkill = true;
 
             UseSkill(3);
-
-            // Ç¢ÇøÇÃÇµÇÒ
             skills[3]?.UseSkill(this);
         }
         else if (context.canceled)
@@ -339,6 +335,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
 
     public void InstanciateSkillEffect(GameObject go, Vector3 pos, Quaternion rotation)
     {
+        Debug.Log("InsatntiateSkill");
         Instantiate(go, pos, rotation);
     }
 
@@ -386,6 +383,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         skill.Setup(status);
         skills[index] = skill;
+        Debug.Log("statau" + status);
     }
     public void TryInteract()
     {
@@ -411,14 +409,5 @@ public class PlayerCon : MonoBehaviour,IStatusView
     private void OnDisable()
     {
         playerAnchor = null;
-    }
-
-    private void OnLockon()
-    {
-        transform.position = playerObj.transform.position;
-        if(lockonTarget == null)
-        {
-            //GameObject target = a
-        }
     }
 }
