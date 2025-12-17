@@ -25,5 +25,33 @@ public class AOE : BaseSkill
         point.y = 0;
         con.InstanciateSkillEffect(effect, point, Quaternion.Euler(-90, 0, 0));
     }
+
+
+    //“G—p
+    public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
+    {
+        float radius = status.length;
+
+        Collider[] hits =
+            Physics.OverlapSphere(enemy.transform.position, radius);
+
+        foreach (var hit in hits)
+        {
+            if (hit.CompareTag("Player"))
+            {
+                var player = hit.GetComponent<PlayerCon>();
+                // player?.TakeDamage((int)status.atk);
+            }
+        }
+
+        if (status.effect != null)
+        {
+            GameObject.Instantiate(
+                status.effect,
+                enemy.transform.position,
+                Quaternion.identity
+            );
+        }
+    }
 }
  

@@ -36,7 +36,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected GameObject thisobj;  // テクスチャ変更用オブジェクト
 
-    [SerializeField] protected GameObject player; // プレイヤーのオブジェクトを保持
+    [SerializeField] protected  GameObject player; // プレイヤーのオブジェクトを保持
+    public NavMeshAgent Agent => navMeshAgent;
+    public GameObject Player => player;
     protected Vector3 playerpos;
 
     protected float currentHP;             // 現在のHP

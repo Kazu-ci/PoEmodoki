@@ -385,7 +385,7 @@ MonoBehaviour:
   player: {fileID: 11400000, guid: 87d7f51ec38e7f8489ffb9722f9fc8e5, type: 2}
   PlayerInput: {fileID: 1083796655}
   playerAnchor: {fileID: 11400000, guid: f6aa36185c0c4104d90f6790c5e9e13b, type: 2}
-  bossEnemy: {fileID: 1284074577}
+  bossEnemy: {fileID: 0}
   InteractRange: 0
   InteractLayer:
     serializedVersion: 2
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   rushSpeed: 0
   stiffnessTime: 0
   skills:
-  - {fileID: 11400000, guid: e2d84cba82228e54d8020fe03014518f, type: 2}
+  - {fileID: 11400000, guid: 395c28558edca6a478ab0f1816577246, type: 2}
 --- !u!65 &1284074578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1459,7 +1459,7 @@ Transform:
   m_GameObject: {fileID: 1723369264}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5156876, y: -0, z: -0, w: 0.8567768}
-  m_LocalPosition: {x: 3.88, y: 8.81, z: 0.6600001}
+  m_LocalPosition: {x: 3.88, y: 13.8, z: 0.6600001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

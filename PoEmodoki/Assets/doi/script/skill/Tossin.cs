@@ -4,6 +4,9 @@ using UnityEditor;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.AI;
+
 public class Tossin : BaseSkill
 {
     float speed;
@@ -52,5 +55,30 @@ public class Tossin : BaseSkill
         ISDASH = true;
     }
 
-}
+    public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
+    {
+        NavMeshAgent agent = enemy.Agent;
+        GameObject player = enemy.Player;
+        // ステータス反映
+        speed = status.speed;
+        dashDuration = status.time;
+
+        // プレイヤー方向へダッシュ
+        Vector3 dir = (enemy.Player.transform.position - enemy.transform.position).normalized;
+        dir.y = 0;
+
+        enemy.StartCoroutine(Dash(enemy, dir));
+    }
+    IEnumerator Dash(Enemy enemy, Vector3 dir)
+    {
+        float timer = 0f;
+
+        while (timer < dashDuration)
+        {
+            enemy.transform.position += dir * speed * Time.deltaTime;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+    }
+  }
 
