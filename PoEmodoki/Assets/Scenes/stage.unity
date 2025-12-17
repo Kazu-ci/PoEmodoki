@@ -996,6 +996,9 @@ MonoBehaviour:
   textures: []
   thisobj: {fileID: 1284074575}
   player: {fileID: 1083796648}
+  skills:
+  - {fileID: 11400000, guid: e2d84cba82228e54d8020fe03014518f, type: 2}
+  - {fileID: 11400000, guid: f4e239762575aaa4191ebca13a621f1b, type: 2}
   BossStatus: {fileID: 11400000, guid: 5608d3e7e2c422a468499273bc87f66a, type: 2}
   mobEnemy: []
   attackStates: []
@@ -1003,8 +1006,6 @@ MonoBehaviour:
   attackColliders: []
   rushSpeed: 0
   stiffnessTime: 0
-  skills:
-  - {fileID: 11400000, guid: 395c28558edca6a478ab0f1816577246, type: 2}
 --- !u!65 &1284074578
 BoxCollider:
   m_ObjectHideFlags: 0

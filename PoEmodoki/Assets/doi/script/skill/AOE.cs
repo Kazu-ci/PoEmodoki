@@ -50,7 +50,7 @@ public class AOE : BaseSkill
                 status.effect,
                 enemy.transform.position,
                 Quaternion.identity
-            );
+            ); 
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections;
 using static UnityEngine.UI.GridLayoutGroup;
 using Unity.VisualScripting;
+using System;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -23,8 +24,7 @@ public class BossEnemy : Enemy
     [SerializeField] float stiffnessTime;
     private Dictionary<string, Collider> colliderDict;
     private Dictionary<string, GameObject> effectDict;
-    [SerializeField] private List<SkillStatus> skills;
-    private SkillStatus currentSkill;
+
 #if UNITY_EDITOR
     private SerializedObject seliarizeBossStatus;
 #endif
@@ -117,7 +117,7 @@ public class BossEnemy : Enemy
         for (int i = 0; i < mobEnemy.Length; i++)
         {
             if (mobEnemy[i] == null) continue; // nullチェック
-            float angle = Random.Range(-90, 90);
+            float angle = UnityEngine.Random.Range(-90, 90);
             Quaternion rot = Quaternion.Euler(0, angle, 0);
             Vector3 dir = rot * transform.forward;
             Vector3 spawnPos = transform.position + dir.normalized * 5;
@@ -184,7 +184,7 @@ public class BossEnemy : Enemy
             Owner.navMeshAgent.isStopped = false;
            // Owner.animator.SetTrigger("Idle");
             time = 0;
-            mTime = Random.Range(4, 6);
+            mTime = UnityEngine.Random.Range(4, 6);
             PickNewRoamPosition();
         }
         public override void OnUpdate()
@@ -232,8 +232,8 @@ public class BossEnemy : Enemy
         void PickNewRoamPosition()
         {
             roamTimer = roamChangeInterval;
-            float angle = Random.Range(0f, Mathf.PI * 2f);
-            float r = Random.Range(0f, roamRadius);
+            float angle = UnityEngine.Random.Range(0f, Mathf.PI * 2f);
+            float r = UnityEngine.Random.Range(0f, roamRadius);
             Vector3 offset = new Vector3(Mathf.Cos(angle) * r, 0, Mathf.Sin(angle) * r);
             roamTarget = Owner.player.transform.position + offset;
         }
@@ -340,19 +340,18 @@ public class BossEnemy : Enemy
             Owner.navMeshAgent.isStopped = true;
 
             // ボスだけ複数スキルから選ぶ
-            skill = Owner.skills[Random.Range(0, Owner.skills.Count)];
-
-            Owner.currentSkill = skill;
+            int index = UnityEngine.Random.Range(0, Owner.skills.Count);
+           
 
             // 向きを合わせる
             Vector3 lookPos = Owner.player.transform.position;
             lookPos.y = Owner.transform.position.y;
             Owner.transform.LookAt(lookPos);
 
-            Owner.animator.SetTrigger("Skill");
+            //Owner.animator.SetTrigger("Skill");
 
-            // ★ここがトリガー
-            skill.skill.EnemyUseSkill(Owner, skill);
+
+            Owner.UseSkill(index);
         }
 
         public override void OnUpdate()
@@ -364,7 +363,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            Owner.animator.ResetTrigger("Skill");
+            //Owner.animator.ResetTrigger("Skill");
         }
     }
     private class StiffnessState : StateMachine<BossEnemy>.StateBase
