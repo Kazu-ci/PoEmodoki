@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public abstract class BaseSkill : IUseSkill
 {
+    abstract public void EnemySetup(EnemyStatus Estatus);
     abstract public void Setup(SkillStatus status);
     abstract public void UseSkill(PlayerCon con);
 }

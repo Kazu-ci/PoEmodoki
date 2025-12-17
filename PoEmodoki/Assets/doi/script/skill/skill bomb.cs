@@ -14,6 +14,10 @@ public class skillbomb : BaseSkill
         effect = status.effect;
         initCt = status.ct;
     }
+    public override void EnemySetup(EnemyStatus Estatus)
+    {
+        
+    }
 
     public override void UseSkill(PlayerCon con)
     {

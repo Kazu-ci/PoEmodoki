@@ -16,6 +16,10 @@ public class AOE : BaseSkill
     {
         effect = status.effect;
     }
+    public override void EnemySetup(EnemyStatus Estatus)
+    {
+        
+    }
 
     public override void UseSkill(PlayerCon con)
     {

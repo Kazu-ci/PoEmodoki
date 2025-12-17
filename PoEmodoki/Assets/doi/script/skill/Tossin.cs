@@ -11,16 +11,22 @@ public class Tossin : BaseSkill
     public float dashDuration = 0.2f;
     float dashTimer;
     float Ct;
+    float atk;
+    float hp;
     float Count;
     bool ISDASH = false;
     float h, v;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void Setup(SkillStatus status)
     {
+        atk = status.atk;
         speed = status.speed;
         Ct = status.ct;
     }
-
+    public override void EnemySetup(EnemyStatus Estatus)
+    {
+        hp = Estatus.EnemyHp;
+    }
     public override void UseSkill(PlayerCon con)
     {
             isDash();
@@ -51,6 +57,12 @@ public class Tossin : BaseSkill
         dashTimer = dashDuration;
         ISDASH = true;
     }
-
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("ìGÇ…è’ìÀÅI");
+        }
+    }
 }
 

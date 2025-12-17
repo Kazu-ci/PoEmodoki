@@ -25,7 +25,9 @@ public class blink : BaseSkill
     public override void Setup(SkillStatus status)
     {
     }
-
+    public override void EnemySetup(EnemyStatus Estatus)
+    {
+    }
     public override void UseSkill(PlayerCon con)
     {
         if ( On == true)
