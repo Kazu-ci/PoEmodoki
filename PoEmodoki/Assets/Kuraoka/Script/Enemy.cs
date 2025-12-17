@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
             gameCon = GameCon.Instance;
             if (gameCon == null) return;
         }
-        if (gameCon.currentState == GameCon.State.Talk)
+        if (gameCon.currentState == GameCon.GameState.Talk)
         {
             return;
         }
