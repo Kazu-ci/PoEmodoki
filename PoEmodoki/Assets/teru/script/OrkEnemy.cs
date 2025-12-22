@@ -1,12 +1,12 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemyzonbi : Enemy
+public class OrkEnemy : Enemy
 {
-    StateMachine<Enemyzonbi> stateMachine;
+    StateMachine<OrkEnemy> stateMachine;
     [SerializeField] EnemyStatus Status;
 #if UNITY_EDITOR
     private SerializedObject seliarizeZonbiStatus;       //S0をキャッシュする用
@@ -32,7 +32,7 @@ public class Enemyzonbi : Enemy
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        navMeshAgent=GetComponent<NavMeshAgent>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
         MaxHP = Status.EnemyHp;
         currentHP = MaxHP;
         Strength = Status.EnemyAtk;
@@ -42,7 +42,7 @@ public class Enemyzonbi : Enemy
         lookPlayerDir = Status.EnemySens;
         fov = Status.EnemyFov;
         name = Status.EnemyName;
-        stateMachine = new StateMachine<Enemyzonbi>(this);
+        stateMachine = new StateMachine<OrkEnemy>(this);
         stateMachine.Add<IdleState>((int)State.Idle);
         stateMachine.Add<PatrolState>((int)State.Patrol);
         stateMachine.Add<ChaseState>((int)State.Chase);
@@ -60,12 +60,12 @@ public class Enemyzonbi : Enemy
         stateMachine.OnUpdate();
     }
 
-    private class IdleState : StateMachine<Enemyzonbi>.StateBase
+    private class IdleState : StateMachine<OrkEnemy>.StateBase
     {
         float cDis;
         public override void OnStart()
         {
-            
+
         }
         public override void OnUpdate()
         {
@@ -80,7 +80,7 @@ public class Enemyzonbi : Enemy
             //Owner.enemyAnimation.ResetTrigger("Idle");
         }
     }
-    private class PatrolState : StateMachine<Enemyzonbi>.StateBase
+    private class PatrolState : StateMachine<OrkEnemy>.StateBase
     {
         float cDis;
         Vector3 endPos;
@@ -127,7 +127,7 @@ public class Enemyzonbi : Enemy
         }
     }
 
-    private class ChaseState : StateMachine<Enemyzonbi>.StateBase
+    private class ChaseState : StateMachine<OrkEnemy>.StateBase
     {
         public override void OnStart()
         {
@@ -150,7 +150,7 @@ public class Enemyzonbi : Enemy
         }
     }
 
-    private class AttackState : StateMachine<Enemyzonbi>.StateBase
+    private class AttackState : StateMachine<OrkEnemy>.StateBase
     {
         public override void OnStart()
         {
@@ -213,19 +213,19 @@ public class Enemyzonbi : Enemy
         public override void OnUpdate()
         {
 
-                
+
         }
         public override void OnEnd()
         {
             //Owner.enemyAnimation.ResetTrigger("Combo");
         }
     }
-    private class AttackIntervalState : StateMachine<Enemyzonbi>.StateBase
+    private class AttackIntervalState : StateMachine<OrkEnemy>.StateBase
     {
         float time;
         public override void OnStart()
         {
-            
+
         }
         public override void OnUpdate()
         {
@@ -239,11 +239,11 @@ public class Enemyzonbi : Enemy
     }
 
 
-    private class HitState : StateMachine<Enemyzonbi>.StateBase
+    private class HitState : StateMachine<OrkEnemy>.StateBase
     {
         public override void OnStart()
         {
-            
+
         }
         public override void OnUpdate()
         {
@@ -256,7 +256,7 @@ public class Enemyzonbi : Enemy
         }
     }
 
-    private class DeadState : StateMachine<Enemyzonbi>.StateBase
+    private class DeadState : StateMachine<OrkEnemy>.StateBase
     {
         public override void OnStart()
         {
@@ -274,5 +274,4 @@ public class Enemyzonbi : Enemy
             //Owner.enemyAnimation.ResetTrigger("Combo");
         }
     }
-
 }
