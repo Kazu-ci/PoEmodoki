@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: f0f4d668bbf33194882fb23fafa52727, type: 2}
+  player: {fileID: 0}
   bomb: {fileID: 6379030148825455949, guid: 5a56dd4837b12674193b847e69955ccf, type: 3}
 --- !u!135 &5811144732719614474
 SphereCollider:
