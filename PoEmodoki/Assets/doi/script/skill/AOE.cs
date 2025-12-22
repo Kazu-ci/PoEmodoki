@@ -34,6 +34,9 @@ public class AOE : BaseSkill
     //“G—p
     public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
     {
+        Vector3 Enemypoint = enemy.transform.position;
+        enemy.InstanciateSkillEffect(effect, Enemypoint, Quaternion.Euler(-90, 0, 0));
+
         float radius = status.length;
 
         Collider[] hits =
@@ -48,14 +51,7 @@ public class AOE : BaseSkill
             }
         }
 
-        if (status.effect != null)
-        {
-            GameObject.Instantiate(
-                status.effect,
-                enemy.transform.position,
-                Quaternion.identity
-            ); 
-        }
     }
+    
 }
  

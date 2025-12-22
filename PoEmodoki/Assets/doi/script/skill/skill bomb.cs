@@ -36,6 +36,16 @@ public class skillbomb : BaseSkill
 
     public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
     {
-        throw new System.NotImplementedException();
+        Vector3 spawnPos = enemy.transform.position + enemy.transform.forward * 1.5f;
+        spawnPos.y -= -0.48f;
+        if (ct < 0)
+        {
+            enemy.InstanciateSkillEffect(effect, spawnPos, enemy.transform.rotation * Quaternion.Euler(-90, 0, 0));
+            ct = initCt;
+        }
+        if (ct >= 0)
+        {
+            --ct;
+        }
     }
 }

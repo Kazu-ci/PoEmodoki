@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881b11d6712ccf342a83c740c7ef92ad, type: 3}
   m_Name: blink
   m_EditorClassIdentifier: 
-  skillId: 0
   atk: 0
+  skillId: 3
   def: 0
   time: 0
   ct: 600
