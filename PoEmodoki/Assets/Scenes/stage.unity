@@ -1599,7 +1599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 1083796654}
   offset: {x: 0, y: 5, z: -4.5}
-<<<<<<< HEAD
+
 --- !u!1 &1837399302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,30 +1686,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837399302}
   m_Mesh: {fileID: -2432090755550338912, guid: 0106dcb7074b8a54d9b08f6fde52781b, type: 3}
-=======
---- !u!114 &1723369270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723369264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 02d1bd290aa3c11428a54949fd96781e, type: 2}
---- !u!4 &1847431366 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-  m_PrefabInstance: {fileID: 1115047476}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> 61ef2ab079e82cdfd2928d456a6c2ed4881cbef3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
