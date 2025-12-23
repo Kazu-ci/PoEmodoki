@@ -869,7 +869,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: bc7542fa398d07c40a1a88ff877c9ee6, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: 8b7fbe95c86eb3b4b9bca94627873405, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -1183,6 +1183,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1656134182
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.605387
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.066233054
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.55856
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
+      propertyPath: m_Name
+      value: RockBigC
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8c659933fafc384fbf4c56e9e396cbe, type: 3}
 --- !u!1 &1694498843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,3 +1550,4 @@ SceneRoots:
   - {fileID: 1361386781}
   - {fileID: 1115047476}
   - {fileID: 1122264130}
+  - {fileID: 1656134182}
