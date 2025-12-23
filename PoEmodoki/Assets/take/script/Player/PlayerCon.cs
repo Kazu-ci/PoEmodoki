@@ -39,6 +39,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     bool OnAttack = false;
 
     int MaxHP;
+    int HP;
     int Defense;
     int MP;
     float MoveSpeed;
@@ -63,6 +64,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     private void Awake()
     {
         MaxHP = player.PlayerHp;
+        HP = MaxHP;
         Defense = player.PlayerDefense;
         MP = player.PlayerMp;
         MoveSpeed = player.PlayerSpeed;
@@ -400,6 +402,13 @@ public class PlayerCon : MonoBehaviour,IStatusView
                 return;
             }
         }
+    }
+
+    public int TakeDamage(int damage)
+    {
+        //ƒ_ƒ[ƒW‚ğó‚¯æ‚Á‚ÄŒ»İ‚ÌHP‚ğŒ¸‚ç‚·
+        HP -= damage;
+        return damage;
     }
     private void OnEnable()
     {
