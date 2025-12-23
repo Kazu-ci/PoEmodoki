@@ -3,24 +3,19 @@ using UnityEngine;
 
 public class GameCon : MonoBehaviour
 {
-    public static class TutorialBlocks
-    {
-        public const string First = "FirstBlock";
-        public const string Second = "SecondBlock";
-        public const string Third = "ThirdBlock";
-        public const string Fourth = "FourthBlock";
-    }
-    StateMachine<GameCon> stateMachine;
     // 外部から唯一アクセスするための静的プロパティ
     public static GameCon Instance { get; private set; }
 
     public enum GameState { Talk, Combat, End }
     public GameState currentState = GameState.Talk;
-    private int stage = 0;
 
     [Header("コンポーネント参照")]
-    [SerializeField] public PlayerController playerController;
-    [SerializeField] public Flowchart mainFlowchart;
+    [SerializeField] public PlayerAnchor player;
+    [SerializeField] public Flowchart Flowchart;
+    [SerializeField] private bool isTutorial;
+    private int progressStep = 0; // 進行度
+    StateMachine<GameCon> stateMachine;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -35,17 +30,19 @@ public class GameCon : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        stage = 0;
+        progressStep = 0;
         stateMachine.Add<TalkState>((int)GameState.Talk);
         stateMachine.Add<CombatState>((int)GameState.Combat);
         stateMachine.Add<EndState>((int)GameState.End);
         stateMachine.Onstart((int)GameState.Talk);
+        TriggerNextConversation();
     }
 
     // Update is called once per frame
     void Update()
     {
         stateMachine.OnUpdate();
+        if (Input.GetKeyDown(KeyCode.H)) { TriggerNextConversation();  }
     }
 
     public void ChangeTalk()
@@ -56,39 +53,41 @@ public class GameCon : MonoBehaviour
     {
         stateMachine.ChangeState((int)GameState.Combat);
     }
-    public void StartNextTalkBlock()
+    public void TriggerNextConversation()
     {
-        if (mainFlowchart == null)
-        {
-            Debug.LogError("mainFlowchartが設定されていません。Fungusブロックを起動できません。", this);
-            return;
-        }
-
-        stage++; // チュートリアルステージを進行
-
+        progressStep++;
         string blockName = "";
 
-        switch (stage)
+        // シーン設定に応じて読み込むリストを変える
+        if (isTutorial)
         {
-            case 1:
-                blockName = TutorialBlocks.First;
-                break;
-            case 2:
-                blockName = TutorialBlocks.Second;
-                break;
-            case 3:
-                blockName = TutorialBlocks.Third;
-                break;
-            case 4:
-                blockName = TutorialBlocks.Fourth;
-                break;
-            default:
-                Debug.LogWarning("全チュートリアルステージが完了しました。");
-                return;
+            blockName = GetTutorialBlock(progressStep);
+        }
+        else
+        {
+            blockName = GetMainGameBlock(progressStep);
         }
 
-        // 汎用的に Fungus のブロックを実行
-        mainFlowchart.ExecuteBlock(blockName);
+        if (!string.IsNullOrEmpty(blockName))
+        {
+            // 状態をTalkに変えてからFungus起動
+            Flowchart.SendFungusMessage(blockName);
+            stateMachine.ChangeState((int)(GameState.Talk));
+        }
     }
+
+    private string GetTutorialBlock(int step) => step switch
+    {
+        1 => "Tut_op",
+        2 => "Tut_end",
+        _ => ""
+    };
+
+    private string GetMainGameBlock(int step) => step switch
+    {
+        1 => "Main_Op",
+        2 => "Main_BossDead",
+        _ => ""
+    };
 
 }

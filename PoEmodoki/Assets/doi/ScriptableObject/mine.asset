@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881b11d6712ccf342a83c740c7ef92ad, type: 3}
   m_Name: mine
   m_EditorClassIdentifier: 
-  skillId: 0
   atk: 0
+  skillId: 2
   def: 0
   time: 0
   ct: 300
@@ -23,4 +23,4 @@ MonoBehaviour:
   Icon: {fileID: 0}
   name: 
   sprite: {fileID: 0}
-  effect: {fileID: 0}
+  effect: {fileID: 302354119741455049, guid: a79dc15967ba06c48a6335a30f6e4491, type: 3}

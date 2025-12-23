@@ -7,6 +7,8 @@ public enum SKILL
 {
     None = -1,
     AOE,
+    Tossin,
+    Bomb,
     Blink,
 }
 

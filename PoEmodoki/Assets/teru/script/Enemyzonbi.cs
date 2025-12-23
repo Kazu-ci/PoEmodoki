@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,12 +12,13 @@ public class Enemyzonbi : Enemy
     private SerializedObject seliarizeZonbiStatus;       //S0をキャッシュする用
 #endif
     [SerializeField] SkillStatus skills;
-    [SerializeField] private List<string> attackStates;
     //protected NavMeshAgent navMeshAgent;
     [SerializeField] private List<GameObject> effects;
     [SerializeField] private List<Collider> attackColliders;
     private Dictionary<string, Collider> colliderDict;
     private Dictionary<string, GameObject> effectDict;
+    private SkillStatus currentSkill;
+
     protected enum State
     {
         Idle,
@@ -152,10 +154,62 @@ public class Enemyzonbi : Enemy
     {
         public override void OnStart()
         {
-            Owner.transform.LookAt(Owner.player.transform.position);
-            //Owner.enemyAnimation.SetTrigger("Combo");
             Owner.navMeshAgent.isStopped = true;
+            Owner.currentSkill = Owner.skills;
+
+            Owner.Strength = (int)Owner.skills.atk;
+
+            // プレイヤーに向ける
+            Vector3 lookPos = Owner.player.transform.position;
+            lookPos.y = Owner.transform.position.y;
+            Owner.transform.LookAt(lookPos);
+
+            // スキルアニメ再生
+            // Owner.animator.SetTrigger("Skill");
+
+
+            // ================================
+            // スキル発射
+            // ================================
+            FireSkill();
+
         }
+
+        private void FireSkill()
+        {
+            if (Owner.skills.effect == null)
+            {
+                Debug.LogWarning("Skill prefab is null for skill: " + Owner.skills.name);
+                return;
+            }
+
+            // 発射位置（少し前方 & 上）
+            Vector3 spawnPos =
+                Owner.transform.position +
+                Owner.transform.forward * 1.5f +
+                Vector3.up * 1.2f;
+            GameObject proj =
+                GameObject.Instantiate(Owner.skills.effect, spawnPos, Owner.transform.rotation);
+
+            // Rigidbody があれば速度を付与
+            Rigidbody rb = proj.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Owner.transform.forward * Owner.skills.speed;
+            }
+
+            // ================================
+            // 射程による自動消滅
+            // ================================
+            // lenge と length のどちらか大きい方を射程とする
+            float range = Mathf.Max(Owner.skills.lenge, Owner.skills.length);
+            if (range > 0 && Owner.skills.speed > 0)
+            {
+                float lifetime = range / Owner.skills.speed;
+                GameObject.Destroy(proj, lifetime);
+            }
+        }
+
         public override void OnUpdate()
         {
 
