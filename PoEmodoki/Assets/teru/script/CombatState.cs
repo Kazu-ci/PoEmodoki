@@ -4,6 +4,7 @@ public class CombatState : StateMachine<GameCon>.StateBase
 {
     public override void OnStart()
     {
+        Debug.Log("Combat");
         Time.timeScale = 1f;
     }
 

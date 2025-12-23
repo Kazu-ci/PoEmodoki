@@ -9,18 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881b11d6712ccf342a83c740c7ef92ad, type: 3}
-  m_Name: Tosiin
+  m_Script: {fileID: 11500000, guid: 33f712dd0d800e443aa0346caae53df0, type: 3}
+  m_Name: Demon
   m_EditorClassIdentifier: 
-  atk: 0
-  skillId: 1
-  def: 0
-  time: 0
-  ct: 0
-  speed: 10
-  lenge: 0
-  length: 0
-  Icon: {fileID: 0}
-  name: 
-  sprite: {fileID: 0}
-  effect: {fileID: 0}
+  EnemyHp: 0
+  EnemyAtk: 0
+  EnemyDefense: 0
+  EnemySpeed: 0
+  EnemyAtkSpeed: 0
+  EnemyCastSpeed: 0
+  EnemySens: 0
+  EnemyLength: 0
+  EnemyElementDefense: 0
+  EnemyFov: 0
+  EnemyName: 

@@ -18,7 +18,8 @@ MonoBehaviour:
   EnemySpeed: 0
   EnemyAtkSpeed: 0
   EnemyCastSpeed: 0
+  EnemySens: 0
   EnemyLength: 0
   EnemyElementDefense: 0
   EnemyFov: 0
-  EnemyName: 
+  EnemyName: zonbi

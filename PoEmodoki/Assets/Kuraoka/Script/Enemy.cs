@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
             gameCon = GameCon.Instance;
             if (gameCon == null) return;
         }
-        if (gameCon.currentState == GameCon.State.Talk)
+        if (gameCon.currentState == GameCon.GameState.Talk)
         {
             return;
         }
@@ -145,7 +145,11 @@ public class Enemy : MonoBehaviour
         skill.EnemyUseSkill(this, status);
        currentSkill = skill;
     }
-
+    public void InstanciateSkillEffect(GameObject go, Vector3 pos, Quaternion rotation)
+    {
+        Debug.Log("InsatntiateSkill");
+        Instantiate(go, pos, rotation);
+    }
     protected BaseSkill CreateSkillInstance(SKILL id)
     {
         switch (id)
@@ -154,6 +158,10 @@ public class Enemy : MonoBehaviour
                 return new AOE();
             case SKILL.Blink:
                 return new blink();
+            case SKILL.Tossin:
+                return new Tossin();
+            case SKILL.Bomb:
+                return new skillbomb();
             default:
                 return null;
         }
