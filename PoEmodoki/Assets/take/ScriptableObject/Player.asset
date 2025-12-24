@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915ca941b3ccfd044af3687582bcdd96, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  PlayerHp: 100
+  PlayerHp: 500
   PlayerDefense: 50
   PlayerSpeed: 5
   PlayerMp: 100
   PlayerAtkSpeed: 1
   PlayerCastSpeed: 1
   PlayerLength: 3
-  PlayerElementDefense: 0
-  PlayerCritical: 0
+  PlayerElementDefense: 50
+  PlayerCritical: 100
