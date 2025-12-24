@@ -34,8 +34,8 @@ public class keepskill : MonoBehaviour
         {
             GameObject slotObj = Instantiate(UIslot, slotParent);
             RectTransform slotRect = slotObj.GetComponent<RectTransform>();
-            SkillSlotUI slotUI = slotObj.GetComponent<SkillSlotUI>();
-            slotUI.SetSkill(skill);
+            //SkillSlotUI slotUI = slotObj.GetComponent<SkillSlotUI>();
+            //slotUI.SetSkill(skill);
 
             otherImages.Add(slotRect);
         }
