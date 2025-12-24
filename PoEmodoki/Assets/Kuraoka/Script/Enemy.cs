@@ -182,6 +182,10 @@ public class Enemy : MonoBehaviour
 
         //return false;
     }
+    public float GetDamage()
+    {
+        return Strength;
+    }
 
     // 確率判定用メソッド（%で判定する）
     public static bool Probability(float fPersent)

@@ -404,11 +404,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
     }
 
-    public int TakeDamage(int damage)
+    public int TakeDamage(DamageData damageData)
     {
         //ƒ_ƒ[ƒW‚ğó‚¯æ‚Á‚ÄŒ»İ‚ÌHP‚ğŒ¸‚ç‚·
-        HP -= damage;
-        return damage;
+       HP-=(int)damageData.damageAmount;
+        return (int) damageData.damageAmount;
     }
     private void OnEnable()
     {
