@@ -318,9 +318,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
         if (context.started)
         {
             OnAttack = true;
+            //ここにボスのダメージ判定を書いて
             DamageData dmgdata = new DamageData();
             dmgdata.damageAmount = 10;
             bossEnemy.TakeDamage(dmgdata);
+            //ここまで編集可
         }
         else if( context.canceled)
         {
