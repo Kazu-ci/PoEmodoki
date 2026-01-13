@@ -33,6 +33,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     [SerializeField] private GameObject lockonTarget;
     [SerializeField] private GameObject playerObj;
     public List<SkillStatus> mySkills = new List<SkillStatus>();
+    public List<SkillStatus> allskill = new List<SkillStatus>();
     private Vector2 moveVec = default;
     private IUseSkill[] skills = new IUseSkill[10];
     bool OnSkill = false;
@@ -368,6 +369,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
         mySkills.Add(data);
         Debug.Log(data.name + "‚ğ“üè");
     }
+    public void InvAddSkill(SkillStatus data)
+    {
+        allskill.Add(data);
+        Debug.Log(data.name + "‚ğ“üè");
+    }
     public void UseSkill(int index)
     {
         SkillStatus status = mySkills[index];
@@ -406,11 +412,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
     }
 
-    public int TakeDamage(int damage)
+    public int TakeDamage(DamageData damageData)
     {
         //ƒ_ƒ[ƒW‚ğó‚¯æ‚Á‚ÄŒ»İ‚ÌHP‚ğŒ¸‚ç‚·
-        HP -= damage;
-        return damage;
+       HP-=(int)damageData.damageAmount;
+        return (int) damageData.damageAmount;
     }
     private void OnEnable()
     {
