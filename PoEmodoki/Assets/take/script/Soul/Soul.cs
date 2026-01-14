@@ -7,7 +7,6 @@ public class Soul : MonoBehaviour, IInteractable, IStatusView
     [SerializeField] SkillStatus data;
     Image Icon;
     float Ct;
-    InventoryU Inventory;
 #if UNITY_EDITOR
     private SerializedObject sSkill;
 #endif
@@ -24,8 +23,6 @@ public class Soul : MonoBehaviour, IInteractable, IStatusView
         {
             player.InvAddSkill(data);
             Debug.Log(data + "“üŽè");
-            if (Inventory != null) Inventory.Refresh();
-            Destroy(gameObject);
         }
     }
 #if UNITY_EDITOR
