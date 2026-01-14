@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 17318924}
   - component: {fileID: 17318923}
   - component: {fileID: 17318922}
+  - component: {fileID: 17318933}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -241,7 +242,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 17318919}
   selectedCommands:
-  - {fileID: 17318927}
+  - {fileID: 17318933}
   variables: []
   description: 
   stepPause: 0
@@ -407,6 +408,7 @@ MonoBehaviour:
   - {fileID: 17318924}
   - {fileID: 17318923}
   - {fileID: 17318922}
+  - {fileID: 17318933}
   suppressAllAutoSelections: 0
 --- !u!114 &17318920
 MonoBehaviour:
@@ -464,7 +466,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &17318922
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -491,7 +493,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &17318923
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -518,7 +520,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &17318924
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -545,7 +547,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &17318925
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -572,7 +574,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &17318926
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -589,7 +591,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &17318927
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -616,7 +618,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &17318928
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -643,7 +645,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &17318929
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -670,7 +672,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &17318930
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -697,7 +699,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &17318931
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -724,7 +726,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &17318932
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -749,6 +751,25 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &17318933
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17318905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 22
+  indentLevel: 0
+  _sceneName:
+    stringRef: {fileID: 0}
+    stringVal: stage
+  loadingImage: {fileID: 0}
+  sceneNameOLD: 
 --- !u!1 &755919009
 GameObject:
   m_ObjectHideFlags: 0
