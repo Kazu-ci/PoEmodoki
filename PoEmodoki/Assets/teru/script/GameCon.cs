@@ -8,7 +8,7 @@ public class GameCon : MonoBehaviour
 
     public enum GameState { Talk, Combat, End }
     public GameState currentState = GameState.Talk;
-
+    private TextObject currentObject;
     [Header("コンポーネント参照")]
     [SerializeField] public PlayerAnchor player;
     [SerializeField] public Flowchart Flowchart;
@@ -77,6 +77,31 @@ public class GameCon : MonoBehaviour
             // 状態をTalkに変えてからFungus起動
             Flowchart.SendFungusMessage(blockName);
             stateMachine.ChangeState((int)(GameState.Talk));
+        }
+    }
+    public void RegisterInteractable(TextObject obj)
+    {
+        currentObject = obj;
+    }
+
+    // オブジェクトから呼ばれる解除メソッド
+    public void UnregisterInteractable(TextObject obj)
+    {
+        if (currentObject == obj) currentObject = null;
+    }
+    private void TryExecuteInteraction()
+    {
+        // 1. 対象のオブジェクトがあるか
+        // 2. Fungusが既に実行中ではないか（二重起動防止）
+        if (currentObject != null && !Flowchart.HasExecutingBlocks())
+        {
+            string blockName = currentObject.TargetBlockName;
+
+            if (Flowchart.HasBlock(blockName))
+            {
+                Flowchart.ExecuteBlock(blockName);
+                ChangeTalk();
+            }
         }
     }
 
