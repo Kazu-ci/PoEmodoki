@@ -21,6 +21,6 @@ MonoBehaviour:
   lenge: 0
   length: 0
   Icon: {fileID: 0}
-  name: 
+  name: mine
   sprite: {fileID: 0}
   effect: {fileID: 302354119741455049, guid: a79dc15967ba06c48a6335a30f6e4491, type: 3}
