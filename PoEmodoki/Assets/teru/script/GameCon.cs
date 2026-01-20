@@ -108,7 +108,7 @@ public class GameCon : MonoBehaviour
 
     private string GetMainGameBlock(int step) => step switch
     {
-        1 => "FirstBlock",
+        1 => "main_op",
         2 => "SecondBlock",
         _ => ""
     };
