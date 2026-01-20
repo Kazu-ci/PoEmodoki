@@ -39,6 +39,9 @@ public class PlayerCon : MonoBehaviour,IStatusView
     bool OnSkill = false;
     bool OnAttack = false;
 
+    //animator
+    [SerializeField]private Animator anim;
+
     int MaxHP;
     int HP;
     int Defense;
@@ -109,6 +112,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
         public override void OnStart()
         {
+            
             Debug.Log("Move");
         }
         public override void OnUpdate()
