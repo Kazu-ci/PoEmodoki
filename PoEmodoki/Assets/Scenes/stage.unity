@@ -393,7 +393,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 257734772}
   selectedCommands: []
   variables: []
   description: 
@@ -782,6 +783,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380478970}
   m_CullTransparentMesh: 1
+--- !u!1001 &537988817
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1607938779156236886, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: Flowchart
+      value: 
+      objectReference: {fileID: 257734773}
+    - target: {fileID: 2545830413186124547, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: m_Name
+      value: GameCon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219612346346742785, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.605387
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219612346346742785, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.066233054
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219612346346742785, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.55856
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219612346346742785, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219612346346742785, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219612346346742785, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219612346346742785, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219612346346742785, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219612346346742785, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219612346346742785, guid: 663c13e24a461a24a989a39447801b27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 663c13e24a461a24a989a39447801b27, type: 3}
 --- !u!1 &551164374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,7 +1335,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!4 &680634219 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5019529699196908203, guid: 1a02003b33d0ca744b4247b73ead5ffc, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3820595513670962758, guid: 1a02003b33d0ca744b4247b73ead5ffc, type: 3}
   m_PrefabInstance: {fileID: 335798120}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &704427736
@@ -1849,9 +1911,6 @@ MonoBehaviour:
   lockonTarget: {fileID: 0}
   playerObj: {fileID: 0}
   mySkills: []
-  allskill:
-  - {fileID: 11400000, guid: e2d84cba82228e54d8020fe03014518f, type: 2}
-  anim: {fileID: 0}
 --- !u!54 &1083796650
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4517,3 +4576,4 @@ SceneRoots:
   - {fileID: 1647222355}
   - {fileID: 1713074684}
   - {fileID: 257734774}
+  - {fileID: 537988817}
