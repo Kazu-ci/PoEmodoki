@@ -92,7 +92,17 @@ public class BossEnemy : Enemy
     }
     public override void OnAttackSet()
     {
-        attackColliders.ForEach(c => c.enabled = true);
+        attackColliders.ForEach(c => c.enabled = false);
+
+        /*var state = animator.GetCurrentAnimatorStateInfo(0);
+        foreach (var kv in colliderDict)
+        {
+            if (state.IsName(kv.Key))
+            {
+                kv.Value.enabled = true;
+                break;
+            }
+        }*/
     }
 
     public override void OnAttackEnd() => attackColliders.ForEach(c => c.enabled = false);
@@ -233,7 +243,6 @@ public class BossEnemy : Enemy
     {
         public override void OnStart()
         {
-            Owner.OnAttackSet();
             Owner.transform.LookAt(Owner.player.transform.position);
            // Owner.animator.SetTrigger("Attack");
             Owner.navMeshAgent.isStopped = true;
@@ -258,7 +267,6 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            Owner.OnAttackEnd();
             //Owner.animator.ResetTrigger("Attack");
         }
     }

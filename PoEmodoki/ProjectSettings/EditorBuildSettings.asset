@@ -9,14 +9,26 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 55e6acebe5228cc44b19e938c2a569d1
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 6a708991c69d5d848a45a5d78aea95f5
-  - enabled: 1
     path: Assets/Scenes/stage.unity
     guid: b25167902843d4f4d9dfa5230d40bac6
   - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 39074a0f66262b743a2ecc652d4e8aab
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/skill.unity
+    guid: efad6b00fa229d84d85ecdf50334323d
+  - enabled: 1
+    path: Assets/Scenes/settei.unity
+    guid: bb4290294f30a7b4dbcbf67bd1b90c40
+  - enabled: 1
+    path: Assets/Scenes/tyousei.unity
+    guid: 37ab737601c3175449611d9c29078e11
+  - enabled: 1
+    path: Assets/Scenes/doitest.unity
+    guid: d96afd2dffd692549b134dc9b8670136
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
