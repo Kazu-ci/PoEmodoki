@@ -26,6 +26,7 @@ public class SkillStatus : ScriptableObject
     public float length;
     public Image Icon;
     public string name;
+    public string Skillname;
     public Sprite sprite;
     public GameObject effect;
 }
