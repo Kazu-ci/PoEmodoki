@@ -1,8 +1,6 @@
 using Unity.VisualScripting;
 using UnityEditor;
-#if UNITY_EDITOR
 using UnityEditorInternal;
-#endif
 using UnityEngine;
 using UnityEngine.UI;
 public class skillbomb : BaseSkill

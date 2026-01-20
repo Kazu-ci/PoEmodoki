@@ -33,14 +33,10 @@ public class PlayerCon : MonoBehaviour,IStatusView
     [SerializeField] private GameObject lockonTarget;
     [SerializeField] private GameObject playerObj;
     public List<SkillStatus> mySkills = new List<SkillStatus>();
-    public List<SkillStatus> allskill = new List<SkillStatus>();
     private Vector2 moveVec = default;
     private IUseSkill[] skills = new IUseSkill[10];
     bool OnSkill = false;
     bool OnAttack = false;
-
-    //animator
-    [SerializeField]private Animator anim;
 
     int MaxHP;
     int HP;
@@ -112,7 +108,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
         public override void OnStart()
         {
-            
             Debug.Log("Move");
         }
         public override void OnUpdate()
@@ -323,11 +318,9 @@ public class PlayerCon : MonoBehaviour,IStatusView
         if (context.started)
         {
             OnAttack = true;
-            //ここにボスのダメージ判定を書いて
             DamageData dmgdata = new DamageData();
             dmgdata.damageAmount = 10;
             bossEnemy.TakeDamage(dmgdata);
-            //ここまで編集可
         }
         else if( context.canceled)
         {
@@ -371,11 +364,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
     public void AddSkill(SkillStatus data)
     {
         mySkills.Add(data);
-        Debug.Log(data.name + "を入手");
-    }
-    public void InvAddSkill(SkillStatus data)
-    {
-        allskill.Add(data);
         Debug.Log(data.name + "を入手");
     }
     public void UseSkill(int index)
