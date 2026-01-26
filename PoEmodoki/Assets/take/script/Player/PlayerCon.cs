@@ -442,6 +442,16 @@ public class PlayerCon : MonoBehaviour,IStatusView
         return false;
     }
 
+    void SetAttackStart()
+    {
+
+    }
+
+    void SetAttackEnd()
+    {
+
+    }
+
     public int TakeDamage(DamageData damageData)
     {
         //ƒ_ƒ[ƒW‚ğó‚¯æ‚Á‚ÄŒ»İ‚ÌHP‚ğŒ¸‚ç‚·
