@@ -75,7 +75,12 @@ public class Enemy : MonoBehaviour
         }
         if (gameCon.currentState == GameCon.GameState.Talk)
         {
+            navMeshAgent.isStopped = true;
             return;
+        }
+        else
+        {
+            navMeshAgent.isStopped = false;
         }
         playerpos = playerAnchor.Value.position;
     }

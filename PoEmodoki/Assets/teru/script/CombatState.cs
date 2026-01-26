@@ -10,7 +10,18 @@ public class CombatState : StateMachine<GameCon>.StateBase
 
     public override void OnUpdate()
     {
-        // 戦闘中の GameCon の監視ロジック（例：プレイヤーHPゼロ判定など）
+        if (Owner.pStatus.PlayerHp <= 0) { 
+            Owner.Flowchart.SendFungusMessage("PlayerDead");
+            Owner.ChangeTalk();
+        }
+        if (Owner.eStatus.EnemyName == "Boss" && Owner.eStatus.EnemyHp <= 200)
+        {
+            Owner.TriggerNextConversation();
+        }
+        if (Owner.eStatus.EnemyName == "Boss" && Owner.eStatus.EnemyHp <= 0)
+        {
+            Owner.TriggerNextConversation();
+        }
     }
 
     public override void OnEnd()

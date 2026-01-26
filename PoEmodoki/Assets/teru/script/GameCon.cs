@@ -11,11 +11,13 @@ public class GameCon : MonoBehaviour
     private TextObject currentObject;
     [Header("コンポーネント参照")]
     [SerializeField] public PlayerAnchor player;
+    [SerializeField] public PlayerStatus pStatus;
+    [SerializeField]public EnemyStatus eStatus;
     [SerializeField] public Flowchart Flowchart;
     [SerializeField] private bool isTutorial;
     private int progressStep = 0; // 進行度
     StateMachine<GameCon> stateMachine;
-
+    [SerializeField]bool rei=true;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -65,7 +67,8 @@ public class GameCon : MonoBehaviour
         }
         else
         {
-            blockName = GetMainGameBlock(progressStep);
+            if (rei) { blockName = GetMainGameBlock_true(progressStep); }
+            else { blockName = GetMainGameBlock(progressStep); }
         }
 
         if (!string.IsNullOrEmpty(blockName))
@@ -109,7 +112,17 @@ public class GameCon : MonoBehaviour
     private string GetMainGameBlock(int step) => step switch
     {
         1 => "main_op",
-        2 => "SecondBlock",
+        2 => "main_bossi",
+        3 =>"main_bossm",
+        4=> "main_bossdeth",
+        _=>""
+    };
+    private string GetMainGameBlock_true(int step) => step switch
+    {
+        1 => "main_op",
+        2 => "main_bossi",
+        3 => "main_bossmt",
+        4 => "main_bossdetht",
         _ => ""
     };
 
