@@ -126,7 +126,8 @@ public class PlayerCon : MonoBehaviour,IStatusView
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 Owner.transform.rotation = Quaternion.Slerp(Owner.transform.rotation, targetRotation, 10f * Time.deltaTime);
             }
-
+            //ƒeƒXƒg
+            
             if (Owner.move.ReadValue<Vector2>() == new Vector2(0, 0))
             {
                 StateMachine.ChangeState((int)state.Idol);
