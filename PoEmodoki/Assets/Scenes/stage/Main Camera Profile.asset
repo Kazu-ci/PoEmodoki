@@ -15,11 +15,11 @@ MonoBehaviour:
   active: 1
   texture:
     m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: e9ba66f0830c64b50aa84d5129f0fb8e, type: 3}
+    m_Value: {fileID: 2800000, guid: d051a2b798e884ad688581c8a1cd6107, type: 3}
     dimension: 1
   contribution:
     m_OverrideState: 1
-    m_Value: 0.114
+    m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,16 +49,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   skipIterations:
     m_OverrideState: 1
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.6
+    m_Value: 9.6
   intensity:
     m_OverrideState: 1
-    m_Value: 0.56
+    m_Value: 0
   scatter:
     m_OverrideState: 1
     m_Value: 0.7
@@ -105,7 +105,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.391
+    m_Value: 0
   smoothness:
     m_OverrideState: 1
     m_Value: 0.2
@@ -124,16 +124,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 1
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1.71
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 500
+    m_Value: 23.3
   gaussianMaxRadius:
     m_OverrideState: 1
     m_Value: 1

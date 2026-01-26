@@ -13,7 +13,7 @@ public class Mpushed : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            SceneManager.LoadScene("stage");
+            SceneManager.LoadScene("doitest");
         }
     }
 }
