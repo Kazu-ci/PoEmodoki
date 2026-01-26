@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f712dd0d800e443aa0346caae53df0, type: 3}
   m_Name: Boss
   m_EditorClassIdentifier: 
-  EnemyHp: 100
+  EnemyHp: 400
   EnemyAtk: 100
   EnemyDefense: 90
   EnemySpeed: 10

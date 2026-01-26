@@ -8,7 +8,6 @@ public class imagemove : MonoBehaviour
     public RectTransform slot1;
     public RectTransform slot3;
     public RectTransform slot4;
-    Vector2 Y = new Vector2(-400,150);
     Vector2 length;
     private void Update()
     {
@@ -33,10 +32,13 @@ public class imagemove : MonoBehaviour
                 move = slot1.anchoredPosition - imageRect.anchoredPosition;
             }
         }
+        if (Input.GetKey(KeyCode.DownArrow) && imageRect.anchoredPosition.y > -150)
+        {
+            move.y = -150;
+        }
         if (Input.GetKey(KeyCode.DownArrow) && imageRect.anchoredPosition.y == 120)
         {
             imageRect.anchoredPosition=slot4.anchoredPosition;
-            
         }
         imageRect.anchoredPosition += move;
 

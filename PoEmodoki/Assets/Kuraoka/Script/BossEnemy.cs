@@ -24,9 +24,6 @@ public class BossEnemy : Enemy
     [SerializeField] float stiffnessTime;
     private Dictionary<string, Collider> colliderDict;
     private Dictionary<string, GameObject> effectDict;
-    [SerializeField] private GameObject soulPrefab;   // Soul のプレハブ
-    [SerializeField] private int dropCount = 1;       // 落とす数
-    [SerializeField] private float dropRadius = 1.5f; // 散らばり半径
 
 #if UNITY_EDITOR
     private SerializedObject seliarizeBossStatus;
@@ -429,21 +426,6 @@ public class BossEnemy : Enemy
         }
     }
 
-    protected override void Drop()
-    {
-        if (soulPrefab == null) return;
-
-        for (int i = 0; i < dropCount; i++)
-        {
-
-
-            Instantiate(
-                soulPrefab,
-                thisobj.transform.position,
-                Quaternion.identity
-            ) ;
-        }
-    }
     public override int TakeDamage(DamageData dmg)
     {
         int damageTaken = base.TakeDamage(dmg);
