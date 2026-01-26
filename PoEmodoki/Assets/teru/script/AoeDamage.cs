@@ -14,25 +14,21 @@ public class AoeDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 playerPos = playerAnchor.Value.position;
-        Vector3 myPos = transform.position;
-        playerPos.y = myPos.y;
-
-        offset = myPos - playerPos;
+        offset = transform.position - playerAnchor.Value.position;
         sqrLen = offset.sqrMagnitude;
-        // 判定用の閾値
+
+        // 判定用の閾値（前回の回答の通り、ドーナツ状の範囲判定）
         float innerCheck = (Ir - Pr) * (Ir - Pr);
         float outerCheck = (Or + Pr) * (Or + Pr);
-        //Debug.Log($"現在の2乗距離: {sqrLen} | 判定範囲: {innerCheck} ～ {outerCheck}");
+
         bool isInside = (sqrLen > innerCheck && sqrLen < outerCheck);
 
         if (isInside)
         {
-            Debug.Log("oa");
             if (!hit)
             {
-                ApplyDamage(); 
-                hit = true;
+                ApplyDamage(); // ダメージ処理を実行
+                hit = true;    
             }
         }
         else
