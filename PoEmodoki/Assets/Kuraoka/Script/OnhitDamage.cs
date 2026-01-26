@@ -13,6 +13,7 @@ public class OnhitDamage : MonoBehaviour
         {
             float finalDmage=(enemy!=null)?enemy.Getdaamge():Damage;
             DamageData damageData= new DamageData(finalDmage);
+            Debug.Log("ダメージを食らった");
             player.TakeDamage(damageData);
         }
 

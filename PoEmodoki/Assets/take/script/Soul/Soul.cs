@@ -21,12 +21,11 @@ public class Soul : MonoBehaviour, IInteractable, IStatusView
     {
         if (data != null)
         {
-            player.AddSkill(data);
+            player.InvAddSkill(data);
             Debug.Log(data + "“üŽè");
-            Destroy(gameObject);
         }
     }
-
+#if UNITY_EDITOR
     public SerializedObject GetSerializedBaseStatus()
     {
         if (data == null)
@@ -40,7 +39,7 @@ public class Soul : MonoBehaviour, IInteractable, IStatusView
         }
         return sSkill;
     }
-#if UNITY_EDITOR
+
     public void DrawRunningStatusGUI()
     {
 

@@ -41,6 +41,10 @@ public class GameCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         stateMachine.OnUpdate();
         if (Input.GetKeyDown(KeyCode.H)) { TriggerNextConversation();  }
     }
@@ -87,6 +91,8 @@ public class GameCon : MonoBehaviour
     }
     private void TryExecuteInteraction()
     {
+        // 1. 対象のオブジェクトがあるか
+        // 2. Fungusが既に実行中ではないか（二重起動防止）
         if (currentObject != null && !Flowchart.HasExecutingBlocks())
         {
             string blockName = currentObject.TargetBlockName;
@@ -108,8 +114,8 @@ public class GameCon : MonoBehaviour
 
     private string GetMainGameBlock(int step) => step switch
     {
-        1 => "main_op",
-        2 => "SecondBlock",
+        1 => "Main_Op",
+        2 => "Main_BossDead",
         _ => ""
     };
 
