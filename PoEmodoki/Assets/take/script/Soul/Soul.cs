@@ -21,7 +21,7 @@ public class Soul : MonoBehaviour, IInteractable, IStatusView
     {
         if (data != null)
         {
-            player.AddSkill(data);
+            player.AddallSkill(data);
             Debug.Log(data + "“üŽè");
             Destroy(gameObject);
         }
