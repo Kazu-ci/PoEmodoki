@@ -195,7 +195,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         public override void OnEnd()
         {
-            Owner.anim.ResetTrigger("Attack");
+
         }
     }
 
