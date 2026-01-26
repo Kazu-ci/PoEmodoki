@@ -23,7 +23,7 @@ public class AoeDamage : MonoBehaviour
         // ”»’è—p‚Ìè‡’l
         float innerCheck = (Ir - Pr) * (Ir - Pr);
         float outerCheck = (Or + Pr) * (Or + Pr);
-        Debug.Log($"Œ»Ý‚Ì2æ‹——£: {sqrLen} | ”»’è”ÍˆÍ: {innerCheck} ` {outerCheck}");
+        //Debug.Log($"Œ»Ý‚Ì2æ‹——£: {sqrLen} | ”»’è”ÍˆÍ: {innerCheck} ` {outerCheck}");
         bool isInside = (sqrLen > innerCheck && sqrLen < outerCheck);
 
         if (isInside)
