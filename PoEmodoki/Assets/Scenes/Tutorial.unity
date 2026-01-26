@@ -240,7 +240,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 17318908}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 17318906}
   variables: []
   description: 
   stepPause: 0
@@ -382,7 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 163.87692
+    x: 164.87692
     y: 46.93235
     width: 124.01
     height: 40
@@ -627,7 +628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 15
   indentLevel: 0
-  storyText: "\u9B54\u5263\u300C\u30A4\u30AF\u30B7\u30AA\u30F3\u300D"
+  storyText: "\u9B54\u5263\u300C\u30A2\u30CA\u30D5\u30A7\u30DE\u300D"
   description: 
   character: {fileID: 1498977302}
   portrait: {fileID: 21300000, guid: 05ccd53483a554ca9b31f685fa76154a, type: 3}
@@ -708,7 +709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 12
   indentLevel: 0
-  storyText: "\u8056\u5263\u300C\u30A2\u30CA\u30D5\u30A7\u30DE\u300D\uFF01\uFF01"
+  storyText: "\u8056\u5263\u300C\u30A4\u30AF\u30B7\u30AA\u30F3\u300D\uFF01\uFF01"
   description: 
   character: {fileID: 1609044954}
   portrait: {fileID: 21300000, guid: a3850401348404655bd0352054c28683, type: 3}
@@ -779,8 +780,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 1
   player: {fileID: 0}
+  pStatus: {fileID: 11400000, guid: 87d7f51ec38e7f8489ffb9722f9fc8e5, type: 2}
+  eStatus: {fileID: 11400000, guid: 5608d3e7e2c422a468499273bc87f66a, type: 2}
   Flowchart: {fileID: 17318909}
   isTutorial: 1
+  rei: 1
 --- !u!4 &755919011
 Transform:
   m_ObjectHideFlags: 0
