@@ -129,7 +129,13 @@ public class Enemy : MonoBehaviour
         if (_isDead) return; // すでに死んでいたら処理しない
 
         _isDead = true;      // 死亡フラグを立てる
+        Drop();       // ★ ここでドロップ
+
         Destroy(gameObject); // 敵のオブジェクトを破壊
+    }
+    protected virtual void Drop()
+    {
+        // デフォルトは何も落とさない
     }
 
     public float Getdaamge()
