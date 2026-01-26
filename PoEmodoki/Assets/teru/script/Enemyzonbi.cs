@@ -18,9 +18,7 @@ public class Enemyzonbi : Enemy
     private Dictionary<string, Collider> colliderDict;
     private Dictionary<string, GameObject> effectDict;
     private SkillStatus currentSkill;
-    [SerializeField] private GameObject soulPrefab;   // Soul ‚ÌƒvƒŒƒnƒu
-    [SerializeField] private int dropCount = 1;       // —‚Æ‚·”
-    [SerializeField] private float dropRadius = 1.5f; // U‚ç‚Î‚è”¼Œa
+
     protected enum State
     {
         Idle,
@@ -276,19 +274,5 @@ public class Enemyzonbi : Enemy
             //Owner.enemyAnimation.ResetTrigger("Combo");
         }
     }
-    protected override void Drop()
-    {
-        if (soulPrefab == null) return;
 
-        for (int i = 0; i < dropCount; i++)
-        {
-
-
-            Instantiate(
-                soulPrefab,
-                transform.position,
-                Quaternion.identity
-            );
-        }
-    }
 }
