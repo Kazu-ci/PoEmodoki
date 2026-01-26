@@ -383,7 +383,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         mySkills.Add(data);
         Debug.Log(data.name + "‚ð“üŽè");
     }
-    public void InvAddSkill(SkillStatus data)
+    public void AddallSkill(SkillStatus data)
     {
         allskill.Add(data);
         Debug.Log(data.name + "‚ð“üŽè");
