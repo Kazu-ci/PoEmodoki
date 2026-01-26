@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHp: 500
   PlayerDefense: 50
-  PlayerSpeed: 5
+  PlayerSpeed: 30
   PlayerMp: 100
   PlayerAtkSpeed: 1
   PlayerCastSpeed: 1

@@ -32,12 +32,15 @@ public class PlayerCon : MonoBehaviour,IStatusView
     //ロックオン
     [SerializeField] private GameObject lockonTarget;
     [SerializeField] private GameObject playerObj;
-    public List<SkillStatus> allskill = new List<SkillStatus>();
     public List<SkillStatus> mySkills = new List<SkillStatus>();
+    public List<SkillStatus> allskill = new List<SkillStatus>();
     private Vector2 moveVec = default;
     private IUseSkill[] skills = new IUseSkill[10];
     bool OnSkill = false;
     bool OnAttack = false;
+
+    //animator
+    [SerializeField] Animator anim;
 
     int MaxHP;
     int HP;
@@ -109,7 +112,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
         public override void OnStart()
         {
-            Debug.Log("Move");
+            Owner.anim.CrossFade("RunForward",0.1f);
         }
         public override void OnUpdate()
         {
@@ -123,7 +126,8 @@ public class PlayerCon : MonoBehaviour,IStatusView
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 Owner.transform.rotation = Quaternion.Slerp(Owner.transform.rotation, targetRotation, 10f * Time.deltaTime);
             }
-
+            //テスト
+            
             if (Owner.move.ReadValue<Vector2>() == new Vector2(0, 0))
             {
                 StateMachine.ChangeState((int)state.Idol);
@@ -131,6 +135,10 @@ public class PlayerCon : MonoBehaviour,IStatusView
             if(Owner.skill1.IsPressed())
             {
                 StateMachine.ChangeState((int)state.SkillAttack);
+            }
+            if(Owner.OnAttack)
+            {
+                StateMachine.ChangeState((int)state.Attack);
             }
             
         }
@@ -144,6 +152,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
         public override void OnStart()
         {
+            Owner.anim.CrossFade("Idol", 0.1f);
             Debug.Log("Idol");
         }
         public override void OnUpdate()
@@ -172,12 +181,17 @@ public class PlayerCon : MonoBehaviour,IStatusView
         public override void OnStart()
         {
             Debug.Log("Attack");
+            Owner.anim.CrossFade("Attack", 0.1f);
         }
         public override void OnUpdate()
         {
-            if(Owner.OnAttack == false)
+
+            if (Owner.AnimationEnd("Attack"))
             {
-                StateMachine.ChangeState((int)(state.Idol));
+                if (Owner.OnAttack == false)
+                {
+                    StateMachine.ChangeState((int)(state.Idol));
+                }
             }
         }
         public override void OnEnd()
@@ -319,9 +333,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
         if (context.started)
         {
             OnAttack = true;
-            DamageData dmgdata = new DamageData();
-            dmgdata.damageAmount = 10;
-            bossEnemy.TakeDamage(dmgdata);
+            ////ここにボスのダメージ判定を書いて
+            //DamageData dmgdata = new DamageData();
+            //dmgdata.damageAmount = 10;
+            //bossEnemy.TakeDamage(dmgdata);
+            ////ここまで編集可
         }
         else if( context.canceled)
         {
@@ -367,7 +383,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         mySkills.Add(data);
         Debug.Log(data.name + "を入手");
     }
-    public void AddallSkill(SkillStatus data)
+    public void InvAddSkill(SkillStatus data)
     {
         allskill.Add(data);
         Debug.Log(data.name + "を入手");
@@ -408,6 +424,22 @@ public class PlayerCon : MonoBehaviour,IStatusView
                 return;
             }
         }
+    }
+    public bool AnimationEnd(string stateName)
+    {
+        // 現在のステート情報を取得
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        // ステート名をハッシュ化して比較
+        int stateHash = Animator.StringToHash("Base Layer." + stateName);
+
+        // 該当ステートでかつ normalizedTime >=1 なら終了とみなす
+        if (stateInfo.fullPathHash == stateHash && stateInfo.normalizedTime >= 0.8f)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public int TakeDamage(DamageData damageData)
