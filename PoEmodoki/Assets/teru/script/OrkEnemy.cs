@@ -18,7 +18,8 @@ public class OrkEnemy : Enemy
     private Dictionary<string, Collider> colliderDict;
     private Dictionary<string, GameObject> effectDict;
     private SkillStatus currentSkill;
-
+    [SerializeField] int dropcount = 1;//ドロップするソウルの数
+    [SerializeField] private GameObject soulprefab;//ドロップさせるソウルの種類
     protected enum State
     {
         Idle,
@@ -272,6 +273,17 @@ public class OrkEnemy : Enemy
         public override void OnEnd()
         {
             //Owner.enemyAnimation.ResetTrigger("Combo");
+        }
+    }
+    protected override void Drop()
+    {
+        if (soulprefab == null)
+        {
+            return;
+        }
+        for (int i = 0; i < dropcount; ++i)
+        {
+            Instantiate(soulprefab, thisobj.transform.position, Quaternion.identity);
         }
     }
 }
