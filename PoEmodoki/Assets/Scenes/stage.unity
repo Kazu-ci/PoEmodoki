@@ -148,6 +148,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b87f20cff5c0424095b5ceb47639f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot1: {fileID: 2008017179}
+  slot2: {fileID: 1910412066}
+  slot3: {fileID: 643425671}
+  player: {fileID: 1083796649}
+  slotData: {fileID: 11400000, guid: 4816e9c4c5a43ca438154a688b42a480, type: 2}
+  Tossin: {fileID: 11400000, guid: 395c28558edca6a478ab0f1816577246, type: 2}
+  AoE: {fileID: 11400000, guid: e2d84cba82228e54d8020fe03014518f, type: 2}
+  AOE: {fileID: 11400000, guid: 88076df0033a200418381a28944011c1, type: 2}
+  Jump: {fileID: 11400000, guid: 2f6748ec7739ae54f95b2f8f8348e4fc, type: 2}
+  Blink: {fileID: 11400000, guid: f4e239762575aaa4191ebca13a621f1b, type: 2}
+  mine: {fileID: 11400000, guid: f0f4d668bbf33194882fb23fafa52727, type: 2}
+  skill1: []
+  skill2: []
+  skill3: []
 --- !u!4 &129266752
 Transform:
   m_ObjectHideFlags: 0
@@ -192,6 +206,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70a49554f0973544a1c5c7c2b4e4b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countText: {fileID: 2104716069}
+  countText1: {fileID: 1521191811}
+  countText2: {fileID: 380478972}
+  countText3: {fileID: 2133918280}
+  countText4: {fileID: 1201413237}
+  countText5: {fileID: 704427738}
+  plcon: {fileID: 1083796649}
 --- !u!4 &138720306
 Transform:
   m_ObjectHideFlags: 0
@@ -436,6 +457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578bbff94dc2d5c429902ba9eae3364b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  countText: {fileID: 0}
 --- !u!222 &291745473
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -866,6 +889,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578bbff94dc2d5c429902ba9eae3364b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  countText: {fileID: 0}
 --- !u!222 &551164377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -954,6 +979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578bbff94dc2d5c429902ba9eae3364b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  countText: {fileID: 0}
 --- !u!222 &560809646
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1182,6 +1209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578bbff94dc2d5c429902ba9eae3364b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  countText: {fileID: 0}
 --- !u!222 &622381423
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1701,6 +1730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578bbff94dc2d5c429902ba9eae3364b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  countText: {fileID: 0}
 --- !u!222 &762780648
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2062,6 +2093,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  allskill:
+  - {fileID: 11400000, guid: e2d84cba82228e54d8020fe03014518f, type: 2}
+  - {fileID: 11400000, guid: f4e239762575aaa4191ebca13a621f1b, type: 2}
+  - {fileID: 11400000, guid: 88076df0033a200418381a28944011c1, type: 2}
 --- !u!54 &1083796650
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2514,7 +2549,9 @@ MonoBehaviour:
   - {fileID: 2008017182}
   - {fileID: 1910412069}
   - {fileID: 643425672}
-  slotData: {fileID: 0}
+  slot1: {fileID: 11400000, guid: 65a100014f2714b4583b67a25a9fb412, type: 2}
+  slot2: {fileID: 11400000, guid: 4b71bd2c643b69948a4d8f85405764a6, type: 2}
+  slot3: {fileID: 11400000, guid: f636a268091a954418c0c96fcf6aeb91, type: 2}
 --- !u!4 &1171237703
 Transform:
   m_ObjectHideFlags: 0
@@ -4222,6 +4259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03e4e5e68cb35740be79ef4c22a9300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  inventorySlots: []
 --- !u!1 &1910412066
 GameObject:
   m_ObjectHideFlags: 0
@@ -4326,6 +4365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f03d500bbfa16f448f383ceee3cadf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillCanvas: {fileID: 1502928893}
 --- !u!4 &1984108967
 Transform:
   m_ObjectHideFlags: 0

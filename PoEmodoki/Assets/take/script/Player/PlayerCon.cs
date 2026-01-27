@@ -33,6 +33,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     [SerializeField] private GameObject lockonTarget;
     [SerializeField] private GameObject playerObj;
     public List<SkillStatus> mySkills = new List<SkillStatus>();
+    public List<SkillStatus> allskill = new List<SkillStatus>();
     private Vector2 moveVec = default;
     private IUseSkill[] skills = new IUseSkill[10];
     bool OnSkill = false;
@@ -103,7 +104,10 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
         stateMachine.OnUpdate();
     }
-   Å@
+    public void Getvalue(float s)
+    {
+        MoveSpeed = s;
+    }
     public class MoveState : StateMachine<PlayerCon>.StateBase
     {
         public override void OnStart()

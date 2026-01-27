@@ -32,10 +32,6 @@ public class imagemove : MonoBehaviour
                 move = slot1.anchoredPosition - imageRect.anchoredPosition;
             }
         }
-        if (Input.GetKey(KeyCode.DownArrow) && imageRect.anchoredPosition.y > -150)
-        {
-            move.y = -150;
-        }
         if (Input.GetKey(KeyCode.DownArrow) && imageRect.anchoredPosition.y == 120)
         {
             imageRect.anchoredPosition=slot4.anchoredPosition;

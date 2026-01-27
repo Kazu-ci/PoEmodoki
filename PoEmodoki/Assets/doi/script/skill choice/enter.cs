@@ -8,23 +8,25 @@ public class CursorSelectImage : MonoBehaviour
     public Image cursorImage;         // カーソル用のImage
     public Image[] targetImages; // 判定対象のImageたち
     public Image[] targetslots;
-    [SerializeField] Slots slotData;
+    [SerializeField] SkillStatus slot1;
+    [SerializeField] SkillStatus slot2;
+    [SerializeField] SkillStatus slot3;
     private Sprite selectedSprite;
     private string selectedname;
     private bool hasSelected = false;
     void Start()
     {
         // ★ Scene 読み込み時に ScriptableObject から UI へ復元
-        if (slotData.slot1 != null) targetslots[0].sprite = slotData.slot1.sprite;
-        if (slotData.slot2 != null) targetslots[1].sprite = slotData.slot2.sprite;
-        if (slotData.slot3 != null) targetslots[2].sprite = slotData.slot3.sprite;
-        if (slotData.slot1 != null) targetslots[0].sprite = null;
-        if (slotData.slot2 != null) targetslots[1].sprite = null;
-        if (slotData.slot3 != null) targetslots[2].sprite = null;
+        if (slot1 != null) targetslots[0].sprite = slot1.sprite;
+        if (slot2 != null) targetslots[1].sprite = slot2.sprite;
+        if (slot3 != null) targetslots[2].sprite = slot3.sprite;
+        if (slot1 != null) targetslots[0].sprite = null;
+        if (slot2 != null) targetslots[1].sprite = null;
+        if (slot3 != null) targetslots[2].sprite = null;
     }
     void Update()
     {
-       
+        Debug.Log(slot1.Skillname);
         if (Input.GetKeyDown(KeyCode.Return))
         {
 
@@ -49,15 +51,21 @@ public class CursorSelectImage : MonoBehaviour
                     {
                         slot.sprite = selectedSprite;
                         Debug.Log("スロットに画像をセットしました: " + slot.name);
-                        if (slot.name == "slot1" )
-                            slotData.slot1.sprite = selectedSprite;
-                            slotData.slot1.Skillname = selectedname;
-                        if (slot.name == "slot2" )
-                            slotData.slot2.sprite = selectedSprite;
-                            slotData.slot2.Skillname = selectedname;
-                        if (slot.name == "slot3" )
-                            slotData.slot3.sprite = selectedSprite;
-                            slotData.slot3.Skillname = selectedname;
+                        if (slot.name == "slot1")
+                        {
+                            slot1.sprite = selectedSprite;
+                            slot1.Skillname = selectedname;
+                        }
+                        else if (slot.name == "slot2")
+                        {
+                            slot2.sprite = selectedSprite;
+                            slot2.Skillname = selectedname;
+                        }
+                        else if (slot.name == "slot3" )
+                        {
+                            slot3.sprite = selectedSprite;
+                            slot3.Skillname = selectedname;
+                        }
                         hasSelected = false; 
                         break;
                     }
