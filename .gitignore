@@ -1836,3 +1836,839 @@ PoEmodoki/Assets/VertexRageStudio/VertexRageStudio/LowPolyNatureEssentials/SRP/U
 PoEmodoki/Assets/VertexRageStudio/VertexRageStudio/LowPolyNatureEssentials/SRP/URP.unitypackage.meta
 PoEmodoki/Assets/VertexRageStudio/VertexRageStudio/LowPolyNatureEssentials/Textures/Base Palette.png
 PoEmodoki/Assets/VertexRageStudio/VertexRageStudio/LowPolyNatureEssentials/Textures/Base Palette.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Scenes.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Shaders.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Foliage 1.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Foliage 2.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Foliage 3.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Grass.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Ground Materials.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Large Rock 1.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Large Rock 2.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Rock Group.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 1.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 2.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 3.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 4 Moss.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 4.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Terrain Materials.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 1.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 2.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 3.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 4.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Foliage 1/Foliage 1.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Foliage 1/Foliage 1.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Foliage 2/Foliage 2.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Foliage 2/Foliage 2.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Foliage 3/Foliage 3.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Foliage 3/Foliage 3.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Grass/Grass Large.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Grass/Grass Large.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Grass/Grass Small.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Grass/Grass Small.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Ground Materials/Grass Floor 1.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Ground Materials/Grass Floor 1.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Ground Materials/Grass Floor 2.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Ground Materials/Grass Floor 2.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Ground Materials/Grass Floor 3.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Ground Materials/Grass Floor 3.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Ground Materials/Rock Floor 1.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Ground Materials/Rock Floor 1.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Ground Materials/Rock Floor 2.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Ground Materials/Rock Floor 2.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Large Rock 1/Large Rock 1.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Large Rock 1/Large Rock 1.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Large Rock 2/Large Rock 2.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Large Rock 2/Large Rock 2.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Rock Group/Rock Group.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Rock Group/Rock Group.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 1/Small Rock 1.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 1/Small Rock 1.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 2/Small Rock 2.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 2/Small Rock 2.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 3/Small Rock 3.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 3/Small Rock 3.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 4/Small Rock 4.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 4/Small Rock 4.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 4 Moss/Small Rock 4 Moss.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Small Rock 4 Moss/Small Rock 4 Moss.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Terrain Materials/Grass 1.terrainlayer
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Terrain Materials/Grass 1.terrainlayer.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Terrain Materials/Grass 2.terrainlayer
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Terrain Materials/Grass 2.terrainlayer.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Terrain Materials/Grass 3.terrainlayer
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Terrain Materials/Grass 3.terrainlayer.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Terrain Materials/Rock Floor 1.terrainlayer
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Terrain Materials/Rock Floor 1.terrainlayer.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Terrain Materials/Rock Floor 2.terrainlayer
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Terrain Materials/Rock Floor 2.terrainlayer.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 1/Tree 1 Branches.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 1/Tree 1 Branches.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 1/Tree 1 Mat.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 1/Tree 1 Mat.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 2/Tree 2 Branches.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 2/Tree 2 Branches.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 2/Tree 2 Mat.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 2/Tree 2 Mat.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 3/Tree 3 Branches.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 3/Tree 3 Branches.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 3/Tree 3 Mat.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 3/Tree 3 Mat.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 4/Tree 4 Branches.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 4/Tree 4 Branches.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 4/Tree 4 Mat.mat
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Materials/Tree 4/Tree 4 Mat.mat.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Foliage 1.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Foliage 1.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Foliage 2.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Foliage 2.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Foliage 3.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Foliage 3.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Grass Patch Large.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Grass Patch Large.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Grass Patch Small.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Grass Patch Small.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Large Rock 1.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Large Rock 1.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Large Rock 2.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Large Rock 2.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Rock Group.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Rock Group.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Small Rock 1.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Small Rock 1.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Small Rock 2.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Small Rock 2.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Small Rock 3.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Small Rock 3.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Small Rock 4.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Small Rock 4.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Tree 1.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Tree 1.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Tree 2.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Tree 2.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Tree 3.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Tree 3.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Tree 4.FBX
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Models/Tree 4.FBX.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Foliage 1.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Foliage 1.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Foliage 2.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Foliage 2.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Foliage 3.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Foliage 3.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Grass Patch Large.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Grass Patch Large.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Grass Patch Small.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Grass Patch Small.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Large Rock 1.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Large Rock 1.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Large Rock 2.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Large Rock 2.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Rock Group.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Rock Group.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Small Rock 1.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Small Rock 1.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Small Rock 2.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Small Rock 2.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Small Rock 3.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Small Rock 3.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Small Rock 4 Moss.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Small Rock 4 Moss.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Small Rock 4.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Small Rock 4.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Tree 1.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Tree 1.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Tree 2.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Tree 2.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Tree 3.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Tree 3.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Tree 4.prefab
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Prefabs/Tree 4.prefab.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Scenes/Demo.unity
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Scenes/Demo.unity.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Scenes/ForestExample.unity
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Scenes/ForestExample.unity.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Shaders/DoubleSided.shader
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Shaders/DoubleSided.shader.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Shaders/How to set up.docx
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Shaders/How to set up.docx.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Shaders/How to set up.pdf
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Shaders/How to set up.pdf.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 1.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 2.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 3.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Grass.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 1.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 2.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Rock Group.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 1.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 2.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 3.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 1.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 2.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 3.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 4.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 1/Foliage 1_NRM.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 1/Foliage 1_NRM.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 1/Foliage 2.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 1/Foliage 2.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 2/Foliage 2.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 2/Foliage 2.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 2/Foliage 2_NRM.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 2/Foliage 2_NRM.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 3/Foliage 3.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 3/Foliage 3.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 3/Foliage 3_NRM.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Foliage 3/Foliage 3_NRM.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Grass/Grass 1.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Grass/Grass 1.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Grass/Grass 1_NRM.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Grass/Grass 1_NRM.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_ambientOcclusion.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_ambientOcclusion.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_baseColor.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_baseColor.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_height.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_height.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_metallic.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_metallic.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_roughness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 1/Grass 1_roughness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_ambientOcclusion.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_ambientOcclusion.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_baseColor.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_baseColor.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_height.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_height.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_metallic.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_metallic.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_roughness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 2/Ground 2_roughness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_ambientOcclusion.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_ambientOcclusion.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_baseColor.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_baseColor.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_height.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_height.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_metallic.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_metallic.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_roughness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Grass 3/Ground 3_roughness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_ambientOcclusion.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_ambientOcclusion.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_baseColor.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_baseColor.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_height.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_height.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_metallic.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_metallic.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_roughness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 1/Ground 4_roughness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_ambientOcclusion.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_ambientOcclusion.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_baseColor.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_baseColor.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_height.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_height.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_metallic.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_metallic.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_roughness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Ground Rocks 2/Ground 5_roughness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 1/Large Rock 1 RFS_DefaultMaterial_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 1/Large Rock 1 RFS_DefaultMaterial_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 1/Large Rock 1 RFS_DefaultMaterial_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 1/Large Rock 1 RFS_DefaultMaterial_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 1/Large Rock 1 RFS_DefaultMaterial_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 1/Large Rock 1 RFS_DefaultMaterial_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 2/Large Rock 2 RFS_DefaultMaterial_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 2/Large Rock 2 RFS_DefaultMaterial_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 2/Large Rock 2 RFS_DefaultMaterial_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 2/Large Rock 2 RFS_DefaultMaterial_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 2/Large Rock 2 RFS_DefaultMaterial_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Large Rock 2/Large Rock 2 RFS_DefaultMaterial_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Rock Group/Rock Group RFS_DefaultMaterial_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Rock Group/Rock Group RFS_DefaultMaterial_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Rock Group/Rock Group RFS_DefaultMaterial_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Rock Group/Rock Group RFS_DefaultMaterial_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Rock Group/Rock Group RFS_DefaultMaterial_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Rock Group/Rock Group RFS_DefaultMaterial_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 1/Small Rock 1 RFS_DefaultMaterial_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 1/Small Rock 1 RFS_DefaultMaterial_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 1/Small Rock 1 RFS_DefaultMaterial_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 1/Small Rock 1 RFS_DefaultMaterial_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 1/Small Rock 1 RFS_DefaultMaterial_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 1/Small Rock 1 RFS_DefaultMaterial_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 2/Small Rock 2 RFS_DefaultMaterial_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 2/Small Rock 2 RFS_DefaultMaterial_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 2/Small Rock 2 RFS_DefaultMaterial_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 2/Small Rock 2 RFS_DefaultMaterial_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 2/Small Rock 2 RFS_DefaultMaterial_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 2/Small Rock 2 RFS_DefaultMaterial_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 3/Small Rock 3 RFS_DefaultMaterial_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 3/Small Rock 3 RFS_DefaultMaterial_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 3/Small Rock 3 RFS_DefaultMaterial_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 3/Small Rock 3 RFS_DefaultMaterial_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 3/Small Rock 3 RFS_DefaultMaterial_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 3/Small Rock 3 RFS_DefaultMaterial_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 Moss RFS_DefaultMaterial_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 Moss RFS_DefaultMaterial_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 Moss RFS_DefaultMaterial_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 Moss RFS_DefaultMaterial_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 Moss RFS_DefaultMaterial_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 Moss RFS_DefaultMaterial_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 RFS_DefaultMaterial_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 RFS_DefaultMaterial_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 RFS_DefaultMaterial_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 RFS_DefaultMaterial_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 RFS_DefaultMaterial_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Small Rock 4/Small Rock 4 RFS_DefaultMaterial_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 1/Tree 1 Branchs.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 1/Tree 1 Branchs.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 1/Tree 1 Branchs_NRM.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 1/Tree 1 Branchs_NRM.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 1/Tree 1 RFS_DefaultMaterial_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 1/Tree 1 RFS_DefaultMaterial_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 1/Tree 1 RFS_DefaultMaterial_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 1/Tree 1 RFS_DefaultMaterial_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 1/Tree 1 RFS_DefaultMaterial_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 1/Tree 1 RFS_DefaultMaterial_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 2/Dead Tree 2 RFS_Tree 1 Mat_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 2/Dead Tree 2 RFS_Tree 1 Mat_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 2/Dead Tree 2 RFS_Tree 1 Mat_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 2/Dead Tree 2 RFS_Tree 1 Mat_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 2/Dead Tree 2 RFS_Tree 1 Mat_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 2/Dead Tree 2 RFS_Tree 1 Mat_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 2/Tree 2 Branchs.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 2/Tree 2 Branchs.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 2/Tree 2 Branchs_NRM.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 2/Tree 2 Branchs_NRM.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 3/Dead Tree 3 RFS_Tree 1 Mat_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 3/Dead Tree 3 RFS_Tree 1 Mat_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 3/Dead Tree 3 RFS_Tree 1 Mat_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 3/Dead Tree 3 RFS_Tree 1 Mat_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 3/Dead Tree 3 RFS_Tree 1 Mat_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 3/Dead Tree 3 RFS_Tree 1 Mat_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 3/Tree 3 Branchs.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 3/Tree 3 Branchs.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 3/Tree 3 Branchs_NRM.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 3/Tree 3 Branchs_NRM.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 4/Dead Tree 4 RFS_Tree 2 Mat_AlbedoTransparency.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 4/Dead Tree 4 RFS_Tree 2 Mat_AlbedoTransparency.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 4/Dead Tree 4 RFS_Tree 2 Mat_MetallicSmoothness.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 4/Dead Tree 4 RFS_Tree 2 Mat_MetallicSmoothness.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 4/Dead Tree 4 RFS_Tree 2 Mat_Normal.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 4/Dead Tree 4 RFS_Tree 2 Mat_Normal.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 4/Tree 4 Branchs.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 4/Tree 4 Branchs.png.meta
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 4/Tree 4 Branchs_NRM.png
+PoEmodoki/Assets/doi/JP Environmental Asset Pack/JP Environmental Asset Pack/Textures/Tree 4/Tree 4 Branchs_NRM.png.meta
+PoEmodoki/Assets/doi/script/canvas.cs
+PoEmodoki/Assets/doi/script/canvas.cs.meta
+PoEmodoki/Assets/doi/script/img.meta
+PoEmodoki/Assets/doi/script/LIist open.cs
+PoEmodoki/Assets/doi/script/LIist open.cs.meta
+PoEmodoki/Assets/doi/script/img/img.asset
+PoEmodoki/Assets/doi/script/img/img.asset.meta
+PoEmodoki/Assets/doi/script/img/Name.cs
+PoEmodoki/Assets/doi/script/img/Name.cs.meta
+PoEmodoki/Assets/doi/script/skill choice/CountList.cs
+PoEmodoki/Assets/doi/script/skill choice/CountList.cs.meta
+PoEmodoki/Assets/doi/script/skill choice/Inventory U.cs
+PoEmodoki/Assets/doi/script/skill choice/Inventory U.cs.meta
+PoEmodoki/Assets/doi/script/skill choice/SkillslotUI.cs
+PoEmodoki/Assets/doi/script/skill choice/SkillslotUI.cs.meta
+PoEmodoki/Assets/doi/script/skill choice/UseSkill.cs
+PoEmodoki/Assets/doi/script/skill choice/UseSkill.cs.meta
+PoEmodoki/Assets/doi/ScriptableObject/follow.asset
+PoEmodoki/Assets/doi/ScriptableObject/follow.asset.meta
+PoEmodoki/Assets/doi/ScriptableObject/JumpAttack.asset
+PoEmodoki/Assets/doi/ScriptableObject/JumpAttack.asset.meta
+PoEmodoki/Assets/take/script/Soul/inventry connect.cs
+PoEmodoki/Assets/take/script/Soul/inventry connect.cs.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Materials.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Readme.md
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Readme.md.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Scenes.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/SRP.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Textures.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Materials/Base Material.mat
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Materials/Base Material.mat.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Materials/Base Shiny.mat
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Materials/Base Shiny.mat.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Materials/Ground.mat
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Materials/Ground.mat.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Materials/Metal.mat
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Materials/Metal.mat.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Fence.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Fence/SimWoodFnc.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Fence/SimWoodFnc/SWFModules.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Fence/SimWoodFnc/SWFModules/SWFModA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Fence/SimWoodFnc/SWFModules/SWFModA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Fence/SimWoodFnc/SWFModules/SWFModShortA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Fence/SimWoodFnc/SWFModules/SWFModShortA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/RuinedWallA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/RuinedWallA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/RuinedWallRubbleA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/RuinedWallRubbleA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/Colliders/RuinedWallACH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/Colliders/RuinedWallACH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/Colliders/RuinedWallACH1.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/Colliders/RuinedWallACH1.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/Colliders/RuinedWallRubbleACH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/Colliders/RuinedWallRubbleACH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/Colliders/RuinedWallRubbleACH1.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/Colliders/RuinedWallRubbleACH1.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/Colliders/RuinedWallRubbleACH2.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Arch/Ruins/RuinedWalls/Colliders/RuinedWallRubbleACH2.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Bushes.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Grass.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Bushes/Bush8.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Bushes/Bush8.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Bushes/BushA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Bushes/BushA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Bushes/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Bushes/Colliders/Bush8_ConvexHull_0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Bushes/Colliders/Bush8_ConvexHull_0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Grass/GrassLumps.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Grass/GrassLumps/GrassLumpD.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Grass/GrassLumps/GrassLumpD.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Grass/GrassLumps/GrassLumpLargeFTall.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Grass/GrassLumps/GrassLumpLargeFTall.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Grass/GrassLumps/MixedGrassLumpLargeB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Grass/GrassLumps/MixedGrassLumpLargeB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/BackgroundMountains.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/FloatingIslands.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/Mounds.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/SmallPiles.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/BackgroundMountains/BackgroundMountainA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/BackgroundMountains/BackgroundMountainA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/FloatingIslands/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/FloatingIslands/FloatingIslandA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/FloatingIslands/FloatingIslandA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/FloatingIslands/Colliders/FloatingIslandA_ConvexHull_0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/FloatingIslands/Colliders/FloatingIslandA_ConvexHull_0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/Mounds/DirtMoundD.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/Mounds/DirtMoundD.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/Mounds/GrassMoundA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/Mounds/GrassMoundA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/Mounds/GrassMoundD.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/Mounds/GrassMoundD.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/SmallPiles/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/SmallPiles/DirtPileG.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/SmallPiles/DirtPileG.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/SmallPiles/GrassPileG.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/SmallPiles/GrassPileG.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/SmallPiles/Colliders/DirtPileG_ConvexHull_0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/SmallPiles/Colliders/DirtPileG_ConvexHull_0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/SmallPiles/Colliders/GrassPileG_ConvexHull_0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Ground/SmallPiles/Colliders/GrassPileG_ConvexHull_0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/DeathCap.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/FlyAgaric.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/Girolle.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/ParasolMushroom.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/Porcini.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/ShaggyInkCap.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/DeathCap/DeathCapBAdultVariantC.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/DeathCap/DeathCapBAdultVariantC.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/FlyAgaric/FlyAgaricBAdultVariantB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/FlyAgaric/FlyAgaricBAdultVariantB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/FlyAgaric/FlyAgaricBYoungVariantB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/FlyAgaric/FlyAgaricBYoungVariantB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/Girolle/GirolleAVariantA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/Girolle/GirolleAVariantA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/ParasolMushroom/ParasolMushroomMatureVariantB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/ParasolMushroom/ParasolMushroomMatureVariantB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/Porcini/PorcinigBAdultVariantD.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/Porcini/PorcinigBAdultVariantD.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/ShaggyInkCap/ShaggyInkCapCMatureVariantB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/ShaggyInkCap/ShaggyInkCapCMatureVariantB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/ShaggyInkCap/ShaggyInkCapDMeltingVariantB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Mushrooms/ShaggyInkCap/ShaggyInkCapDMeltingVariantB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Bluebells.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Daisies.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Dandelions.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ferns.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Foxgloves.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ivy.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Nettles.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/PlantSaplingG.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/PlantSaplingG.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/WildGarlic.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Bluebells/BluebellBLeaves.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Bluebells/BluebellBLeaves.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Bluebells/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Bluebells/Colliders/BluebellBLeaves_ConvexHull_0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Bluebells/Colliders/BluebellBLeaves_ConvexHull_0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Daisies/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Daisies/DaisyB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Daisies/DaisyB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Daisies/Colliders/DaisyBCH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Daisies/Colliders/DaisyBCH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Dandelions/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Dandelions/DandelionBLeaves.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Dandelions/DandelionBLeaves.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Dandelions/DandelionsClusterB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Dandelions/DandelionsClusterB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Dandelions/Colliders/DandelionBLeaves_ConvexHull_0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Dandelions/Colliders/DandelionBLeaves_ConvexHull_0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Dandelions/Colliders/DandelionsClusterB_ConvexHull_0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Dandelions/Colliders/DandelionsClusterB_ConvexHull_0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ferns/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ferns/FernBClusterVariantA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ferns/FernBClusterVariantA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ferns/FernDClusterVariantB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ferns/FernDClusterVariantB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ferns/Colliders/FernBClusterVariantA_ConvexHull_0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ferns/Colliders/FernBClusterVariantA_ConvexHull_0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ferns/Colliders/FernDClusterVariantB_ConvexHull_0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ferns/Colliders/FernDClusterVariantB_ConvexHull_0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Foxgloves/FoxgloveBVariantB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Foxgloves/FoxgloveBVariantB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ivy/IvySimple.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ivy/IvySimple/IvybranchCDense.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ivy/IvySimple/IvybranchCDense.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ivy/IvySimple/IvybranchCSparse.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Ivy/IvySimple/IvybranchCSparse.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Nettles/NettleDMixedVariantB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/Nettles/NettleDMixedVariantB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/WildGarlic/WildGarlicBLeaves.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Plants/WildGarlic/WildGarlicBLeaves.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/RockBigC.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/RockBigC.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/RockBlueD.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/RockBlueD.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/RockNormD.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/RockNormD.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/RockSmallA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/RockSmallA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/RockSmallE.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/RockSmallE.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/Colliders/RockBigCCH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/Colliders/RockBigCCH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/Colliders/RockBlueDCH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/Colliders/RockBlueDCH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/Colliders/RockNormDCH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Rocks/Colliders/RockNormDCH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Birch.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/GenericTrees.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Oak.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Pines.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeBranches.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeRoots.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/WeepingWillow.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/WitheredTrees.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Birch/BirchTreeAdultA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Birch/BirchTreeAdultA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Birch/BirchTreeYoungCSimple.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Birch/BirchTreeYoungCSimple.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/GenericTrees/GenericTreeB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/GenericTrees/GenericTreeB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/GenericTrees/GenericTreeD.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/GenericTrees/GenericTreeD.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Oak/OakAdultD.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Oak/OakAdultD.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Pines/PineVariantA.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Pines/PineVariantA/PineVariantAGrowingB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Pines/PineVariantA/PineVariantAGrowingB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Pines/PineVariantA/PineVariantAMatureB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Pines/PineVariantA/PineVariantAMatureB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Pines/PineVariantA/PineVariantAYoungC.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/Pines/PineVariantA/PineVariantAYoungC.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeBranches/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeBranches/TreeBranchBLeafless.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeBranches/TreeBranchBLeafless.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeBranches/Colliders/TreeBranchBLeaflessCH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeBranches/Colliders/TreeBranchBLeaflessCH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeBranches/Colliders/TreeBranchBLeaflessCH1.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeBranches/Colliders/TreeBranchBLeaflessCH1.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeBranches/Colliders/TreeBranchBLeaflessCH2.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeBranches/Colliders/TreeBranchBLeaflessCH2.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/TreeLogOakB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/TreeLogOakB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/TreeLogsPiles.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/Colliders/TreeLogOakALeavesCH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/Colliders/TreeLogOakALeavesCH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/Colliders/TreeLogOakALeavesCH1.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/Colliders/TreeLogOakALeavesCH1.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/Colliders/TreeLogOakALeavesCH2.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/Colliders/TreeLogOakALeavesCH2.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/TreeLogsPiles/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/TreeLogsPiles/TreeLogPileNormalB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/TreeLogsPiles/TreeLogPileNormalB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/TreeLogsPiles/Colliders/TreeLogPileNormalBCH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/TreeLogsPiles/Colliders/TreeLogPileNormalBCH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/TreeLogsPiles/Colliders/TreeLogPileNormalBCH1.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeLogs/TreeLogsPiles/Colliders/TreeLogPileNormalBCH1.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeRoots/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeRoots/TreeRootB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeRoots/TreeRootB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeRoots/Colliders/TreeRootBCH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeRoots/Colliders/TreeRootBCH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/TreeStumpNormalC.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/TreeStumpNormalC.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/TreeStumpShortD.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/TreeStumpShortD.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/Colliders/TreeStumpNormalCCH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/Colliders/TreeStumpNormalCCH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/Colliders/TreeStumpShortDCH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/Colliders/TreeStumpShortDCH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/Colliders/TreeStumpShortDCH1.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/Colliders/TreeStumpShortDCH1.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/Colliders/TreeStumpShortDCH2.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/Colliders/TreeStumpShortDCH2.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/Colliders/TreeStumpShortDCH3.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/TreeStumps/Colliders/TreeStumpShortDCH3.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/WeepingWillow/WillowTreeAdultA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/WeepingWillow/WillowTreeAdultA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/WitheredTrees/SmallWitheredTreeB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/WitheredTrees/SmallWitheredTreeB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/WitheredTrees/WitheredTreeB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Env/Trees/WitheredTrees/WitheredTreeB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Planks.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire/CampfireASmall.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire/CampfireASmall.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire/FirewoodPileA.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire/FirewoodPileA.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire/Colliders/CampfireASmallCH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire/Colliders/CampfireASmallCH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire/Colliders/CampfireASmallCH1.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire/Colliders/CampfireASmallCH1.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire/Colliders/FirewoodPileACH0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Campfire/Colliders/FirewoodPileACH0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Planks/Colliders.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Planks/PlankMed.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Planks/PlankMed.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Planks/PlankStackB.fbx
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Planks/PlankStackB.fbx.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Planks/Colliders/PlankStackB_ConvexHull_0.asset
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Models/Props/Planks/Colliders/PlankStackB_ConvexHull_0.asset.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Props.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Fence.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Ruins.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Fence/SimWoodFnc.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Fence/SimWoodFnc/SWFModules.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Fence/SimWoodFnc/SWFModules/SWFModA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Fence/SimWoodFnc/SWFModules/SWFModA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Fence/SimWoodFnc/SWFModules/SWFModShortA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Fence/SimWoodFnc/SWFModules/SWFModShortA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Ruins/RuinedWalls.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Ruins/RuinedWalls/RuinedWallA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Ruins/RuinedWalls/RuinedWallA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Ruins/RuinedWalls/RuinedWallRubbleA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Arch/Ruins/RuinedWalls/RuinedWallRubbleA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Bushes.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Grass.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Rocks.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Bushes/Bush8.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Bushes/Bush8.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Bushes/BushA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Bushes/BushA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Grass/GrassLumps.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Grass/GrassLumps/GrassLumpD.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Grass/GrassLumps/GrassLumpD.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Grass/GrassLumps/GrassLumpLargeFTall.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Grass/GrassLumps/GrassLumpLargeFTall.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Grass/GrassLumps/MixedGrassLumpLargeB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Grass/GrassLumps/MixedGrassLumpLargeB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/BackgroundMountains.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/FloatingIslands.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/Mounds.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/SmallPiles.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/BackgroundMountains/BackgroundMountainA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/BackgroundMountains/BackgroundMountainA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/FloatingIslands/FloatingIslandA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/FloatingIslands/FloatingIslandA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/Mounds/DirtMoundD.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/Mounds/DirtMoundD.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/Mounds/GrassMoundA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/Mounds/GrassMoundA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/Mounds/GrassMoundD.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/Mounds/GrassMoundD.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/SmallPiles/DirtPileG.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/SmallPiles/DirtPileG.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/SmallPiles/GrassPileG.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Ground/SmallPiles/GrassPileG.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/DeathCap.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/FlyAgaric.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/Girolle.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/ParasolMushroom.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/Porcini.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/ShaggyInkCap.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/DeathCap/DeathCapBAdultVariantC.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/DeathCap/DeathCapBAdultVariantC.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/FlyAgaric/FlyAgaricBAdultVariantB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/FlyAgaric/FlyAgaricBAdultVariantB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/FlyAgaric/FlyAgaricBYoungVariantB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/FlyAgaric/FlyAgaricBYoungVariantB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/Girolle/GirolleAVariantA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/Girolle/GirolleAVariantA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/ParasolMushroom/ParasolMushroomMatureVariantB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/ParasolMushroom/ParasolMushroomMatureVariantB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/Porcini/PorcinigBAdultVariantD.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/Porcini/PorcinigBAdultVariantD.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/ShaggyInkCap/ShaggyInkCapCMatureVariantB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/ShaggyInkCap/ShaggyInkCapCMatureVariantB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/ShaggyInkCap/ShaggyInkCapDMeltingVariantB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Mushrooms/ShaggyInkCap/ShaggyInkCapDMeltingVariantB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Bluebells.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Daisies.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Dandelions.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Ferns.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Foxgloves.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Ivy.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Nettles.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/PlantSaplingG.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/PlantSaplingG.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/WildGarlic.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Bluebells/BluebellBLeaves.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Bluebells/BluebellBLeaves.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Daisies/DaisyB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Daisies/DaisyB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Dandelions/DandelionBLeaves.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Dandelions/DandelionBLeaves.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Dandelions/DandelionsClusterB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Dandelions/DandelionsClusterB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Ferns/FernBClusterVariantA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Ferns/FernBClusterVariantA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Ferns/FernDClusterVariantB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Ferns/FernDClusterVariantB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Foxgloves/FoxgloveBVariantB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Foxgloves/FoxgloveBVariantB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Ivy/IvySimple.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Ivy/IvySimple/IvybranchCDense.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Ivy/IvySimple/IvybranchCDense.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Ivy/IvySimple/IvybranchCSparse.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Ivy/IvySimple/IvybranchCSparse.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Nettles/NettleDMixedVariantB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/Nettles/NettleDMixedVariantB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/WildGarlic/WildGarlicBLeaves.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Plants/WildGarlic/WildGarlicBLeaves.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Rocks/RockBigC.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Rocks/RockBigC.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Rocks/RockBlueD.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Rocks/RockBlueD.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Rocks/RockNormD.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Rocks/RockNormD.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Rocks/RockSmallA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Rocks/RockSmallA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Rocks/RockSmallE.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Rocks/RockSmallE.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Birches.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/GenericTrees.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Oak.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Pines.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeBranches.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeLogs.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeRoots.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeStump.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Willows.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/WitheredTrees.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Birches/BirchTreeAdultA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Birches/BirchTreeAdultA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Birches/BirchTreeYoungCSimple.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Birches/BirchTreeYoungCSimple.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/GenericTrees/GenericTreeB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/GenericTrees/GenericTreeB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/GenericTrees/GenericTreeD.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/GenericTrees/GenericTreeD.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Oak/OakAdultD.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Oak/OakAdultD.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Pines/PinesVariantA.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Pines/PinesVariantA/PineVariantAGrowingB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Pines/PinesVariantA/PineVariantAGrowingB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Pines/PinesVariantA/PineVariantAMatureB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Pines/PinesVariantA/PineVariantAMatureB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Pines/PinesVariantA/PineVariantAYoungC.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Pines/PinesVariantA/PineVariantAYoungC.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeBranches/TreeBranchBLeafless.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeBranches/TreeBranchBLeafless.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeLogs/TreeLogOakB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeLogs/TreeLogOakB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeLogs/TreeLogsPiles.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeLogs/TreeLogsPiles/TreeLogPileNormalB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeLogs/TreeLogsPiles/TreeLogPileNormalB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeRoots/TreeRootB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeRoots/TreeRootB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeStump/TreeStumpNormalC.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeStump/TreeStumpNormalC.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeStump/TreeStumpShortD.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/TreeStump/TreeStumpShortD.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Willows/WillowTreeAdultA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/Willows/WillowTreeAdultA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/WitheredTrees/SmallWitheredTreeB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/WitheredTrees/SmallWitheredTreeB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/WitheredTrees/WitheredTreeB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Env/Trees/WitheredTrees/WitheredTreeB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Props/Campfires.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Props/Planks.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Props/Campfires/CampfireASmall.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Props/Campfires/CampfireASmall.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Props/Campfires/FirewoodPileA.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Props/Campfires/FirewoodPileA.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Props/Planks/PlankMed.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Props/Planks/PlankMed.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Props/Planks/PlankStackB.prefab
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Prefabs/Props/Planks/PlankStackB.prefab.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Scenes/FloatingIsland.unity
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Scenes/FloatingIsland.unity.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Scenes/Overview Nice.unity
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Scenes/Overview Nice.unity.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Scenes/Overview.unity
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Scenes/Overview.unity.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/SRP/HDRP.unitypackage
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/SRP/HDRP.unitypackage.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/SRP/URP.unitypackage
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/SRP/URP.unitypackage.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Textures/Base Palette.png
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Textures/Base Palette.png.meta
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Textures/New Material.mat
+PoEmodoki/Assets/VertexRageStudio/LowPolyNatureEssentials/Textures/New Material.mat.meta
