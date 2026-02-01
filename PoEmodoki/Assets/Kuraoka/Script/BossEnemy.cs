@@ -22,11 +22,11 @@ public class BossEnemy : Enemy
     [SerializeField] private List<Collider> attackColliders;
     [SerializeField] float rushSpeed;
     [SerializeField] float stiffnessTime;
+    [SerializeField] int dropcount = 1;//ドロップするソウルの数
+    [SerializeField] private GameObject soulprefab;//ドロップさせるソウルの種類
+
     private Dictionary<string, Collider> colliderDict;
     private Dictionary<string, GameObject> effectDict;
-    [SerializeField] private GameObject soulPrefab;   // Soul のプレハブ
-    [SerializeField] private int dropCount = 1;       // 落とす数
-    [SerializeField] private float dropRadius = 1.5f; // 散らばり半径
 
 #if UNITY_EDITOR
     private SerializedObject seliarizeBossStatus;
@@ -429,21 +429,6 @@ public class BossEnemy : Enemy
         }
     }
 
-    protected override void Drop()
-    {
-        if (soulPrefab == null) return;
-
-        for (int i = 0; i < dropCount; i++)
-        {
-
-
-            Instantiate(
-                soulPrefab,
-                thisobj.transform.position,
-                Quaternion.identity
-            ) ;
-        }
-    }
     public override int TakeDamage(DamageData dmg)
     {
         int damageTaken = base.TakeDamage(dmg);
@@ -455,10 +440,21 @@ public class BossEnemy : Enemy
         return damageTaken;
     }
 
+    protected override void Drop()
+    {
+        if (soulprefab == null)
+        {
+            return;
+        }
+        for(int i = 0;i<dropcount;++i)
+        {
+            Instantiate(soulprefab, thisobj.transform.position, Quaternion.identity);
+        }
+    }
 
 #if UNITY_EDITOR
 
-public void DrawRunningStatusGUI()
+    public void DrawRunningStatusGUI()
     {
         EditorGUILayout.FloatField("現在のHP:", currentHP);
         EditorGUILayout.FloatField("HPの最大値:", MaxHP);

@@ -18,9 +18,8 @@ public class Enemyzonbi : Enemy
     private Dictionary<string, Collider> colliderDict;
     private Dictionary<string, GameObject> effectDict;
     private SkillStatus currentSkill;
-    [SerializeField] private GameObject soulPrefab;   // Soul のプレハブ
-    [SerializeField] private int dropCount = 1;       // 落とす数
-    [SerializeField] private float dropRadius = 1.5f; // 散らばり半径
+    [SerializeField] int dropcount = 1;//ドロップするソウルの数
+    [SerializeField] private GameObject soulprefab;//ドロップさせるソウルの種類
     protected enum State
     {
         Idle,
@@ -278,17 +277,13 @@ public class Enemyzonbi : Enemy
     }
     protected override void Drop()
     {
-        if (soulPrefab == null) return;
-
-        for (int i = 0; i < dropCount; i++)
+        if (soulprefab == null)
         {
-
-
-            Instantiate(
-                soulPrefab,
-                transform.position,
-                Quaternion.identity
-            );
+            return;
+        }
+        for (int i = 0; i < dropcount; ++i)
+        {
+            Instantiate(soulprefab, thisobj.transform.position, Quaternion.identity);
         }
     }
 }

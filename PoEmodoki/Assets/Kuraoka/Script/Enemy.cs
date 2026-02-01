@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 [Serializable]
 public struct DamageData
@@ -75,7 +76,12 @@ public class Enemy : MonoBehaviour
         }
         if (gameCon.currentState == GameCon.GameState.Talk)
         {
+            navMeshAgent.isStopped = true;
             return;
+        }
+        else
+        {
+            navMeshAgent.isStopped = false;
         }
         playerpos = playerAnchor.Value.position;
     }
@@ -122,17 +128,15 @@ public class Enemy : MonoBehaviour
     public virtual void OnDead()
     {
         if (_isDead) return; // すでに死んでいたら処理しない
-
+        Drop();
         _isDead = true;      // 死亡フラグを立てる
-        Drop();       // ★ ここでドロップ
-
         Destroy(gameObject); // 敵のオブジェクトを破壊
     }
+
     protected virtual void Drop()
     {
-        // デフォルトは何も落とさない
+        //デフォルト処理はなし
     }
-
     public float Getdaamge()
     {
         return Strength;     // 敵の攻撃力を返す

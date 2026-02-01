@@ -1,6 +1,5 @@
 using Fungus;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,7 +40,6 @@ public class CursorSelectImage : MonoBehaviour
                     selectedname = img.transform.parent.name;
                     hasSelected = true;
                     Debug.Log("画像を選択しました: " + img.name);
-                    Debug.Log(slot1.Skillname);
                     break; 
                 }
             }
@@ -53,18 +51,15 @@ public class CursorSelectImage : MonoBehaviour
                     {
                         slot.sprite = selectedSprite;
                         Debug.Log("スロットに画像をセットしました: " + slot.name);
-                        if (slot.name == "slot1" )
+                        if (slot.name == "slot1")
                         {
                             slot1.sprite = selectedSprite;
                             slot1.Skillname = selectedname;
-                            Debug.Log(slot1.Skillname);
                         }
-                       
-                        else if (slot.name == "slot2" )
+                        else if (slot.name == "slot2")
                         {
                             slot2.sprite = selectedSprite;
                             slot2.Skillname = selectedname;
-                            Debug.Log(slot2.Skillname);
                         }
                         else if (slot.name == "slot3" )
                         {
