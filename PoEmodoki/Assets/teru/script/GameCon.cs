@@ -44,7 +44,7 @@ public class GameCon : MonoBehaviour
     void Update()
     {
         stateMachine.OnUpdate();
-        if (Input.GetKeyDown(KeyCode.H)) { TriggerNextConversation();  }
+        if (Input.GetKeyDown(KeyCode.LeftAlt)) { TriggerNextConversation();  }
     }
 
     public void ChangeTalk()

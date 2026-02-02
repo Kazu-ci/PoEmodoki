@@ -4,7 +4,8 @@ public class EndState : StateMachine<GameCon>.StateBase
 {
     public override void OnStart()
     {
-        //ˆ—‚Ì’Ç‰Á
+        Owner.Flowchart.SendFungusMessage("PlayerDead");
+        Owner.ChangeTalk();
     }
 
 }
