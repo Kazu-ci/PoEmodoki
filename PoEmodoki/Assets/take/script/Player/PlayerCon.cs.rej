@@ -1,0 +1,17 @@
+diff a/PoEmodoki/Assets/take/script/Player/PlayerCon.cs b/PoEmodoki/Assets/take/script/Player/PlayerCon.cs	(rejected hunks)
+@@ -33,15 +33,11 @@
+     [SerializeField] private GameObject lockonTarget;
+     [SerializeField] private GameObject playerObj;
+     public List<SkillStatus> mySkills = new List<SkillStatus>();
+-    public List<SkillStatus> allskill = new List<SkillStatus>();
+     private Vector2 moveVec = default;
+     private IUseSkill[] skills = new IUseSkill[10];
+     bool OnSkill = false;
+     bool OnAttack = false;
+ 
+-    //animator
+-    [SerializeField] Animator anim;
+-
+     int MaxHP;
+     int HP;
+     int Defense;
