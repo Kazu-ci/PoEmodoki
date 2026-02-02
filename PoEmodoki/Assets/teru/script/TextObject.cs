@@ -1,23 +1,27 @@
 using UnityEngine;
 
-public class TextObject : MonoBehaviour
+public class TextObject : MonoBehaviour, IInteractable
 {
     [SerializeField] private string targetBlockName;
 
     // プロパティでブロック名を外部（GameCon）から読み取れるようにする
     public string TargetBlockName => targetBlockName;
 
-    private void OnTriggerEnter(Collider other)
+
+    public void OnInteract(PlayerCon player)
+    {
+        Debug.Log("oppai");
+    }
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             // GameConに「自分がいま操作対象である」と伝える
             GameCon.Instance.RegisterInteractable(this);
-            Debug.Log("oppai");
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
