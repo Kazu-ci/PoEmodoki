@@ -13,6 +13,7 @@ public class TextObject : MonoBehaviour
         {
             // GameCon‚Éu©•ª‚ª‚¢‚Ü‘€ì‘ÎÛ‚Å‚ ‚év‚Æ“`‚¦‚é
             GameCon.Instance.RegisterInteractable(this);
+            Debug.Log("oppai");
         }
     }
 
@@ -22,6 +23,8 @@ public class TextObject : MonoBehaviour
         {
             // GameCon‚Ì‘€ì‘ÎÛ‚©‚ç©•ª‚ğŠO‚·
             GameCon.Instance.UnregisterInteractable(this);
+            Debug.Log("oppaijin");
+
         }
     }
 }
