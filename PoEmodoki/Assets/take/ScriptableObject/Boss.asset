@@ -15,7 +15,7 @@ MonoBehaviour:
   EnemyHp: 400
   EnemyAtk: 100
   EnemyDefense: 90
-  EnemySpeed: 10
+  EnemySpeed: 100
   EnemyAtkSpeed: 20
   EnemyCastSpeed: 321
   EnemySens: 200

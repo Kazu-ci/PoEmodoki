@@ -26,7 +26,7 @@ public class CursorSelectImage : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(slot1.Skillname);
+        //Debug.Log(slot1.Skillname);
         if (Input.GetKeyDown(KeyCode.Return))
         {
 
@@ -39,7 +39,7 @@ public class CursorSelectImage : MonoBehaviour
                     selectedSprite = img.sprite;
                     selectedname = img.transform.parent.name;
                     hasSelected = true;
-                    Debug.Log("画像を選択しました: " + img.name);
+                    //Debug.Log("画像を選択しました: " + img.name);
                     break; 
                 }
             }
@@ -50,7 +50,7 @@ public class CursorSelectImage : MonoBehaviour
                     if (IsRectOverlapping(cursorImage.rectTransform, slot.rectTransform))
                     {
                         slot.sprite = selectedSprite;
-                        Debug.Log("スロットに画像をセットしました: " + slot.name);
+                       // Debug.Log("スロットに画像をセットしました: " + slot.name);
                         if (slot.name == "slot1")
                         {
                             slot1.sprite = selectedSprite;

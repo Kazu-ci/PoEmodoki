@@ -143,7 +143,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            //Owner.animator.ResetTrigger("Idle");
+            Owner.animator.ResetTrigger("Idle");
         }
     }
 
@@ -152,7 +152,7 @@ public class BossEnemy : Enemy
         NavMeshAgent navMeshAgent;
         public override void OnStart()
         {
-           //Owner.animator.SetTrigger("Idle");
+           Owner.animator.SetTrigger("Run");
             navMeshAgent = Owner.navMeshAgent;
             navMeshAgent.isStopped = false;
         }
@@ -169,7 +169,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            //Owner.animator.ResetTrigger("Idle");
+            Owner.animator.ResetTrigger("Idle");
         }
     }
     private class VigilanceState : StateMachine<BossEnemy>.StateBase
@@ -185,7 +185,7 @@ public class BossEnemy : Enemy
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = false;
-           // Owner.animator.SetTrigger("Idle");
+            Owner.animator.SetTrigger("Idle");
             time = 0;
             mTime = UnityEngine.Random.Range(4, 6);
             PickNewRoamPosition();
@@ -375,7 +375,7 @@ public class BossEnemy : Enemy
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
-            //Owner.animator.SetTrigger("Idle");
+            Owner.animator.SetTrigger("Idle");
             time = 0;
         }
         public override void OnUpdate()
@@ -390,7 +390,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-           // Owner.animator.ResetTrigger("Idle");
+            Owner.animator.ResetTrigger("Idle");
         }
 
     }
