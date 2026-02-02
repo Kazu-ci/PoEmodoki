@@ -403,14 +403,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
                 case SKILL.AoE:
                     skill = new playerfollow();
                     break;
-                case SKILL.Bomb:
-                    skill = new skillbomb();
-                    break;
-                case SKILL.Tossin:
-                    skill = new Tossin();
-                    break;
                 case SKILL.Jump:
                     skill = new JumpATTACK();
+                    break;
+                case SKILL.Bomb:
+                    skill = new skillbomb();
                     break;
             }
         }

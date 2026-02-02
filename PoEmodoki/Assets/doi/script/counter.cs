@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class bossa : JumpATTACK
+public class counter : MonoBehaviour
 {
-   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,9 +11,6 @@ public class bossa : JumpATTACK
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J)) 
-        {
-          
-        }
+        
     }
 }

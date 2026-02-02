@@ -15,10 +15,9 @@ public class blink : BaseSkill
     // ===== 初期化 =====
     public override void Setup(SkillStatus status)
     {
-        distance = status.length;   
-       ct = status.ct;  
-        effect = status.effect;
-    }
+        distance = status.length;    // Enemy側で使ってた length
+        ct = status.ct;  // もし無いなら固定値にしてOK
+        effect = status.effect;    }
 
     public override void EnemySetup(EnemyStatus Estatus) { }
 
@@ -52,7 +51,7 @@ public class blink : BaseSkill
     // ===== Enemy が使う =====
     public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
     {
-      
+        // Enemy側は status を使ってもいいけど、Setup()の値で統一してもOK
         float d = status.length;
 
         Vector3 dir = (enemy.Player.transform.position - enemy.transform.position).normalized;
@@ -64,16 +63,16 @@ public class blink : BaseSkill
         SpawnEffect(targetPos);
     }
 
-   
+    // ===== 入力方向の取得（環境に合わせて調整）=====
     Vector3 GetBlinkDirection(PlayerCon con)
     {
-            return con.transform.forward;
+        return con.transform.forward;
     }
 
-   
+    // ===== NavMesh上に補正（めり込み防止）=====
     Vector3 ResolveBlinkTarget(Vector3 rawTarget)
     {
-       
+        // NavMeshが無いプロジェクトならそのまま返す
         NavMeshHit hit;
         if (NavMesh.SamplePosition(rawTarget, out hit, 2.0f, NavMesh.AllAreas))
         {
@@ -82,7 +81,7 @@ public class blink : BaseSkill
         return rawTarget;
     }
 
-   
+    // ===== Warp優先（NavMeshAgentが付いてたらWarp）=====
     void WarpOrMove(GameObject obj, Vector3 targetPos)
     {
         var agent = obj.GetComponent<NavMeshAgent>();

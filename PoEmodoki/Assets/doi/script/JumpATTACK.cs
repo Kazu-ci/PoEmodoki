@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class JumpATTACK : BaseSkill
@@ -14,41 +14,43 @@ public class JumpATTACK : BaseSkill
 
     bool isJumping = false;
 
- 
+    // デバッグ描画用（最後にスキルを使った側）
     Transform lastAttacker;
 
- 
+    // ===== 初期化 =====
     public override void Setup(SkillStatus status)
     {
+        
         jumpHeight = status.height;
-        airTime = status.airtime;
+        airTime = status.airTime;
         dropSpeed = status.speed;
-        shockRange = status.lenge;  
+        shockRange = status.lenge;   
         damage = status.atk;
         effect = status.effect;
     }
 
     public override void EnemySetup(EnemyStatus Estatus)
     {
-       
+        
     }
 
-    
+    // ===== Player がスキルを使う =====
     public override void UseSkill(PlayerCon con)
     {
         if (isJumping) return;
 
-        
+        // 自分の位置に落ちるなら target = 自分
+        // 前方に落としたいなら con.transform.position + con.transform.forward * 落下距離 にする
         Vector3 dropPos = con.transform.position;
 
         con.StartCoroutine(JumpAttackRoutine(
             attackerTransform: con.transform,
             dropTargetWorldPos: dropPos,
-            hitTargetTag: "Enemy"
+            hitTargetTag: "Enemy"      // 敵に当てる
         ));
     }
 
-    
+    // ===== Enemy がスキルを使う =====
     public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
     {
         if (isJumping) return;
@@ -61,11 +63,11 @@ public class JumpATTACK : BaseSkill
         enemy.StartCoroutine(JumpAttackRoutine(
             attackerTransform: enemy.transform,
             dropTargetWorldPos: dropPos,
-            hitTargetTag: "Player"     
+            hitTargetTag: "Player"     // プレイヤーに当てる
         ));
     }
 
-   
+    // ===== ジャンプ攻撃本体（共通） =====
     IEnumerator JumpAttackRoutine(Transform attackerTransform, Vector3 dropTargetWorldPos, string hitTargetTag)
     {
         isJumping = true;
@@ -86,8 +88,10 @@ public class JumpATTACK : BaseSkill
             yield return null;
         }
 
+        
         Vector3 dropTarget = new Vector3(dropTargetWorldPos.x, dropTargetWorldPos.y, dropTargetWorldPos.z);
 
+        // ちょい上まで落とす（同じ高さだとMoveTowardsが止まらないケース対策）
         while (attackerTransform.position.y > dropTarget.y + 0.05f)
         {
             attackerTransform.position = Vector3.MoveTowards(
@@ -98,16 +102,16 @@ public class JumpATTACK : BaseSkill
             yield return null;
         }
 
-      
+        // 最終的に着地位置を固定
         attackerTransform.position = new Vector3(dropTarget.x, dropTarget.y, dropTarget.z);
 
-        
+       
         ShockWave(attackerTransform.position, hitTargetTag);
 
         isJumping = false;
     }
 
-    
+    // ===== 衝撃波処理 =====
     void ShockWave(Vector3 center, string hitTargetTag)
     {
         Collider[] hits = Physics.OverlapSphere(center, shockRange);
@@ -116,18 +120,25 @@ public class JumpATTACK : BaseSkill
         {
             if (!hit.CompareTag(hitTargetTag)) continue;
 
+            // ここでダメージ処理
+            // PlayerCon / Enemy に合わせて書き換えてね
+            // 例:
+            // if (hitTargetTag == "Player")
+            //     hit.GetComponent<PlayerCon>()?.TakeDamage(damage);
+            // else
+            //     hit.GetComponent<Enemy>()?.TakeDamage(damage);
         }
 
         if (effect != null)
         {
-            GameObject fx = Instantiate(effect, center, Quaternion.identity);
+            GameObject fx = UnityEngine.GameObject.Instantiate(effect, center, Quaternion.identity);
 
             ParticleSystem ps = fx.GetComponent<ParticleSystem>();
             if (ps != null) ps.Play();
         }
     }
 
-   
+    // ===== デバッグ用 =====
     void OnDrawGizmosSelected()
     {
         if (lastAttacker == null) return;

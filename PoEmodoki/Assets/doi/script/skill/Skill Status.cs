@@ -27,6 +27,8 @@ public class SkillStatus : ScriptableObject
     public float height;
     public float airtime;
     public float lenge;
+    public float height;
+    public float airTime;
     public float length;
     public Image Icon;
     public GameObject obj;

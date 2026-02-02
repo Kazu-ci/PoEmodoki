@@ -12,15 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881b11d6712ccf342a83c740c7ef92ad, type: 3}
   m_Name: blink
   m_EditorClassIdentifier: 
+  skill: {fileID: 0}
   atk: 0
   skillId: 3
   def: 0
   time: 0
   ct: 600
-  speed: 5
+  speed: 20
   lenge: 0
-  length: 0
+  height: 0
+  airTime: 0
+  length: 20
   Icon: {fileID: 0}
+  obj: {fileID: 0}
   name: blink
+  Skillname: 
   sprite: {fileID: 0}
   effect: {fileID: 7587689979162469237, guid: 1dc79594a28680c4da10db494124e84c, type: 3}

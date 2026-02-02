@@ -7,21 +7,23 @@ using UnityEngine.UI;
 public class Tossin : BaseSkill
 {
     float speed;
-    public KeyCode SpawnKey = KeyCode.F;
+    float atk;
+
+    float ct;
+    float ctTimer;
+
     public float dashDuration = 0.2f;
     float dashTimer;
-    float Ct;
-    float atk;
     float hp;
-    float Count;
-    bool ISDASH = false;
-    float h, v;
+    bool isDashing = false;
+    PlayerCon currentCon;
+    Vector3 dashDirection;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void Setup(SkillStatus status)
     {
         atk = status.atk;
         speed = status.speed;
-        Ct = status.ct;
+        ct = status.ct;
     }
     public override void EnemySetup(EnemyStatus Estatus)
     {
@@ -33,39 +35,60 @@ public class Tossin : BaseSkill
     }
     public override void UseSkill(PlayerCon con)
     {
-            isDash();
-            h = Input.GetAxisRaw("Horizontal");
-            v = Input.GetAxisRaw("Vertical");
-        if (ISDASH&&Count>Ct)
+        currentCon = con;
+        if (!isDashing && ctTimer <= 0f)
         {
-            dashTimer -= Time.deltaTime;
-            Vector3 inputDirection = new Vector3(h, 0, v).normalized;
-            Quaternion characterRotation = con.transform.rotation;
-            Vector3 worldMoveDirection = characterRotation * inputDirection;
-            Vector3 moveVector = worldMoveDirection * speed;
-            // TODO: 移動させる方法を考えて.
-            //CC.Move(moveVector * Time.deltaTime);
-            if (dashTimer < 0)
-            {
-                ISDASH = false;
-            }
-            Count = 0;
-        }
-        if(Count<=Ct)
-        {
-            ++Count;
+            StartDash(con);
         }
     }
-    void isDash()
+    void StartDash(PlayerCon con)
     {
+        isDashing = true;
         dashTimer = dashDuration;
-        ISDASH = true;
+        ctTimer = ct;
+
+        // 入力方向 or 前方向
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+
+        Vector3 inputDir = new Vector3(h, 0, v);
+
+        if (inputDir.magnitude > 0.1f)
+        {
+            dashDirection = con.transform.rotation * inputDir.normalized;
+        }
+        else
+        {
+            dashDirection = con.transform.forward;
+        }
+    }
+    void Update()
+    {
+        if (ctTimer > 0f)
+            ctTimer -= Time.deltaTime;
+    }
+    void LateUpdate()
+    {
+        if (!isDashing || currentCon == null) return;
+
+        CharacterController cc =
+            currentCon.GetComponent<CharacterController>();
+
+        cc.Move(dashDirection * speed * Time.deltaTime);
+
+        dashTimer -= Time.deltaTime;
+
+        if (dashTimer <= 0f)
+        {
+            isDashing = false;
+        }
     }
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("敵に衝突！");
+            // ダメージ処理 here
         }
     }
 }
