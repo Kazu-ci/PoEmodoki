@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -38,11 +39,15 @@ public class PlayerCon : MonoBehaviour,IStatusView
     private IUseSkill[] skills = new IUseSkill[10];
     bool OnSkill = false;
     bool OnAttack = false;
+    //通常攻撃の当たり判定
+    public Transform atkPoint;
+    public LayerMask enemyLayer;
     //ステータス
     int MaxHP;
     int HP;
     int Defense;
     int MP;
+    int Atk;
     float MoveSpeed;
     float AtkSpeed;
     float CastSpeed;
@@ -87,6 +92,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         Length = player.PlayerLength;
         ElementDefense = player.PlayerElementDefense;
         Critical = player.PlayerCritical;
+        Atk = player.PlayerAtk;
 
 
         move = PlayerInput.actions["Move"];
@@ -103,7 +109,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
         stateMachine.Add<HitState>((int)state.Hit);
         stateMachine.Add<SkillAttackState>((int)state.SkillAttack);
         stateMachine.Add<DeadState>((int)state.Dead);
-        stateMachine.Add<PoseState>((int)state.pose);
         stateMachine.Onstart((int)state.Idol);
         //デバッグ用スキル
         //mySkills.Add(skill);
@@ -115,6 +120,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     }
     void Update()
     {
+        if (HP <= 0) { stateMachine.ChangeState((int)state.Dead); }
         stateMachine.OnUpdate();
     }
     public void Getvalue(float s)
@@ -145,11 +151,15 @@ public class PlayerCon : MonoBehaviour,IStatusView
             {
                 StateMachine.ChangeState((int)state.Idol);
             }
-            if(Owner.skill1.IsPressed())
+            if (Owner.OnAttack)
+            {
+                StateMachine.ChangeState((int)state.Attack);
+            }
+            else if (Owner.OnSkill)
             {
                 StateMachine.ChangeState((int)state.SkillAttack);
             }
-            
+
         }
         public override void OnEnd()
         {
@@ -187,19 +197,57 @@ public class PlayerCon : MonoBehaviour,IStatusView
 
     public class AttackState : StateMachine<PlayerCon>.StateBase
     {
+        private bool attackHit = false;
         public override void OnStart()
         {
             Debug.Log("Attack");
+            Owner.anim.CrossFade(Owner.AnimAttack, 0.1f);
+            attackHit = false;
         }
         public override void OnUpdate()
         {
-            if(Owner.OnAttack == false)
+            AnimatorStateInfo stateInfo = Owner.anim.GetCurrentAnimatorStateInfo(0);
+
+            float hitTime = stateInfo.normalizedTime;
+            if(hitTime >= 0.2f && hitTime <= 0.7f)
+            {
+                if(!attackHit)
+                {
+                    hitCheckColl();
+                }
+            }
+
+            if(hitTime >= 1.0f)
             {
                 StateMachine.ChangeState((int)(state.Idol));
+                //if (stateInfo.IsName("Attack") && stateInfo.normalizedTime >= 1.0f)
+                //{
+                //    if (Owner.OnAttack == false)
+                //    {
+                //        StateMachine.ChangeState((int)(state.Idol));
+                //    }
+                //}
             }
         }
         public override void OnEnd()
         {
+
+        }
+        private void hitCheckColl()
+        {
+            float dagger = 1.2f;
+            
+
+            Collider[] hitEnemy = Physics.OverlapSphere(Owner.atkPoint.position, dagger, Owner.enemyLayer);
+            foreach (var enemy in hitEnemy)
+            {
+                //ここでダメージ処理
+
+                Debug.Log("Hit");
+
+                attackHit = true;
+
+            }
 
         }
     }
@@ -208,11 +256,16 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
         public override void OnStart()
         {
-
+            Owner.anim.CrossFade(Owner.AnimTakingDamage, 1.0f);
         }
         public override void OnUpdate()
         {
+            AnimatorStateInfo stateInfo = Owner.anim.GetCurrentAnimatorStateInfo(0);
 
+            if (stateInfo.IsName("TakingDamage") && stateInfo.normalizedTime >= 1.0f)
+            {
+                    StateMachine.ChangeState((int)(state.Idol));   
+            }
         }
         public override void OnEnd()
         {
@@ -225,13 +278,20 @@ public class PlayerCon : MonoBehaviour,IStatusView
         public override void OnStart()
         {
             Debug.Log("SkillAttack");
+            Owner.anim.CrossFade(Owner.AnimSkill, 0.1f);
         }
         public override void OnUpdate()
         {
-            if (Owner.OnSkill == false)//デバッグ用スキル
+            AnimatorStateInfo stateInfo = Owner.anim.GetCurrentAnimatorStateInfo(0);
+
+            if (stateInfo.IsName("Ability") && stateInfo.normalizedTime >= 1.0f)
             {
-                StateMachine.ChangeState((int)(state.Idol));
+                if (Owner.OnSkill == false)
+                {
+                    StateMachine.ChangeState((int)(state.Idol));
+                }
             }
+            
         }
         public override void OnEnd()
         {
@@ -244,23 +304,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         public override void OnStart()
         {
             Debug.Log("Dead");
-        }
-        public override void OnUpdate()
-        {
-            //シーン遷移
-            //アニメーション
-        }
-        public override void OnEnd()
-        {
-
-        }
-    }
-
-    public class PoseState : StateMachine<PlayerCon>.StateBase
-    {
-        public override void OnStart()
-        {
-
+            Owner.anim.CrossFade(Owner.AnimDeath, 0.1f);
         }
         public override void OnUpdate()
         {
@@ -338,7 +382,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         {
             OnAttack = true;
             DamageData dmgdata = new DamageData();
-            dmgdata.damageAmount = 10;
+            dmgdata.damageAmount = Atk;
             bossEnemy.TakeDamage(dmgdata);
         }
         else if( context.canceled)
