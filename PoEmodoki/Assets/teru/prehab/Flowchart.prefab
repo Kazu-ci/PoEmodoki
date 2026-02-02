@@ -234,9 +234,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 8921208583936015597}
+  - {fileID: 9110299416270306370}
   selectedCommands:
-  - {fileID: 7163091121935986040}
+  - {fileID: 514841101482282413}
   variables: []
   description: 
   stepPause: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   storyText: "\u307E\u3041\u3044\u3044..."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 29745344, guid: 0791e452d1017754c955ed31ead1754a, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1854,7 +1854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 80.65973
+    x: 82.47791
     y: 262.5528
     width: 79.83
     height: 40
@@ -2105,7 +2105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 71
   indentLevel: 0
-  storyText: "\u30DA\u30C8\u30EA\u30B5\u30A4\u30C8\u306E\u4F53\u304C\u660F\u304F\u721B\u308C\u308B"
+  storyText: "\u30E9\u30B8\u30A8\u30EB\u306E\u4F53\u304C\u660F\u304F\u721B\u308C\u308B"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2375,7 +2375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 81
   indentLevel: 0
-  storyText: "\u30DA\u30C8\u30EA\u30B5\u30A4\u30C8\u306F\u5730\u306B\u4F0F\u3057\u3001\u9244\u306E\u5302\u3044\u304C\u6F02\u3046"
+  storyText: "\u30E9\u30B8\u30A8\u30EB\u306F\u5730\u306B\u4F0F\u3057\u3001\u9244\u306E\u5302\u3044\u304C\u6F02\u3046"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -3520,7 +3520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 122
   indentLevel: 0
-  storyText: "\u30DA\u30C8\u30EA\u30B5\u30A4\u30C8\u306F\u6238\u60D1\u3046"
+  storyText: "\u30E9\u30B8\u30A8\u30EB\u306F\u6238\u60D1\u3046"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}

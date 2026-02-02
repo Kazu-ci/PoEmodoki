@@ -50,10 +50,12 @@ public class GameCon : MonoBehaviour
     public void ChangeTalk()
     {
         stateMachine.ChangeState((int)GameState.Talk);
+        currentState=GameState.Talk;
     }
     public void ChangeCombat()
     {
         stateMachine.ChangeState((int)GameState.Combat);
+        currentState = GameState.Combat;
     }
     public void TriggerNextConversation()
     {
@@ -88,7 +90,7 @@ public class GameCon : MonoBehaviour
     {
         if (currentObject == obj) currentObject = null;
     }
-    private void TryExecuteInteraction()
+    public void TryExecuteInteraction()
     {
         if (currentObject != null && !Flowchart.HasExecutingBlocks())
         {
