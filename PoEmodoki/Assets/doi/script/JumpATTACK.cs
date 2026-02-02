@@ -20,18 +20,18 @@ public class JumpATTACK : BaseSkill
     // ===== 初期化 =====
     public override void Setup(SkillStatus status)
     {
-        // ここは SkillStatus 側の変数名に合わせてね
+        
         jumpHeight = status.height;
         airTime = status.airTime;
         dropSpeed = status.speed;
-        shockRange = status.lenge;   // ← spellミスっぽいけど、元に合わせてる
+        shockRange = status.lenge;   
         damage = status.atk;
         effect = status.effect;
     }
 
     public override void EnemySetup(EnemyStatus Estatus)
     {
-        // 必要ならここでEnemy専用の補正を入れる
+        
     }
 
     // ===== Player がスキルを使う =====
@@ -75,7 +75,7 @@ public class JumpATTACK : BaseSkill
 
         Vector3 startPos = attackerTransform.position;
 
-        // ▲ 上昇：その場で真上にジャンプ
+       
         float t = 0f;
         while (t < airTime)
         {
@@ -88,8 +88,7 @@ public class JumpATTACK : BaseSkill
             yield return null;
         }
 
-        // ▼ 落下：指定した地点へ落ちる（XY合わせ）
-        // 地面の高さに合わせたいなら dropTargetWorldPos.y を地面Yにしてね
+        
         Vector3 dropTarget = new Vector3(dropTargetWorldPos.x, dropTargetWorldPos.y, dropTargetWorldPos.z);
 
         // ちょい上まで落とす（同じ高さだとMoveTowardsが止まらないケース対策）
@@ -106,7 +105,7 @@ public class JumpATTACK : BaseSkill
         // 最終的に着地位置を固定
         attackerTransform.position = new Vector3(dropTarget.x, dropTarget.y, dropTarget.z);
 
-        // 💥 衝撃波
+       
         ShockWave(attackerTransform.position, hitTargetTag);
 
         isJumping = false;

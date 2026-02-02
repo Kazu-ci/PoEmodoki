@@ -1,87 +1,110 @@
 #if UNITY_EDITOR
-using Unity.VisualScripting;
 using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
+
 public class blink : BaseSkill
 {
-    [SerializeField] SkillStatus skill;
-    float speed;
-    bool On=true;
-    bool used = false;
-    [SerializeField] float Distance = 5f;
-    void Blink(PlayerCon con)
-    {
-        // con.Getvalue(speed);
-        // On = false;
-        Vector3 forwardDirection = con.transform.forward;
-        Vector3 offset = forwardDirection * Distance;
-        Vector3 point = con.transform.position + offset;
-        point.y = con.transform.position.y;
-        con.transform.position = point;
-        if (skill.effect != null)
-        {
-            con.InstanciateSkillEffect(
-                skill.effect,
-                point,
-                Quaternion.Euler(-90, 0, 0)
-            );
-        }
+    float distance;          // ブリンク距離
+    float ct;          // クールタイム
+    GameObject effect;
 
-        On = false;
-    }
+    bool isReady = true;
+
+    // ===== 初期化 =====
     public override void Setup(SkillStatus status)
     {
-    }
-    public override void EnemySetup(EnemyStatus Estatus)
-    {
-    }
+        distance = status.length;    // Enemy側で使ってた length
+        ct = status.ct;  // もし無いなら固定値にしてOK
+        effect = status.effect;    }
+
+    public override void EnemySetup(EnemyStatus Estatus) { }
+
+    // ===== Player が使う =====
     public override void UseSkill(PlayerCon con)
     {
-        if (On)
+        if (!isReady) return;
+
+        Vector3 startPos = con.transform.position;
+
+        // 方向（移動入力があるならその方向、無いなら前方）
+        Vector3 dir = GetBlinkDirection(con);
+        if (dir.sqrMagnitude < 0.0001f) dir = con.transform.forward;
+
+        Vector3 rawTarget = startPos + dir.normalized * distance;
+
+        // NavMeshがあるなら、NavMesh上の安全な点に補正
+        Vector3 targetPos = ResolveBlinkTarget(rawTarget);
+
+        // 実移動
+        WarpOrMove(con.gameObject, targetPos);
+
+        // エフェクト
+        SpawnEffect(startPos);
+        SpawnEffect(targetPos);
+
+        // クールタイム開始
+        con.StartCoroutine(CooldownRoutine());
+    }
+
+    // ===== Enemy が使う =====
+    public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
+    {
+        // Enemy側は status を使ってもいいけど、Setup()の値で統一してもOK
+        float d = status.length;
+
+        Vector3 dir = (enemy.Player.transform.position - enemy.transform.position).normalized;
+        Vector3 rawTarget = enemy.transform.position + dir * d;
+
+        Vector3 targetPos = ResolveBlinkTarget(rawTarget);
+
+        WarpOrMove(enemy.gameObject, targetPos);
+        SpawnEffect(targetPos);
+    }
+
+    // ===== 入力方向の取得（環境に合わせて調整）=====
+    Vector3 GetBlinkDirection(PlayerCon con)
+    {
+        return con.transform.forward;
+    }
+
+    // ===== NavMesh上に補正（めり込み防止）=====
+    Vector3 ResolveBlinkTarget(Vector3 rawTarget)
+    {
+        // NavMeshが無いプロジェクトならそのまま返す
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(rawTarget, out hit, 2.0f, NavMesh.AllAreas))
         {
-            Blink(con);
-            used = true;
+            return hit.position;
+        }
+        return rawTarget;
+    }
+
+    // ===== Warp優先（NavMeshAgentが付いてたらWarp）=====
+    void WarpOrMove(GameObject obj, Vector3 targetPos)
+    {
+        var agent = obj.GetComponent<NavMeshAgent>();
+        if (agent != null && agent.enabled)
+        {
+            agent.Warp(targetPos);
         }
         else
         {
-            used = false;
+            obj.transform.position = targetPos;
         }
     }
 
-    public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
+    void SpawnEffect(Vector3 pos)
     {
-        NavMeshAgent agent = enemy.Agent;
-        GameObject player = enemy.Player;
-        // ブリンク距離
-        float distance = status.length;   // SkillStatus に length がある前提
+        if (effect == null) return;
+        GameObject.Instantiate(effect, pos, Quaternion.identity);
+    }
 
-        // プレイヤー方向へ
-        Vector3 dir = (enemy.Player.transform.position - enemy.transform.position).normalized;
-
-        // 移動先
-        Vector3 targetPos = enemy.transform.position + dir * distance;
-
-        // NavMeshAgent を使っているなら一旦止める
-        if (enemy.Agent != null)
-        {
-            enemy.Agent.Warp(targetPos);
-        }
-        else
-        {
-            enemy.transform.position = targetPos;
-        }
-
-        // エフェクト
-        if (status.effect != null)
-        {
-            GameObject.Instantiate(
-                status.effect,
-                enemy.transform.position,
-                Quaternion.identity
-            );
-        }
+    System.Collections.IEnumerator CooldownRoutine()
+    {
+        isReady = false;
+        yield return new WaitForSeconds(ct <= 0 ? 0.5f : ct);
+        isReady = true;
     }
 }

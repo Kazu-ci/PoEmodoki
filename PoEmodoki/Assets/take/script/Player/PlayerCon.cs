@@ -400,6 +400,15 @@ public class PlayerCon : MonoBehaviour,IStatusView
                 case SKILL.Blink:
                     skill = new blink();
                     break;
+                case SKILL.AoE:
+                    skill = new playerfollow();
+                    break;
+                case SKILL.Jump:
+                    skill = new JumpATTACK();
+                    break;
+                case SKILL.Bomb:
+                    skill = new skillbomb();
+                    break;
             }
         }
         skill.Setup(status);
