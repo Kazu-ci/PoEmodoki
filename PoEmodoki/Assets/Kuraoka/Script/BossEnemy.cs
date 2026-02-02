@@ -213,8 +213,8 @@ public class BossEnemy : Enemy
 
             if (distance < Owner.AttackRange)
             {
-                Vector3 dir = (Owner.transform.position - Owner.player.transform.position).normalized;
-                Vector3 retreatPos = Owner.player.transform.position + dir * Owner.AttackRange * 2;
+                Vector3 dir = (Owner.transform.position - Owner.playerpos).normalized;
+                Vector3 retreatPos = Owner.playerpos + dir * Owner.AttackRange * 2;
                 Owner.navMeshAgent.SetDestination(retreatPos);
             }
             else
@@ -230,7 +230,7 @@ public class BossEnemy : Enemy
                 Owner.navMeshAgent.SetDestination(roamTarget);
             }
 
-            Vector3 lookDir = Owner.player.transform.position - Owner.transform.position;
+            Vector3 lookDir = Owner.playerpos - Owner.transform.position;
             lookDir.y = 0;
             if (lookDir.sqrMagnitude > 0.01f)
             {
@@ -247,7 +247,7 @@ public class BossEnemy : Enemy
             float angle = UnityEngine.Random.Range(0f, Mathf.PI * 2f);
             float r = UnityEngine.Random.Range(0f, roamRadius);
             Vector3 offset = new Vector3(Mathf.Cos(angle) * r, 0, Mathf.Sin(angle) * r);
-            roamTarget = Owner.player.transform.position + offset;
+            roamTarget = Owner.playerpos + offset;
         }
     }
 
@@ -255,7 +255,7 @@ public class BossEnemy : Enemy
     {
         public override void OnStart()
         {
-            Owner.transform.LookAt(Owner.player.transform.position);
+            Owner.transform.LookAt(Owner.playerpos);
             Owner.animator.CrossFade(Owner.AnimAttack, 0.1f);
             Owner.navMeshAgent.isStopped = true;
         }
@@ -356,7 +356,7 @@ public class BossEnemy : Enemy
            
 
             // 向きを合わせる
-            Vector3 lookPos = Owner.player.transform.position;
+            Vector3 lookPos = Owner.playerpos;
             lookPos.y = Owner.transform.position.y;
             Owner.transform.LookAt(lookPos);
 

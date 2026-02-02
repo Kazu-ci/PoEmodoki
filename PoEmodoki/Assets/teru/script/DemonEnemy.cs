@@ -174,7 +174,7 @@ public class DemonEnemy : Enemy
 
 
             // 向きを合わせる
-            Vector3 lookPos = Owner.player.transform.position;
+            Vector3 lookPos = Owner.playerpos;
             lookPos.y = Owner.transform.position.y;
             Owner.transform.LookAt(lookPos);
             // スキルアニメ再生
@@ -253,7 +253,7 @@ public class DemonEnemy : Enemy
     {
         public override void OnStart()
         {
-            Owner.transform.LookAt(Owner.player.transform.position);
+            Owner.transform.LookAt(Owner.playerpos);
             Owner.animator.CrossFade(Owner.AnimDead, 0.1f);
 
             Owner.navMeshAgent.isStopped = true;

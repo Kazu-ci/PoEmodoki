@@ -11,7 +11,7 @@ public class SceneChanger : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.F12))
         {
-            FadeManager.Instance.LoadScene(sceneName,1f);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         }
     }
 }
