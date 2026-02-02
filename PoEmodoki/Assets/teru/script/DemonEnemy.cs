@@ -11,15 +11,25 @@ public class DemonEnemy : Enemy
 #if UNITY_EDITOR
     private SerializedObject seliarizeZonbiStatus;       //S0をキャッシュする用
 #endif
-    [SerializeField] SkillStatus skills;
+
     //protected NavMeshAgent navMeshAgent;
     [SerializeField] private List<GameObject> effects;
     [SerializeField] private List<Collider> attackColliders;
     private Dictionary<string, Collider> colliderDict;
     private Dictionary<string, GameObject> effectDict;
+
     private SkillStatus currentSkill;
     [SerializeField] int dropcount = 1;//ドロップするソウルの数
     [SerializeField] private GameObject soulprefab;//ドロップさせるソウルの種類
+    //アニメーション関係
+    public readonly int AnimIdle = Animator.StringToHash("idle00");
+    public readonly int AnimChase = Animator.StringToHash("run00");
+    public readonly int AnimWalk = Animator.StringToHash("walk00");
+    public readonly int AnimSkill = Animator.StringToHash("attack02");
+    public readonly int AnimHit = Animator.StringToHash("hit00");
+    public readonly int AnimAttack = Animator.StringToHash("attack01");
+    public readonly int AnimDead = Animator.StringToHash("die00");
+
     protected enum State
     {
         Idle,
@@ -51,6 +61,7 @@ public class DemonEnemy : Enemy
         stateMachine.Add<AttackIntervalState>((int)State.AttackInt);
         stateMachine.Add<HitState>((int)State.Hit);
         stateMachine.Add<DeadState>((int)State.Dead);
+        stateMachine.Onstart((int)State.Idle);
 
     }
 
@@ -66,7 +77,7 @@ public class DemonEnemy : Enemy
         float cDis;
         public override void OnStart()
         {
-            
+            Owner.animator.CrossFade(Owner.AnimIdle, 0.1f);
         }
         public override void OnUpdate()
         {
@@ -78,7 +89,7 @@ public class DemonEnemy : Enemy
         }
         public override void OnEnd()
         {
-            //Owner.enemyAnimation.ResetTrigger("Idle");
+
         }
     }
     private class PatrolState : StateMachine<DemonEnemy>.StateBase
@@ -90,6 +101,7 @@ public class DemonEnemy : Enemy
         bool firstInit = true;
         public override void OnStart()
         {
+
             //Owner.ChangeTexture(0);
             Owner.navMeshAgent.isStopped = false;
             if (firstInit)
@@ -103,7 +115,7 @@ public class DemonEnemy : Enemy
         }
         public override void OnUpdate()
         {
-            //Owner.enemyAnimation.SetTrigger("Walk");
+            Owner.animator.CrossFade(Owner.AnimIdle, 0.1f);
             float playerDis = Owner.Getdistance();
             var playerDir = Owner.playerpos - Owner.transform.position;
             var angle = Vector3.Angle(Owner.transform.forward, playerDir);
@@ -124,7 +136,7 @@ public class DemonEnemy : Enemy
         }
         public override void OnEnd()
         {
-            //Owner.enemyAnimation.ResetTrigger("Walk");
+
         }
     }
 
@@ -133,6 +145,7 @@ public class DemonEnemy : Enemy
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = false;
+            Owner.animator.CrossFade(Owner.AnimChase, 0.1f);
         }
         public override void OnUpdate()
         {
@@ -147,78 +160,57 @@ public class DemonEnemy : Enemy
         }
         public override void OnEnd()
         {
-            //Owner.animator.ResetTrigger("Chase");
+
         }
     }
 
     private class AttackState : StateMachine<DemonEnemy>.StateBase
     {
+        private bool _isSkillPlaying;
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
-            Owner.currentSkill = Owner.skills;
 
-            Owner.Strength = (int)Owner.skills.atk;
 
-            // プレイヤーに向ける
+
+            // 向きを合わせる
             Vector3 lookPos = Owner.player.transform.position;
             lookPos.y = Owner.transform.position.y;
             Owner.transform.LookAt(lookPos);
-
             // スキルアニメ再生
-            // Owner.animator.SetTrigger("Skill");
+            Owner.animator.CrossFade(Owner.AnimSkill, 0.1f);
 
 
             // ================================
             // スキル発射
             // ================================
-            FireSkill();
+            Owner.UseSkill(Owner.skills.Count);
 
+            _isSkillPlaying = true;
         }
 
-        private void FireSkill()
-        {
-            if (Owner.skills.effect == null)
-            {
-                Debug.LogWarning("Skill prefab is null for skill: " + Owner.skills.name);
-                return;
-            }
 
-            // 発射位置（少し前方 & 上）
-            Vector3 spawnPos =
-                Owner.transform.position +
-                Owner.transform.forward * 1.5f +
-                Vector3.up * 1.2f;
-            GameObject proj =
-                GameObject.Instantiate(Owner.skills.effect, spawnPos, Owner.transform.rotation);
-
-            // Rigidbody があれば速度を付与
-            Rigidbody rb = proj.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.linearVelocity = Owner.transform.forward * Owner.skills.speed;
-            }
-
-            // ================================
-            // 射程による自動消滅
-            // ================================
-            // lenge と length のどちらか大きい方を射程とする
-            float range = Mathf.Max(Owner.skills.lenge, Owner.skills.length);
-            if (range > 0 && Owner.skills.speed > 0)
-            {
-                float lifetime = range / Owner.skills.speed;
-                GameObject.Destroy(proj, lifetime);
-            }
-        }
 
         public override void OnUpdate()
         {
+            {
+                if (!_isSkillPlaying) return;
 
+                AnimatorStateInfo info =
+                    Owner.animator.GetCurrentAnimatorStateInfo(0);
 
+                // Skillアニメが再生完了したら遷移
+                if (info.shortNameHash == Owner.AnimSkill &&
+                    info.normalizedTime >= 1.0f)
+                {
+                    _isSkillPlaying = false;
+                    Owner.stateMachine.ChangeState((int)State.AttackInt);
+                }
+            }
         }
         public override void OnEnd()
         {
-            //Owner.enemyAnimation.ResetTrigger("Combo");
+
         }
     }
     private class AttackIntervalState : StateMachine<DemonEnemy>.StateBase
@@ -226,7 +218,7 @@ public class DemonEnemy : Enemy
         float time;
         public override void OnStart()
         {
-
+            Owner.animator.CrossFade(Owner.AnimIdle, 0.1f);
         }
         public override void OnUpdate()
         {
@@ -235,7 +227,7 @@ public class DemonEnemy : Enemy
         }
         public override void OnEnd()
         {
-            //Owner.enemyAnimation.ResetTrigger("Combo");
+
         }
     }
 
@@ -244,7 +236,7 @@ public class DemonEnemy : Enemy
     {
         public override void OnStart()
         {
-
+            Owner.animator.CrossFade(Owner.AnimHit, 0.1f);
         }
         public override void OnUpdate()
         {
@@ -253,7 +245,7 @@ public class DemonEnemy : Enemy
         }
         public override void OnEnd()
         {
-            //Owner.enemyAnimation.ResetTrigger("Combo");
+
         }
     }
 
@@ -262,7 +254,8 @@ public class DemonEnemy : Enemy
         public override void OnStart()
         {
             Owner.transform.LookAt(Owner.player.transform.position);
-            //Owner.enemyAnimation.SetTrigger("Combo");
+            Owner.animator.CrossFade(Owner.AnimDead, 0.1f);
+
             Owner.navMeshAgent.isStopped = true;
         }
         public override void OnUpdate()
@@ -272,7 +265,7 @@ public class DemonEnemy : Enemy
         }
         public override void OnEnd()
         {
-            //Owner.enemyAnimation.ResetTrigger("Combo");
+
         }
     }
     protected override void Drop()
@@ -286,4 +279,5 @@ public class DemonEnemy : Enemy
             Instantiate(soulprefab, thisobj.transform.position, Quaternion.identity);
         }
     }
+
 }

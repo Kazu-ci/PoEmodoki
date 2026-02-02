@@ -7,7 +7,7 @@ using UnityEngine.Accessibility;
 using UnityEngine.UI;
 using static UnityEngine.UI.GridLayoutGroup;
 
-public abstract class BaseSkill : MonoBehaviour, IUseSkill
+public abstract class BaseSkill : IUseSkill
 {
     abstract public void EnemySetup(EnemyStatus Estatus);
     abstract public void Setup(SkillStatus status);
