@@ -43,8 +43,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
     //ステータス
     int MaxHP;
     int HP;
-    int Defense;
-    int MP;
     int Atk;
     float MoveSpeed;
     float AtkSpeed;
@@ -92,8 +90,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
         MaxHP = player.PlayerHp;
         HP = MaxHP;
-        Defense = player.PlayerDefense;
-        MP = player.PlayerMp;
         MoveSpeed = player.PlayerSpeed;
         AtkSpeed = player.PlayerAtkSpeed;
         CastSpeed = player.PlayerCastSpeed;
@@ -230,6 +226,10 @@ public class PlayerCon : MonoBehaviour,IStatusView
             Owner.anim.CrossFade(Owner.AnimAttack, 0.1f);
             attackHit = false;
             Owner.OnAttack = false;
+            if(SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySE(SoundManager.SE.Attack);
+            }
         }
         public override void OnUpdate()
         {
@@ -287,6 +287,10 @@ public class PlayerCon : MonoBehaviour,IStatusView
         public override void OnStart()
         {
             Owner.anim.CrossFade(Owner.AnimTakingDamage, 0.1f);
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySE(SoundManager.SE.Hit);
+            }
         }
         public override void OnUpdate()
         {
@@ -339,6 +343,10 @@ public class PlayerCon : MonoBehaviour,IStatusView
         {
             Debug.Log("Dead");
             Owner.anim.CrossFade(Owner.AnimDeath, 0.1f);
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySE(SoundManager.SE.Dead);
+            }
         }
         public override void OnUpdate()
         {
