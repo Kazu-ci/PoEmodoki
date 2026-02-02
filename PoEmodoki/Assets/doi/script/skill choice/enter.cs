@@ -16,7 +16,7 @@ public class CursorSelectImage : MonoBehaviour
     [SerializeField] SkillStatus slot2;
     [SerializeField] SkillStatus slot3;
     private Sprite selectedSprite;
-    LIistopen listopen;
+    //LIistopen listopen;
     private string selectedname;
     private bool hasSelected = false;
     void Start()
