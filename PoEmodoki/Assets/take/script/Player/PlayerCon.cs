@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
@@ -7,13 +8,13 @@ using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR;
 
 
 
-
+[RequireComponent(typeof(CharacterController))]
 public class PlayerCon : MonoBehaviour,IStatusView
 {
+    //スクリプタブルオブジェクト
     [SerializeField]PlayerStatus player;
 #if UNITY_EDITOR
     private SerializedObject sPlayerStatus;
@@ -29,10 +30,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     //インタラクト対象レイヤー
     [SerializeField] private LayerMask InteractLayer;
     InputAction move;
-    InputAction skill1,skill2,skill3,skill4;
-    //ロックオン
-    [SerializeField] private GameObject lockonTarget;
-    [SerializeField] private GameObject playerObj;
+
     public List<SkillStatus> mySkills = new List<SkillStatus>();
     public List<SkillStatus> allskill = new List<SkillStatus>();
     private Vector2 moveVec = default;
@@ -67,6 +65,18 @@ public class PlayerCon : MonoBehaviour,IStatusView
     public readonly int AnimTakingDamage = Animator.StringToHash("TakingDamage");
     public readonly int AnimDeath = Animator.StringToHash("Death");
 
+    //CharactorController関連
+    [SerializeField]private CharacterController charaCon;
+    private Vector2 moveInput = default;
+
+    //待機命令
+    private WaitForSeconds wait;
+
+    //無敵時間
+    [SerializeField] private float invincibleDuration = 1.0f;
+    //無敵フラグ
+    private bool isInvincible = false;
+
     StateMachine<PlayerCon> stateMachine;
     enum state
     {
@@ -76,8 +86,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
         Hit,
         SkillAttack,
         Dead,
-        pose,
-
     }
 
     private void Awake()
@@ -94,13 +102,9 @@ public class PlayerCon : MonoBehaviour,IStatusView
         Critical = player.PlayerCritical;
         Atk = player.PlayerAtk;
 
-
         move = PlayerInput.actions["Move"];
-        skill1 = PlayerInput.actions["Skill1"];
-        skill2 = PlayerInput.actions["Skill2"];
-        skill3 = PlayerInput.actions["Skill3"];
-        skill4 = PlayerInput.actions["Skill4"];
 
+        wait = new WaitForSeconds(0.1f);
 
         stateMachine = new StateMachine<PlayerCon>(this);
         stateMachine.Add<MoveState>((int)state.Move);
@@ -110,23 +114,38 @@ public class PlayerCon : MonoBehaviour,IStatusView
         stateMachine.Add<SkillAttackState>((int)state.SkillAttack);
         stateMachine.Add<DeadState>((int)state.Dead);
         stateMachine.Onstart((int)state.Idol);
-        //デバッグ用スキル
-        //mySkills.Add(skill);
-        
-    }
-    void Start()
-    {
         
     }
     void Update()
     {
-        if (HP <= 0) { stateMachine.ChangeState((int)state.Dead); }
+
+        if(GameCon.Instance != null && GameCon.Instance.currentState == GameCon.GameState.Talk)
+        {
+            moveInput = Vector2.zero;
+            if(!(stateMachine.CurrentState is IdolState))
+            {
+                stateMachine.ChangeState((int)state.Idol);
+            }
+            return;
+        }
+
+        moveInput = move.ReadValue<Vector2>();
+
         stateMachine.OnUpdate();
     }
+
+    public void MoveCharacter(Vector3 motion)
+    {
+        charaCon.Move(motion);
+    }
+
     public void Getvalue(float s)
     {
         MoveSpeed = s;
     }
+    //------------------------------------------------------------------------------------------------
+    //以下ステート管理
+    //------------------------------------------------------------------------------------------------
     public class MoveState : StateMachine<PlayerCon>.StateBase
     {
         public override void OnStart()
@@ -136,21 +155,24 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         public override void OnUpdate()
         {
-            Vector3 direction = new Vector3(Owner.moveVec.x,0, Owner.moveVec.y);
             //移動処理
-            if (direction != Vector3.zero)
+            Vector3 direction = new Vector3(Owner.moveInput.x,0, Owner.moveInput.y).normalized;
+            
+            if (direction.magnitude >= 0.1f)
             {
-                Owner.gameObject.transform.Translate
-                (new Vector3(Owner.moveVec.x, 0, Owner.moveVec.y) * Owner.MoveSpeed * Time.deltaTime, Space.World);
                 //回転処理
-                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                Quaternion targetRotation = Quaternion.Euler(0f,targetAngle,0f);
                 Owner.transform.rotation = Quaternion.Slerp(Owner.transform.rotation, targetRotation, 10f * Time.deltaTime);
+
+                //移動ベクトル
+                Vector3 moveDir = targetRotation * Vector3.forward;
+
+                //移動の実行
+                Owner.MoveCharacter(moveDir * Owner.MoveSpeed * Time.deltaTime);
             }
 
-            if (Owner.move.ReadValue<Vector2>() == new Vector2(0, 0))
-            {
-                StateMachine.ChangeState((int)state.Idol);
-            }
+            //以下ステート遷移判定
             if (Owner.OnAttack)
             {
                 StateMachine.ChangeState((int)state.Attack);
@@ -158,6 +180,10 @@ public class PlayerCon : MonoBehaviour,IStatusView
             else if (Owner.OnSkill)
             {
                 StateMachine.ChangeState((int)state.SkillAttack);
+            }
+            else if (Owner.moveInput == Vector2.zero)
+            {
+                StateMachine.ChangeState((int)state.Idol);
             }
 
         }
@@ -176,7 +202,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         public override void OnUpdate()
         {
-            if(Owner.moveVec != Vector2.zero)
+            if(Owner.moveInput != Vector2.zero)
             {
                 StateMachine.ChangeState((int)state.Move);
             }
@@ -203,10 +229,20 @@ public class PlayerCon : MonoBehaviour,IStatusView
             Debug.Log("Attack");
             Owner.anim.CrossFade(Owner.AnimAttack, 0.1f);
             attackHit = false;
+            Owner.OnAttack = false;
         }
         public override void OnUpdate()
         {
             AnimatorStateInfo stateInfo = Owner.anim.GetCurrentAnimatorStateInfo(0);
+
+            if(Owner.anim.IsInTransition(0))
+            {
+                return;
+            }
+            if(!stateInfo.IsName("Attack"))
+            {
+                return;
+            }
 
             float hitTime = stateInfo.normalizedTime;
             if(hitTime >= 0.2f && hitTime <= 0.7f)
@@ -220,13 +256,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
             if(hitTime >= 1.0f)
             {
                 StateMachine.ChangeState((int)(state.Idol));
-                //if (stateInfo.IsName("Attack") && stateInfo.normalizedTime >= 1.0f)
-                //{
-                //    if (Owner.OnAttack == false)
-                //    {
-                //        StateMachine.ChangeState((int)(state.Idol));
-                //    }
-                //}
             }
         }
         public override void OnEnd()
@@ -235,7 +264,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         }
         private void hitCheckColl()
         {
-            float dagger = 1.2f;
+            float dagger = 5f;
             
 
             Collider[] hitEnemy = Physics.OverlapSphere(Owner.atkPoint.position, dagger, Owner.enemyLayer);
@@ -256,7 +285,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     {
         public override void OnStart()
         {
-            Owner.anim.CrossFade(Owner.AnimTakingDamage, 1.0f);
+            Owner.anim.CrossFade(Owner.AnimTakingDamage, 0.1f);
         }
         public override void OnUpdate()
         {
@@ -264,7 +293,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
 
             if (stateInfo.IsName("TakingDamage") && stateInfo.normalizedTime >= 1.0f)
             {
-                    StateMachine.ChangeState((int)(state.Idol));   
+                StateMachine.ChangeState((int)(state.Idol));   
+            }
+            else
+            {
+                StateMachine.ChangeState((int)state.Dead);
             }
         }
         public override void OnEnd()
@@ -315,10 +348,12 @@ public class PlayerCon : MonoBehaviour,IStatusView
 
         }
     }
-
+    //------------------------------------------------------------------------------------------------
+    //以下プレイヤーイベント
+    //------------------------------------------------------------------------------------------------
     public void MovePlayer(InputAction.CallbackContext context)
     {
-        moveVec = context.ReadValue<Vector2>();
+        moveInput = context.ReadValue<Vector2>();
     }
     //デバッグ用スキル
     public void OnSkillQ(InputAction.CallbackContext context)
@@ -397,7 +432,9 @@ public class PlayerCon : MonoBehaviour,IStatusView
             TryInteract();
         }
     }
-
+    //------------------------------------------------------------------------------------------------
+    //以下その他のメソッド
+    //------------------------------------------------------------------------------------------------
     public void InstanciateSkillEffect(GameObject go, Vector3 pos, Quaternion rotation)
     {
         Debug.Log("InsatntiateSkill");
@@ -471,6 +508,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             {
                 //実行
                 interactable.OnInteract(this);
+                //GameCon.Instance.TryExecuteInteraction();
                 return;
             }
         }
@@ -478,9 +516,19 @@ public class PlayerCon : MonoBehaviour,IStatusView
 
     public int TakeDamage(DamageData damageData)
     {
+        if(isInvincible)
+        {
+            return 0;
+        }
         //ダメージを受け取って現在のHPを減らす
        HP-=(int)damageData.damageAmount;
-        return (int) damageData.damageAmount;
+        if(HP > 0)
+        {
+            stateMachine.ChangeState((int)state.Hit);
+
+            StartCoroutine(OnInvincibleRoutine());
+        }
+            return (int)damageData.damageAmount;
     }
     private void OnEnable()
     {
@@ -490,5 +538,15 @@ public class PlayerCon : MonoBehaviour,IStatusView
     private void OnDisable()
     {
         playerAnchor = null;
+    }
+    private IEnumerator OnInvincibleRoutine()
+    {
+        Debug.Log("無敵");
+        isInvincible = true;
+
+        yield return new WaitForSeconds(invincibleDuration);
+
+        isInvincible = false;
+
     }
 }
