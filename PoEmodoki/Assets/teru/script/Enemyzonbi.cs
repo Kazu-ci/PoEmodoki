@@ -66,7 +66,7 @@ public class Enemyzonbi : Enemy
         float cDis;
         public override void OnStart()
         {
-            
+            Owner.animator.SetTrigger("Idle");
         }
         public override void OnUpdate()
         {
@@ -78,7 +78,7 @@ public class Enemyzonbi : Enemy
         }
         public override void OnEnd()
         {
-            //Owner.enemyAnimation.ResetTrigger("Idle");
+            Owner.animator.ResetTrigger("Idle");
         }
     }
     private class PatrolState : StateMachine<Enemyzonbi>.StateBase
