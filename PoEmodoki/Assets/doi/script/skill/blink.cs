@@ -3,80 +3,109 @@ using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
+
 public class blink : BaseSkill
 {
-    [SerializeField] SkillStatus skill;
-    float speed;
-    bool On=true;
-    bool used = false;
-   void Start()
-    {
-        speed = 5;
-    }
-    void Blink(PlayerCon con)
-    {
-        con.Getvalue(speed);
-        On = false;
-    }
+    float distance;          // ブリンク距離
+    float ct;          // クールタイム
+    GameObject effect;
+
+    bool isReady = true;
+
+    // ===== 初期化 =====
     public override void Setup(SkillStatus status)
     {
+        distance = status.length;   
+       ct = status.ct;  
+        effect = status.effect;
     }
-    public override void EnemySetup(EnemyStatus Estatus)
-    {
-    }
+
+    public override void EnemySetup(EnemyStatus Estatus) { }
+
+    // ===== Player が使う =====
     public override void UseSkill(PlayerCon con)
     {
-        if ( On == true)
-        {
-            Blink(con);
-            used = true;
-        }
-        else
-        {
-            used = false;
-        }
-        /*if (used == true)
-        {
-            ct = data.ct;
-        }
-        else
-        {
-            --ct;
-        }*/
-    }
+        if (!isReady) return;
 
-    public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
-    {
-        NavMeshAgent agent = enemy.Agent;
-        GameObject player = enemy.Player;
-        // ブリンク距離
-        float distance = status.length;   // SkillStatus に length がある前提
+        Vector3 startPos = con.transform.position;
 
-        // プレイヤー方向へ
-        Vector3 dir = (enemy.Player.transform.position - enemy.transform.position).normalized;
+        // 方向（移動入力があるならその方向、無いなら前方）
+        Vector3 dir = GetBlinkDirection(con);
+        if (dir.sqrMagnitude < 0.0001f) dir = con.transform.forward;
 
-        // 移動先
-        Vector3 targetPos = enemy.transform.position + dir * distance;
+        Vector3 rawTarget = startPos + dir.normalized * distance;
 
-        // NavMeshAgent を使っているなら一旦止める
-        if (enemy.Agent != null)
-        {
-            enemy.Agent.Warp(targetPos);
-        }
-        else
-        {
-            enemy.transform.position = targetPos;
-        }
+        // NavMeshがあるなら、NavMesh上の安全な点に補正
+        Vector3 targetPos = ResolveBlinkTarget(rawTarget);
+
+        // 実移動
+        WarpOrMove(con.gameObject, targetPos);
 
         // エフェクト
-        if (status.effect != null)
+        SpawnEffect(startPos);
+        SpawnEffect(targetPos);
+
+        // クールタイム開始
+        con.StartCoroutine(CooldownRoutine());
+    }
+
+    // ===== Enemy が使う =====
+    public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
+    {
+      
+        float d = status.length;
+
+        Vector3 dir = (enemy.Player.transform.position - enemy.transform.position).normalized;
+        Vector3 rawTarget = enemy.transform.position + dir * d;
+
+        Vector3 targetPos = ResolveBlinkTarget(rawTarget);
+
+        WarpOrMove(enemy.gameObject, targetPos);
+        SpawnEffect(targetPos);
+    }
+
+   
+    Vector3 GetBlinkDirection(PlayerCon con)
+    {
+            return con.transform.forward;
+    }
+
+   
+    Vector3 ResolveBlinkTarget(Vector3 rawTarget)
+    {
+       
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(rawTarget, out hit, 2.0f, NavMesh.AllAreas))
         {
-            GameObject.Instantiate(
-                status.effect,
-                enemy.transform.position,
-                Quaternion.identity
-            );
+            return hit.position;
         }
+        return rawTarget;
+    }
+
+   
+    void WarpOrMove(GameObject obj, Vector3 targetPos)
+    {
+        var agent = obj.GetComponent<NavMeshAgent>();
+        if (agent != null && agent.enabled)
+        {
+            agent.Warp(targetPos);
+        }
+        else
+        {
+            obj.transform.position = targetPos;
+        }
+    }
+
+    void SpawnEffect(Vector3 pos)
+    {
+        if (effect == null) return;
+        GameObject.Instantiate(effect, pos, Quaternion.identity);
+    }
+
+    System.Collections.IEnumerator CooldownRoutine()
+    {
+        isReady = false;
+        yield return new WaitForSeconds(ct <= 0 ? 0.5f : ct);
+        isReady = true;
     }
 }

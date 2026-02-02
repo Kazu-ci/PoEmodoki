@@ -7,6 +7,8 @@ public enum SKILL
 {
     None = -1,
     AOE,
+    AoE,
+    Jump,
     Tossin,
     Bomb,
     Blink,
@@ -22,6 +24,8 @@ public class SkillStatus : ScriptableObject
     public float time;
     public float ct;//cooltime
     public float speed;
+    public float height;
+    public float airtime;
     public float lenge;
     public float length;
     public Image Icon;

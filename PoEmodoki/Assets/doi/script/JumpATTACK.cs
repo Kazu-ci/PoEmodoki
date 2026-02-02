@@ -1,69 +1,138 @@
 using System.Collections;
-using System.Xml.Serialization;
 using UnityEngine;
 
-public class JumpATTACK : MonoBehaviour
+public class JumpATTACK : BaseSkill
 {
-    public Transform player;
-    public float jumpHeight = 6f;      // どれくらい上に飛ぶか
-    public float airTime = 0.7f;       // 滞空時間
-    public float dropSpeed = 15f;      // 落下速度
-    public float shockRange = 4f;      // 衝撃波の範囲
-    public int damage = 20;
-    public GameObject effect;
-    private bool isJumping = false;
-    public GameObject enemy;
-    
-    public void StartJumpAttack()
+    [Header("Skill Params")]
+    float jumpHeight;
+    float airTime;
+    float dropSpeed;
+    float shockRange;
+    float damage;
+
+    GameObject effect;
+
+    bool isJumping = false;
+
+ 
+    Transform lastAttacker;
+
+ 
+    public override void Setup(SkillStatus status)
     {
-        if (!isJumping)
-            StartCoroutine(JumpAttackRoutine());
+        jumpHeight = status.height;
+        airTime = status.airtime;
+        dropSpeed = status.speed;
+        shockRange = status.lenge;  
+        damage = status.atk;
+        effect = status.effect;
     }
 
-    IEnumerator JumpAttackRoutine()
+    public override void EnemySetup(EnemyStatus Estatus)
+    {
+       
+    }
+
+    
+    public override void UseSkill(PlayerCon con)
+    {
+        if (isJumping) return;
+
+        
+        Vector3 dropPos = con.transform.position;
+
+        con.StartCoroutine(JumpAttackRoutine(
+            attackerTransform: con.transform,
+            dropTargetWorldPos: dropPos,
+            hitTargetTag: "Enemy"
+        ));
+    }
+
+    
+    public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
+    {
+        if (isJumping) return;
+
+        Transform playerTf = enemy.Player != null ? enemy.Player.transform : null;
+        if (playerTf == null) return;
+
+        Vector3 dropPos = playerTf.position;
+
+        enemy.StartCoroutine(JumpAttackRoutine(
+            attackerTransform: enemy.transform,
+            dropTargetWorldPos: dropPos,
+            hitTargetTag: "Player"     
+        ));
+    }
+
+   
+    IEnumerator JumpAttackRoutine(Transform attackerTransform, Vector3 dropTargetWorldPos, string hitTargetTag)
     {
         isJumping = true;
-        Vector3 targetPos = player.position;
-        float t = 0;
-        Vector3 startPos = enemy.transform.position;
+        lastAttacker = attackerTransform;
 
+        Vector3 startPos = attackerTransform.position;
+
+       
+        float t = 0f;
         while (t < airTime)
         {
-            float y = Mathf.Lerp(startPos.y, startPos.y + jumpHeight, t / airTime);
-            enemy.transform.position = new Vector3(startPos.x, y, startPos.z);
+            float rate = t / airTime;
+            float y = Mathf.Lerp(startPos.y, startPos.y + jumpHeight, rate);
+
+            attackerTransform.position = new Vector3(startPos.x, y, startPos.z);
+
             t += Time.deltaTime;
             yield return null;
         }
 
-        // ▼ 記録したプレイヤー位置へ落下
-        while (enemy.transform.position.y > targetPos.y + 0.2f)
+        Vector3 dropTarget = new Vector3(dropTargetWorldPos.x, dropTargetWorldPos.y, dropTargetWorldPos.z);
+
+        while (attackerTransform.position.y > dropTarget.y + 0.05f)
         {
-            enemy.transform.position = Vector3.MoveTowards(
-                enemy.transform.position,
-                new Vector3(targetPos.x, targetPos.y, targetPos.z),
+            attackerTransform.position = Vector3.MoveTowards(
+                attackerTransform.position,
+                dropTarget,
                 dropSpeed * Time.deltaTime
             );
             yield return null;
         }
 
-        ShockWave();
+      
+        attackerTransform.position = new Vector3(dropTarget.x, dropTarget.y, dropTarget.z);
+
+        
+        ShockWave(attackerTransform.position, hitTargetTag);
 
         isJumping = false;
     }
-    void ShockWave()
-    {
+
     
-        Collider[] hits = Physics.OverlapSphere(enemy.transform.position, shockRange);
+    void ShockWave(Vector3 center, string hitTargetTag)
+    {
+        Collider[] hits = Physics.OverlapSphere(center, shockRange);
 
         foreach (Collider hit in hits)
         {
-            if (hit.CompareTag("Player"))
-            {
-               //damage
-            }
-        }
-       Instantiate(effect, enemy.transform.position, Quaternion.identity);
-        effect.GetComponent<ParticleSystem>().Play();
+            if (!hit.CompareTag(hitTargetTag)) continue;
 
+        }
+
+        if (effect != null)
+        {
+            GameObject fx = Instantiate(effect, center, Quaternion.identity);
+
+            ParticleSystem ps = fx.GetComponent<ParticleSystem>();
+            if (ps != null) ps.Play();
+        }
+    }
+
+   
+    void OnDrawGizmosSelected()
+    {
+        if (lastAttacker == null) return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(lastAttacker.position, shockRange);
     }
 }
