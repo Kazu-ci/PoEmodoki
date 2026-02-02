@@ -18,7 +18,7 @@ public class OrkEnemy : Enemy
     private Dictionary<string, Collider> colliderDict;
     private Dictionary<string, GameObject> effectDict;
    
-    private SkillStatus currentSkill;
+    //private SkillStatus currentSkill;
     [SerializeField] int dropcount = 1;//ドロップするソウルの数
     [SerializeField] private GameObject soulprefab;//ドロップさせるソウルの種類
     //アニメーション関係
