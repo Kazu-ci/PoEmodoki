@@ -126,6 +126,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         public override void OnStart()
         {
             Debug.Log("Move");
+            Owner.anim.CrossFade(Owner.AnimRun, 0.1f);
         }
         public override void OnUpdate()
         {
@@ -169,11 +170,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
             {
                 StateMachine.ChangeState((int)state.Move);
             }
-            if(Owner.OnSkill)
+            else if(Owner.OnSkill)
             {
                 StateMachine.ChangeState((int)state.SkillAttack);
             }
-            if (Owner.OnAttack)
+            else if (Owner.OnAttack)
             {
                 StateMachine.ChangeState((int)state.Attack);
             }
