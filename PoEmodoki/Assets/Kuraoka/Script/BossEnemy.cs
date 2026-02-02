@@ -167,7 +167,7 @@ public class BossEnemy : Enemy
         }
         public override void OnUpdate()
         {
-            Vector3 playerPos = Owner.player.transform.position;
+            Vector3 playerPos = Owner.playerpos;
             navMeshAgent.SetDestination(playerPos);
             if (Owner.Getdistance() <= Owner.AttackRange)
             {
