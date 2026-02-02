@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using Unity.VisualScripting;
 using UnityEditor;
 #endif
 using UnityEngine;
@@ -10,13 +11,25 @@ public class blink : BaseSkill
     float speed;
     bool On=true;
     bool used = false;
-   void Start()
-    {
-        speed = 5;
-    }
+    [SerializeField] float Distance = 5f;
     void Blink(PlayerCon con)
     {
-        con.Getvalue(speed);
+        // con.Getvalue(speed);
+        // On = false;
+        Vector3 forwardDirection = con.transform.forward;
+        Vector3 offset = forwardDirection * Distance;
+        Vector3 point = con.transform.position + offset;
+        point.y = con.transform.position.y;
+        con.transform.position = point;
+        if (skill.effect != null)
+        {
+            con.InstanciateSkillEffect(
+                skill.effect,
+                point,
+                Quaternion.Euler(-90, 0, 0)
+            );
+        }
+
         On = false;
     }
     public override void Setup(SkillStatus status)
@@ -27,7 +40,7 @@ public class blink : BaseSkill
     }
     public override void UseSkill(PlayerCon con)
     {
-        if ( On == true)
+        if (On)
         {
             Blink(con);
             used = true;
@@ -36,14 +49,6 @@ public class blink : BaseSkill
         {
             used = false;
         }
-        /*if (used == true)
-        {
-            ct = data.ct;
-        }
-        else
-        {
-            --ct;
-        }*/
     }
 
     public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
