@@ -1,7 +1,8 @@
 using TMPro;
+using System;
 using UnityEngine;
 
-public class playerfollow : MonoBehaviour
+public class playerfollow : BaseSkill
 {
     [SerializeField]  GameObject objprefab;
     [SerializeField] GameObject player;
@@ -19,20 +20,40 @@ public class playerfollow : MonoBehaviour
        
        
     }
-    void Update()
+    public override void Setup(SkillStatus status)
     {
+        
+    }
+    public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
+    {
+
+    }
+    public override void EnemySetup(EnemyStatus Estatus)
+    {
+        
+    }
+    public override void UseSkill(PlayerCon con)
+    {
+        void PlayerPositionget()
+        {
+            playerPosition = con.transform.position;
+        }
         ppp = new(playerPosition.x, 0.1f, playerPosition.z);
         if (Input.GetKeyDown(spawnKey) && alive == false)
         {
-            obj = Instantiate(objprefab, ppp, Quaternion.Euler(90, 0, 0));
-            Instantiate(Particle);
+            obj = UnityEngine.Object.Instantiate(objprefab, ppp, Quaternion.Euler(90, 0, 0));
+            UnityEngine.Object.Instantiate(Particle);
         }
-        if (count > 10*60)
+        if (count > 10 * 60)
         {
-            Destroy(obj);
+            UnityEngine.Object.Destroy(obj);
             count = 0;
         }
         Debug.Log(alive);
+    }
+    void Update()
+    {
+      
     }
     void LateUpdate()
     {

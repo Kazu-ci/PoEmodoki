@@ -2,16 +2,21 @@ using Fungus;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+using System.Linq;
+using TMPro;
 
 public class CursorSelectImage : MonoBehaviour
 {
     public Image cursorImage;         // カーソル用のImage
     public Image[] targetImages; // 判定対象のImageたち
     public Image[] targetslots;
+    public TextMeshProUGUI text;
     [SerializeField] SkillStatus slot1;
     [SerializeField] SkillStatus slot2;
     [SerializeField] SkillStatus slot3;
     private Sprite selectedSprite;
+    LIistopen listopen;
     private string selectedname;
     private bool hasSelected = false;
     void Start()
@@ -36,11 +41,12 @@ public class CursorSelectImage : MonoBehaviour
             {
                 if (IsRectOverlapping(cursorImage.rectTransform, img.rectTransform))
                 {
-                    selectedSprite = img.sprite;
-                    selectedname = img.transform.parent.name;
-                    hasSelected = true;
-                    Debug.Log("画像を選択しました: " + img.name);
-                    break; 
+                        selectedSprite = img.sprite;
+                        selectedname = img.transform.parent.name;
+                        hasSelected = true;
+                        Debug.Log("画像を選択しました: " + img.name);
+                        break;
+          
                 }
             }
             if (hasSelected)

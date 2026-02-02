@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class skillbomb : BaseSkill
 {
     GameObject effect;
+    GameObject bomb;
     float initCt;
     float ct;
+    [SerializeField] SkillStatus data;
 
     public override void Setup(SkillStatus status)
     {
         effect = status.effect;
         initCt = status.ct;
+        bomb = data.obj;
     }
     public override void EnemySetup(EnemyStatus Estatus)
     {
@@ -21,7 +24,10 @@ public class skillbomb : BaseSkill
 
     public override void UseSkill(PlayerCon con)
     {
+        
         Vector3 spawnPos = con.transform.position + con.transform.forward * 1.5f;
+        UnityEngine.Object.Instantiate(bomb,spawnPos, Quaternion.Euler(-90, 0, 0));
+        Debug.Log("èoåªÇµÇ‹ÇµÇΩ");
         spawnPos.y -= -0.48f;
         if (ct < 0)
         {
@@ -33,7 +39,10 @@ public class skillbomb : BaseSkill
             --ct;
         }
     }
-
+    void OnCollisionEnter(Collision collision)
+    {
+        UnityEngine.Object.Destroy(bomb);
+    }
     public override void EnemyUseSkill(Enemy enemy, SkillStatus status)
     {
         Vector3 spawnPos = enemy.transform.position + enemy.transform.forward * 1.5f;
