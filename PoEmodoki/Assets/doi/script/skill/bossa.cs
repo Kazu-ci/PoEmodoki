@@ -14,7 +14,7 @@ public class bossa : JumpATTACK
     {
         if (Input.GetKeyDown(KeyCode.J)) 
         {
-           StartJumpAttack();
+          
         }
     }
 }
