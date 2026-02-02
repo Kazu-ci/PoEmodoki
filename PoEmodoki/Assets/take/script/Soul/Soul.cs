@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,7 +33,7 @@ public class Soul : MonoBehaviour, IInteractable, IStatusView
             Destroy(gameObject);
         }
     }
-
+#if UNITY_EDITOR
     public SerializedObject GetSerializedBaseStatus()
     {
         if (data == null)
@@ -45,6 +47,7 @@ public class Soul : MonoBehaviour, IInteractable, IStatusView
         }
         return sSkill;
     }
+#endif
 #if UNITY_EDITOR
     public void DrawRunningStatusGUI()
     {
