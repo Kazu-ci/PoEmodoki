@@ -14,6 +14,11 @@ public class CombatState : StateMachine<GameCon>.StateBase
         if (Owner.pStatus.PlayerHp <= 0) {
             StateMachine.ChangeState((int)GameState.End);
         }
+        if (Owner.BossArea())
+        {
+            Owner.TriggerNextConversation();
+            Owner.BossOut();
+        }
         if (Owner.eStatus.EnemyName == "Boss" && Owner.eStatus.EnemyHp <= 200)
         {
             Owner.TriggerNextConversation();
