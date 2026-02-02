@@ -271,6 +271,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             foreach (var enemy in hitEnemy)
             {
                 //‚±‚±‚Åƒ_ƒ[ƒWˆ—
+                
 
                 Debug.Log("Hit");
 
