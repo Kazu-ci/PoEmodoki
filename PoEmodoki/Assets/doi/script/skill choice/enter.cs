@@ -31,7 +31,7 @@ public class CursorSelectImage : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(slot1.Skillname);
+        
         if (Input.GetKeyDown(KeyCode.Return))
         {
 

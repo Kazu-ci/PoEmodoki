@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f712dd0d800e443aa0346caae53df0, type: 3}
   m_Name: Bron
   m_EditorClassIdentifier: 
-  EnemyHp: 0
-  EnemyAtk: 0
-  EnemyDefense: 0
-  EnemySpeed: 0
-  EnemyAtkSpeed: 0
-  EnemyCastSpeed: 0
-  EnemySens: 0
-  EnemyLength: 0
-  EnemyElementDefense: 0
-  EnemyFov: 0
+  EnemyHp: 100
+  EnemyAtk: 20
+  EnemyDefense: 50
+  EnemySpeed: 100
+  EnemyAtkSpeed: 5
+  EnemyCastSpeed: 10
+  EnemySens: 60
+  EnemyLength: 20
+  EnemyElementDefense: 10
+  EnemyFov: 110
   EnemyName: 

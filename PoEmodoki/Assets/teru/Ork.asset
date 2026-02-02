@@ -16,10 +16,10 @@ MonoBehaviour:
   EnemyAtk: 20
   EnemyDefense: 50
   EnemySpeed: 100
-  EnemyAtkSpeed: 20
+  EnemyAtkSpeed: 1
   EnemyCastSpeed: 1
   EnemySens: 80
-  EnemyLength: 100
+  EnemyLength: 10
   EnemyElementDefense: 20
-  EnemyFov: 60
+  EnemyFov: 110
   EnemyName: Orc
