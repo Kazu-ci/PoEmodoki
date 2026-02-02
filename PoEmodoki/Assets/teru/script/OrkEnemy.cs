@@ -51,6 +51,7 @@ public class OrkEnemy : Enemy
         stateMachine.Add<AttackIntervalState>((int)State.AttackInt);
         stateMachine.Add<HitState>((int)State.Hit);
         stateMachine.Add<DeadState>((int)State.Dead);
+        stateMachine.Onstart((int)State.Idle);
 
     }
 

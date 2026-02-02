@@ -38,7 +38,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
     private IUseSkill[] skills = new IUseSkill[10];
     bool OnSkill = false;
     bool OnAttack = false;
-
+    //ステータス
     int MaxHP;
     int HP;
     int Defense;
@@ -49,6 +49,19 @@ public class PlayerCon : MonoBehaviour,IStatusView
     float Length;
     float ElementDefense;
     float Critical;
+
+    //以下アニメーション関連
+    public Animator anim;
+
+    //ハッシュ化
+    public readonly int AnimIdle = Animator.StringToHash("Idle");
+    public readonly int AnimRun = Animator.StringToHash("RunForward");
+    public readonly int AnimAttack = Animator.StringToHash("Attack");
+    public readonly int AnimSkill = Animator.StringToHash("Ability");
+    public readonly int AnimStun = Animator.StringToHash("Stun");
+    public readonly int AnimTakingDamage = Animator.StringToHash("TakingDamage");
+    public readonly int AnimDeath = Animator.StringToHash("Death");
+
     StateMachine<PlayerCon> stateMachine;
     enum state
     {
@@ -113,6 +126,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         public override void OnStart()
         {
             Debug.Log("Move");
+            Owner.anim.CrossFade(Owner.AnimRun, 0.1f);
         }
         public override void OnUpdate()
         {
@@ -148,6 +162,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
         public override void OnStart()
         {
             Debug.Log("Idol");
+            Owner.anim.CrossFade(Owner.AnimIdle, 0.1f);
         }
         public override void OnUpdate()
         {
@@ -155,11 +170,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
             {
                 StateMachine.ChangeState((int)state.Move);
             }
-            if(Owner.OnSkill)
+            else if(Owner.OnSkill)
             {
                 StateMachine.ChangeState((int)state.SkillAttack);
             }
-            if (Owner.OnAttack)
+            else if (Owner.OnAttack)
             {
                 StateMachine.ChangeState((int)state.Attack);
             }

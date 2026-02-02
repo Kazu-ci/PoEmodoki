@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
 
     protected GameObject weapon;           // ドロップアイテム
 
-    protected Animator animator;           // アニメーション制御用
+    [SerializeField] protected Animator animator;           // アニメーション制御用
 
     protected bool animationEnd;           // アニメーション終了フラグ
 

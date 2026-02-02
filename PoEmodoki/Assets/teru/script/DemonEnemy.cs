@@ -66,7 +66,7 @@ public class DemonEnemy : Enemy
         float cDis;
         public override void OnStart()
         {
-
+            
         }
         public override void OnUpdate()
         {
