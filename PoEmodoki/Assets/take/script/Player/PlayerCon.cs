@@ -508,7 +508,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             {
                 //é¿çs
                 interactable.OnInteract(this);
-                //GameCon.Instance.TryExecuteInteraction();
+                GameCon.Instance.TryExecuteInteraction();
                 return;
             }
         }

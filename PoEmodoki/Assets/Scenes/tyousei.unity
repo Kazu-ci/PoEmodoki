@@ -275,9 +275,9 @@ GameObject:
   - component: {fileID: 423108544}
   - component: {fileID: 423108543}
   - component: {fileID: 423108542}
-  - component: {fileID: 423108541}
   - component: {fileID: 423108540}
   - component: {fileID: 423108539}
+  - component: {fileID: 423108546}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -495,8 +495,6 @@ MonoBehaviour:
   InteractLayer:
     serializedVersion: 2
     m_Bits: 256
-  lockonTarget: {fileID: 0}
-  playerObj: {fileID: 0}
   mySkills:
   - {fileID: 0}
   - {fileID: 0}
@@ -510,33 +508,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   anim: {fileID: 1869444486}
---- !u!54 &423108541
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423108538}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
+  charaCon: {fileID: 423108546}
+  invincibleDuration: 1
 --- !u!136 &423108542
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -629,6 +602,31 @@ Transform:
   - {fileID: 1869444487}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &423108546
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423108538}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &472700055
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +728,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472700055}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 289bc2faa17c8d04e9636d7c3b4f4862, type: 3}
   m_Name: 

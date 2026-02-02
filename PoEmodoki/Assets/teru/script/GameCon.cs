@@ -17,7 +17,7 @@ public class GameCon : MonoBehaviour
     [SerializeField] private bool isTutorial;
     private int progressStep = 0; // êiçsìx
     StateMachine<GameCon> stateMachine;
-    [SerializeField]bool rei=true;
+    [SerializeField]public bool rei=true;
     void Awake()
     {
         if (Instance != null && Instance != this)
