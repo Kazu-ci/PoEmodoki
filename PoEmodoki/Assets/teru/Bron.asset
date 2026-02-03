@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f712dd0d800e443aa0346caae53df0, type: 3}
   m_Name: Bron
   m_EditorClassIdentifier: 
-  EnemyHp: 100
+  EnemyHp: 30
   EnemyAtk: 20
   EnemyDefense: 50
   EnemySpeed: 100

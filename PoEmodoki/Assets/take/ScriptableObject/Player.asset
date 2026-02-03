@@ -16,6 +16,7 @@ MonoBehaviour:
   PlayerDefense: 50
   PlayerSpeed: 30
   PlayerMp: 100
+  PlayerAtk: 10
   PlayerAtkSpeed: 1
   PlayerCastSpeed: 1
   PlayerLength: 3
