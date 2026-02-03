@@ -11,10 +11,11 @@ public class AOE : BaseSkill
     Vector3 forwardDirection;
     Vector3 offset;
     Vector3 point;
-    LIistopen listopen;
+    public LIistopen listopen;
     public override void Setup(SkillStatus status)
     {
         effect = status.effect;
+        listopen = status.listopen;
     }
     public override void EnemySetup(EnemyStatus Estatus)
     {
@@ -23,7 +24,7 @@ public class AOE : BaseSkill
 
     public override void UseSkill(PlayerCon con)
     {
-        if(listopen.AoECount>0)
+        //if(listopen.AoECount>0)
         {
             forwardDirection = con.transform.forward;
             offset = forwardDirection * Distance;
