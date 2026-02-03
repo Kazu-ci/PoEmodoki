@@ -11,7 +11,7 @@ public class AOE : BaseSkill
     Vector3 forwardDirection;
     Vector3 offset;
     Vector3 point;
-
+    LIistopen listopen;
     public override void Setup(SkillStatus status)
     {
         effect = status.effect;
@@ -23,15 +23,19 @@ public class AOE : BaseSkill
 
     public override void UseSkill(PlayerCon con)
     {
-        forwardDirection = con.transform.forward;
-        offset = forwardDirection * Distance;
-        point = con.transform.position /*+ offset*/;
-        point.y = 0;
-        con.InstanciateSkillEffect(effect, point, Quaternion.Euler(-90, 0, 0));
-        //サウンド
-        if (SoundManager.Instance != null)
+        if(listopen.AoECount>0)
         {
-            SoundManager.Instance.PlaySE(SoundManager.SE.AOE);
+            forwardDirection = con.transform.forward;
+            offset = forwardDirection * Distance;
+            point = con.transform.position /*+ offset*/;
+            point.y = 0;
+            --listopen.AoECount;
+            con.InstanciateSkillEffect(effect, point, Quaternion.Euler(-90, 0, 0));
+            //サウンド
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySE(SoundManager.SE.AOE);
+            }
         }
     }
 
