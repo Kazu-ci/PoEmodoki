@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: 
   EnemyHp: 400
-  EnemyAtk: 100
+  EnemyAtk: 10
   EnemyDefense: 90
   EnemySpeed: 100
   EnemyAtkSpeed: 2

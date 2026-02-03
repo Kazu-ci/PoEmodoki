@@ -177,6 +177,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
+    - target: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: attackColliders.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1067,6 +1071,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
     - target: {fileID: 5459204842647657264, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: ownerPlayer
       value: 
@@ -1098,7 +1106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 372882115}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &372882115 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
@@ -2677,6 +2685,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 170912478}
     - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
+    - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: attackColliders.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2759,7 +2771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1446567234}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!1001 &792968947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2813,6 +2825,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
+    - target: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: attackColliders.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2857,6 +2873,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 170912478}
+    - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
     - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: attackColliders.Array.size
       value: 1
@@ -3321,7 +3341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 974916316}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &974916316 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
@@ -3737,7 +3757,7 @@ PrefabInstance:
     - target: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: soulprefab
       value: 
-      objectReference: {fileID: 1634780239}
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
     - target: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: attackColliders.Array.size
       value: 1
@@ -3786,7 +3806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1149097142}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &1149097142 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
@@ -4280,6 +4300,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
+    - target: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: attackColliders.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4584,6 +4608,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 170912478}
     - target: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
+    - target: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: attackColliders.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4626,7 +4654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1337740171}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &1337740171 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
@@ -5090,7 +5118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1446567234}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!1001 &1461801113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5151,6 +5179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 6077454606942212952, guid: 6ef9046df6593f94ab195ecdefc4e2e3, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5188,7 +5220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1488952465}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &1488952465 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4955612517017720683, guid: 737af7b409249ed42867f9ee602d1cf7, type: 3}
@@ -5603,6 +5635,10 @@ PrefabInstance:
       propertyPath: ownerPlayer
       value: 
       objectReference: {fileID: 170912482}
+    - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
     - target: {fileID: 7594876465782089639, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: m_LocalPosition.x
       value: -281.80923
@@ -5674,7 +5710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1572125412}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &1572125412 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
@@ -5970,7 +6006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1616586616}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &1616586616 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4955612517017720683, guid: 737af7b409249ed42867f9ee602d1cf7, type: 3}
@@ -6099,7 +6135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1626796108}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &1626796108 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4955612517017720683, guid: 737af7b409249ed42867f9ee602d1cf7, type: 3}
@@ -6557,6 +6593,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 170912482}
     - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
+    - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: effects.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -6643,7 +6683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1713178062}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &1713178062 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
@@ -6831,7 +6871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1731513239}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &1731513239 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
@@ -6882,7 +6922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 0}
   ownerPlayer: {fileID: 0}
-  damage: 10
+  damage: 0
 --- !u!114 &1740072011 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4161264506931902074, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
@@ -6938,6 +6978,10 @@ PrefabInstance:
       propertyPath: ownerPlayer
       value: 
       objectReference: {fileID: 170912482}
+    - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
     - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: attackColliders.Array.size
       value: 1
@@ -7021,7 +7065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1763736636}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &1763736636 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
@@ -7135,7 +7179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1818372948}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!1 &1821888713
 GameObject:
   m_ObjectHideFlags: 0
@@ -7181,7 +7225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 1887707231}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &1887707231 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
@@ -8047,7 +8091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 2043405822}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &2043405822 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4955612517017720683, guid: 737af7b409249ed42867f9ee602d1cf7, type: 3}
@@ -8625,7 +8669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownerEnemy: {fileID: 2109392622}
   ownerPlayer: {fileID: 170912482}
-  damage: 10
+  damage: 0
 --- !u!114 &2109392622 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4955612517017720683, guid: 737af7b409249ed42867f9ee602d1cf7, type: 3}
@@ -8920,6 +8964,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: soulprefab
+      value: 
+      objectReference: {fileID: 7236463517348118092, guid: 087690df636b29a4b8872015a368472c, type: 3}
     - target: {fileID: 7594876465782089639, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.77887
