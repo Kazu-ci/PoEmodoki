@@ -75,6 +75,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
     //無敵フラグ
     private bool isInvincible = false;
 
+    [Header("回復スキル設定")]
+    [SerializeField] private int maxHealCount = 3;  //マックス回数
+    private int currentHealCount;                   //残り回数
+    [SerializeField] private int healAmount = 50;   //回復量
+
     StateMachine<PlayerCon> stateMachine;
     enum state
     {
@@ -101,6 +106,8 @@ public class PlayerCon : MonoBehaviour,IStatusView
         move = PlayerInput.actions["Move"];
 
         wait = new WaitForSeconds(0.1f);
+
+        currentHealCount = maxHealCount;
 
         stateMachine = new StateMachine<PlayerCon>(this);
         stateMachine.Add<MoveState>((int)state.Move);
@@ -265,7 +272,6 @@ public class PlayerCon : MonoBehaviour,IStatusView
         private void hitCheckColl()
         {
             float dagger = 5f;
-            
 
             Collider[] hitEnemy = Physics.OverlapSphere(Owner.atkPoint.position, dagger, Owner.enemyLayer);
             foreach (var enemy in hitEnemy)
@@ -411,14 +417,40 @@ public class PlayerCon : MonoBehaviour,IStatusView
         {
             OnSkill = true;
 
-            UseSkill(3);
-            skills[3]?.UseSkill(this);
+            if (currentHealCount > 0 && HP < MaxHP)
+            {
+                OnSkill = true;
+                ExecuteHeal();
+            }
+            else
+            {
+                Debug.Log("回復できない");
+            }
+
+            //UseSkill(3);
+            //skills[3]?.UseSkill(this);
         }
         else if (context.canceled)
         {
             OnSkill = false;
         }
     }
+
+    // 直接回復するメソッド
+    private void ExecuteHeal()
+    {
+        currentHealCount--;
+        HP = Mathf.Min(HP + healAmount, MaxHP);
+
+        Debug.Log("回復しました！ 残り回数: " + currentHealCount + " 現在HP: " + HP);
+
+        //回復エフェクトや音
+        if (SoundManager.Instance != null)
+        {
+            //SoundManager.Instance.PlaySE(SoundManager.SE.Heal);
+        }
+    }
+
 
     public void OnAttackL(InputAction.CallbackContext context)
     {
@@ -557,5 +589,21 @@ public class PlayerCon : MonoBehaviour,IStatusView
 
         isInvincible = false;
 
+    }
+
+    // 選択されている時だけギズモ（補助線）を表示
+    private void OnDrawGizmosSelected()
+    {
+        if (atkPoint == null) return;
+
+        // 色を赤に設定（半透明にしたい場合は Color(1, 0, 0, 0.5f) とか）
+        Gizmos.color = Color.red;
+
+        // ワイヤーフレーム（枠線）の球体を描画
+        // 第1引数：中心座標, 第2引数：半径（hitCheckCollのdaggerと同じ5fにする）
+        Gizmos.DrawWireSphere(atkPoint.position, 5f);
+
+        // もし塗りつぶした球体がいいならこっち
+        // Gizmos.DrawSphere(atkPoint.position, 5f);
     }
 }
