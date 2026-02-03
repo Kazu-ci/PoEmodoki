@@ -24,8 +24,9 @@ public class AOE : BaseSkill
 
     public override void UseSkill(PlayerCon con)
     {
-        //if(listopen.AoECount>0)
+       //if(listopen.AoECount>0)
         {
+            //Debug.Log("AoECount = " + listopen.AoECount);
             forwardDirection = con.transform.forward;
             offset = forwardDirection * Distance;
             point = con.transform.position /*+ offset*/;
