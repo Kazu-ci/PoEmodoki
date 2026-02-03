@@ -306,7 +306,7 @@ public class PlayerCon : MonoBehaviour,IStatusView
             {
                 StateMachine.ChangeState((int)(state.Idol));   
             }
-            else
+            else if(Owner.HP <= 0)
             {
                 StateMachine.ChangeState((int)state.Dead);
             }
