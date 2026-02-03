@@ -33,7 +33,11 @@ public class Enemy : MonoBehaviour
     protected BaseSkill currentSkill;
     [SerializeField] protected PlayerAnchor playerAnchor;
     [SerializeField] protected Texture[] textures;  // テクスチャ（見た目変更用）
+    public bool IsAttacking { get; protected set; }
 
+    public virtual void StartAttack() => IsAttacking = true;
+    public virtual void EndAttack() => IsAttacking = false;
+   
     protected float fov;                   // 視野角（プレイヤーを見つける範囲）
 
     [SerializeField] protected GameObject thisobj;  // テクスチャ変更用オブジェクト
@@ -216,5 +220,9 @@ public class Enemy : MonoBehaviour
         {
             return false;
         }
+    }
+    public interface IAttackStatus
+    {
+        bool IsAttacking { get; }
     }
 }
