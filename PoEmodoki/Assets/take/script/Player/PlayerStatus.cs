@@ -8,6 +8,7 @@ public class PlayerStatus : ScriptableObject
     public int PlayerDefense;           //プレイヤーの防御力
     public float PlayerSpeed;           //プレイヤーの移動速度
     public int PlayerMp;                //プレイヤーのMP
+    public int PlayerAtk;               //プレイヤーの通常攻撃力
     public float PlayerAtkSpeed;        //プレイヤーの攻撃速度
     public float PlayerCastSpeed;       //プレイヤーの詠唱速度
     public float PlayerLength;          //プレイヤーの射程

@@ -10,11 +10,12 @@ TagManager:
   - Enemy
   - midBoss
   - lustboss
+  - BossArea
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - skill

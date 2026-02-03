@@ -32,6 +32,13 @@ public class BossEnemy : Enemy
     private SerializedObject seliarizeBossStatus;
 #endif
 
+    public readonly int AnimIdle = Animator.StringToHash("Idle");
+    public readonly int AnimVigi = Animator.StringToHash("RunFowrard");
+    public readonly int AnimSkill = Animator.StringToHash("Ability");
+    public readonly int AnimHit = Animator.StringToHash("TakingDaamage");
+    public readonly int AnimAttack = Animator.StringToHash("Attack");
+    public readonly int AnimSumon = Animator.StringToHash("Stun");
+    public readonly int AnimDead = Animator.StringToHash("Death");
 
     private enum EnemyState
     {
@@ -97,7 +104,7 @@ public class BossEnemy : Enemy
     {
         attackColliders.ForEach(c => c.enabled = false);
 
-        /*var state = animator.GetCurrentAnimatorStateInfo(0);
+        var state = animator.GetCurrentAnimatorStateInfo(0);
         foreach (var kv in colliderDict)
         {
             if (state.IsName(kv.Key))
@@ -105,7 +112,7 @@ public class BossEnemy : Enemy
                 kv.Value.enabled = true;
                 break;
             }
-        }*/
+        }
     }
 
     public override void OnAttackEnd() => attackColliders.ForEach(c => c.enabled = false);
@@ -134,7 +141,7 @@ public class BossEnemy : Enemy
         float cDis;
         public override void OnStart()
         {
-            //Owner.animator.SetTrigger("Idle");
+            Owner.animator.CrossFade(Owner.AnimIdle, 0.1f);
             cDis = Owner.lookPlayerDir;
         }
         public override void OnUpdate()
@@ -143,7 +150,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            Owner.animator.ResetTrigger("Idle");
+          
         }
     }
 
@@ -152,13 +159,15 @@ public class BossEnemy : Enemy
         NavMeshAgent navMeshAgent;
         public override void OnStart()
         {
-           Owner.animator.SetTrigger("Run");
+           
             navMeshAgent = Owner.navMeshAgent;
+
             navMeshAgent.isStopped = false;
+            Owner.animator.CrossFade(Owner.AnimVigi, 0.1f);
         }
         public override void OnUpdate()
         {
-            Vector3 playerPos = Owner.player.transform.position;
+            Vector3 playerPos = Owner.playerpos;
             navMeshAgent.SetDestination(playerPos);
             if (Owner.Getdistance() <= Owner.AttackRange)
             {
@@ -169,7 +178,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            Owner.animator.ResetTrigger("Idle");
+          
         }
     }
     private class VigilanceState : StateMachine<BossEnemy>.StateBase
@@ -185,7 +194,7 @@ public class BossEnemy : Enemy
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = false;
-            Owner.animator.SetTrigger("Idle");
+            Owner.animator.CrossFade(Owner.AnimIdle, 0.1f);
             time = 0;
             mTime = UnityEngine.Random.Range(4, 6);
             PickNewRoamPosition();
@@ -204,8 +213,8 @@ public class BossEnemy : Enemy
 
             if (distance < Owner.AttackRange)
             {
-                Vector3 dir = (Owner.transform.position - Owner.player.transform.position).normalized;
-                Vector3 retreatPos = Owner.player.transform.position + dir * Owner.AttackRange * 2;
+                Vector3 dir = (Owner.transform.position - Owner.playerpos).normalized;
+                Vector3 retreatPos = Owner.playerpos + dir * Owner.AttackRange * 2;
                 Owner.navMeshAgent.SetDestination(retreatPos);
             }
             else
@@ -221,7 +230,7 @@ public class BossEnemy : Enemy
                 Owner.navMeshAgent.SetDestination(roamTarget);
             }
 
-            Vector3 lookDir = Owner.player.transform.position - Owner.transform.position;
+            Vector3 lookDir = Owner.playerpos - Owner.transform.position;
             lookDir.y = 0;
             if (lookDir.sqrMagnitude > 0.01f)
             {
@@ -230,7 +239,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-           // Owner.animator.ResetTrigger("Idle");
+           
         }
         void PickNewRoamPosition()
         {
@@ -238,7 +247,7 @@ public class BossEnemy : Enemy
             float angle = UnityEngine.Random.Range(0f, Mathf.PI * 2f);
             float r = UnityEngine.Random.Range(0f, roamRadius);
             Vector3 offset = new Vector3(Mathf.Cos(angle) * r, 0, Mathf.Sin(angle) * r);
-            roamTarget = Owner.player.transform.position + offset;
+            roamTarget = Owner.playerpos + offset;
         }
     }
 
@@ -246,8 +255,8 @@ public class BossEnemy : Enemy
     {
         public override void OnStart()
         {
-            Owner.transform.LookAt(Owner.player.transform.position);
-           // Owner.animator.SetTrigger("Attack");
+            Owner.transform.LookAt(Owner.playerpos);
+            Owner.animator.CrossFade(Owner.AnimAttack, 0.1f);
             Owner.navMeshAgent.isStopped = true;
         }
         public override void OnUpdate()
@@ -270,7 +279,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            //Owner.animator.ResetTrigger("Attack");
+            
         }
     }
     private class RotateState : StateMachine<BossEnemy>.StateBase
@@ -278,7 +287,7 @@ public class BossEnemy : Enemy
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
-            //Owner.animator.SetTrigger("Attack");
+            Owner.animator.CrossFade(Owner.AnimAttack, 0.1f);
         }
         public override void OnUpdate()
         {
@@ -299,7 +308,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-           // Owner.animator.ResetTrigger("Attack");
+           
         }
     }
     private class SumonState : StateMachine<BossEnemy>.StateBase
@@ -307,12 +316,12 @@ public class BossEnemy : Enemy
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
-           // Owner.animator.SetTrigger("Sumon");
+            Owner.animator.CrossFade(Owner.AnimSumon, 0.1f);
 
         }
         public override void OnUpdate()
         {
-            if (Owner.AnimationEnd("Sumon"))
+            if (Owner.AnimationEnd("Stun"))
             {
                 if (Probability(20)) { StateMachine.ChangeState((int)EnemyState.Vigilance); }
                 if (Probability(80))
@@ -331,7 +340,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            //Owner.animator.ResetTrigger("Sumon");
+            
         }
     }
     private class SkillState : StateMachine<BossEnemy>.StateBase
@@ -347,11 +356,11 @@ public class BossEnemy : Enemy
            
 
             // 向きを合わせる
-            Vector3 lookPos = Owner.player.transform.position;
+            Vector3 lookPos = Owner.playerpos;
             lookPos.y = Owner.transform.position.y;
             Owner.transform.LookAt(lookPos);
 
-            //Owner.animator.SetTrigger("Skill");
+            Owner.animator.CrossFade(Owner.AnimSkill, 0.1f);
 
 
             Owner.UseSkill(index);
@@ -359,14 +368,14 @@ public class BossEnemy : Enemy
 
         public override void OnUpdate()
         {
-            if (Owner.AnimationEnd("Skill"))
+            if (Owner.AnimationEnd("Ability"))
             {
                 StateMachine.ChangeState((int)EnemyState.Chase);
             }
         }
         public override void OnEnd()
         {
-            //Owner.animator.ResetTrigger("Skill");
+
         }
     }
     private class StiffnessState : StateMachine<BossEnemy>.StateBase
@@ -375,7 +384,7 @@ public class BossEnemy : Enemy
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
-            Owner.animator.SetTrigger("Idle");
+            Owner.animator.CrossFade(Owner.AnimIdle, 0.1f);
             time = 0;
         }
         public override void OnUpdate()
@@ -390,7 +399,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            Owner.animator.ResetTrigger("Idle");
+           
         }
 
     }
@@ -399,33 +408,33 @@ public class BossEnemy : Enemy
     {
         public override void OnStart()
         {
-            //Owner.animator.SetTrigger("Damage");
+            Owner.animator.CrossFade(Owner.AnimHit, 0.1f);
         }
         public override void OnUpdate()
         {
-            if (Owner.AnimationEnd("")) { StateMachine.ChangeState((int)EnemyState.Idle); }
+            if (Owner.AnimationEnd("TakingDamage")) { StateMachine.ChangeState((int)EnemyState.Idle); }
         }
         public override void OnEnd()
         {
-           // Owner.animator.ResetTrigger("Damage");
+          
         }
     }
     private class DeadState : StateMachine<BossEnemy>.StateBase
     {
         public override void OnStart()
         {
-          //  Owner.animator.SetTrigger("Dead");
+            Owner.animator.CrossFade(Owner.AnimDead, 0.1f);
         }
         public override void OnUpdate()
         {
-            if (Owner.AnimationEnd("Dead"))
+            if (Owner.AnimationEnd("Death"))
             {
                 Owner.OnDead();
             }
         }
         public override void OnEnd()
         {
-            //Owner.animator.ResetTrigger("Dead");
+           
         }
     }
 

@@ -2,7 +2,7 @@ using Fungus;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+//using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 using System.Linq;
 using TMPro;
 
@@ -31,7 +31,7 @@ public class CursorSelectImage : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(slot1.Skillname);
+        
         if (Input.GetKeyDown(KeyCode.Return))
         {
 

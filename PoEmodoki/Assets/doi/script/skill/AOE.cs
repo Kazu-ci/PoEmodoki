@@ -28,6 +28,11 @@ public class AOE : BaseSkill
         point = con.transform.position /*+ offset*/;
         point.y = 0;
         con.InstanciateSkillEffect(effect, point, Quaternion.Euler(-90, 0, 0));
+        //ƒTƒEƒ“ƒh
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySE(SoundManager.SE.AOE);
+        }
     }
 
 

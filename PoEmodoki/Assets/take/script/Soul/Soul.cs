@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,12 +23,17 @@ public class Soul : MonoBehaviour, IInteractable, IStatusView
     {
         if (data != null)
         {
+            GameCon.Instance.rei = false;
             player.AddSkill(data);
             Debug.Log(data + "“üŽè");
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySE(SoundManager.SE.GetSoul);
+            }
             Destroy(gameObject);
         }
     }
-
+#if UNITY_EDITOR
     public SerializedObject GetSerializedBaseStatus()
     {
         if (data == null)
@@ -40,6 +47,7 @@ public class Soul : MonoBehaviour, IInteractable, IStatusView
         }
         return sSkill;
     }
+#endif
 #if UNITY_EDITOR
     public void DrawRunningStatusGUI()
     {

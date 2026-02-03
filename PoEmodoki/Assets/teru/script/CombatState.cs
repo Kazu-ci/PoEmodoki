@@ -1,4 +1,5 @@
 using UnityEngine;
+using static GameCon;
 
 public class CombatState : StateMachine<GameCon>.StateBase
 {
@@ -10,9 +11,13 @@ public class CombatState : StateMachine<GameCon>.StateBase
 
     public override void OnUpdate()
     {
-        if (Owner.pStatus.PlayerHp <= 0) { 
-            Owner.Flowchart.SendFungusMessage("PlayerDead");
-            Owner.ChangeTalk();
+        if (Owner.pStatus.PlayerHp <= 0) {
+            StateMachine.ChangeState((int)GameState.End);
+        }
+        if (Owner.BossArea())
+        {
+            Owner.TriggerNextConversation();
+            Owner.BossOut();
         }
         if (Owner.eStatus.EnemyName == "Boss" && Owner.eStatus.EnemyHp <= 200)
         {

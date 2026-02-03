@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
 
     protected float currentHP;             // 現在のHP
 
-    protected NavMeshAgent navMeshAgent;   // NavMeshAgent（移動AI）
+    [SerializeField] protected NavMeshAgent navMeshAgent;   // NavMeshAgent（移動AI）
 
     protected float Distance;              // プレイヤーとの距離
 
@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour
     public float Getdistance()
     {
         // プレイヤーとの距離を Vector3 で計算して返す
-        Vector3 offset = player.transform.position - transform.position;
+        Vector3 offset = playerpos - transform.position;
         return offset.magnitude; // ベクトルの長さ = 距離
     }
 

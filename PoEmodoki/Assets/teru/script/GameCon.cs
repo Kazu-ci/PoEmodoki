@@ -17,7 +17,8 @@ public class GameCon : MonoBehaviour
     [SerializeField] private bool isTutorial;
     private int progressStep = 0; // 進行度
     StateMachine<GameCon> stateMachine;
-    [SerializeField]bool rei=true;
+    [SerializeField]public bool rei=true;
+    protected bool bossin = false;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -44,16 +45,30 @@ public class GameCon : MonoBehaviour
     void Update()
     {
         stateMachine.OnUpdate();
-        if (Input.GetKeyDown(KeyCode.H)) { TriggerNextConversation();  }
+        if (Input.GetKeyDown(KeyCode.RightAlt)) { TriggerNextConversation();  }
     }
 
     public void ChangeTalk()
     {
         stateMachine.ChangeState((int)GameState.Talk);
+        currentState=GameState.Talk;
     }
     public void ChangeCombat()
     {
         stateMachine.ChangeState((int)GameState.Combat);
+        currentState = GameState.Combat;
+    }
+    public void BossIn()
+    {
+        bossin = true;
+    }
+    public void BossOut()
+    {
+        bossin = false;
+    }
+    public bool BossArea()
+    {
+        return bossin;
     }
     public void TriggerNextConversation()
     {
@@ -75,7 +90,7 @@ public class GameCon : MonoBehaviour
         {
             // 状態をTalkに変えてからFungus起動
             Flowchart.SendFungusMessage(blockName);
-            stateMachine.ChangeState((int)(GameState.Talk));
+            ChangeTalk();
         }
     }
     public void RegisterInteractable(TextObject obj)
@@ -88,7 +103,7 @@ public class GameCon : MonoBehaviour
     {
         if (currentObject == obj) currentObject = null;
     }
-    private void TryExecuteInteraction()
+    public void TryExecuteInteraction()
     {
         if (currentObject != null && !Flowchart.HasExecutingBlocks())
         {
