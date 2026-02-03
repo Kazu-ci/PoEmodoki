@@ -72,12 +72,7 @@ public class BornEnemy : Enemy
         stateMachine.OnUpdate();
     }
     public override void OnAttackSet()
-    {
-        attackColliders.ForEach(c => c.enabled = false);
-
-      
-        
-    }
+    => attackColliders.ForEach(c => c.enabled = true);
 
     public override void OnAttackEnd() => attackColliders.ForEach(c => c.enabled = false);
     private class IdleState : StateMachine<BornEnemy>.StateBase

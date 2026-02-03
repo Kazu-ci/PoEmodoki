@@ -64,12 +64,8 @@ public class OrkEnemy : Enemy
         stateMachine.Onstart((int)State.Idle);
 
     }
-    public override void OnAttackSet()
-    {
-        attackColliders.ForEach(c => c.enabled = false);
+    public override void OnAttackSet()=> attackColliders.ForEach(c => c.enabled = true);
 
-      
-    }
 
     public override void OnAttackEnd() => attackColliders.ForEach(c => c.enabled = false);
     // Update is called once per frame

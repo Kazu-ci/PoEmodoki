@@ -184,6 +184,10 @@ PrefabInstance:
       propertyPath: 'attackColliders.Array.data[0]'
       value: 
       objectReference: {fileID: 445958590}
+    - target: {fileID: 5459204842647657264, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 7161485082279086792, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -258,6 +262,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7167574284354855398, guid: 737af7b409249ed42867f9ee602d1cf7, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -525,6 +533,10 @@ PrefabInstance:
       propertyPath: 'attackColliders.Array.data[0]'
       value: 
       objectReference: {fileID: 1991398966}
+    - target: {fileID: 7167574284354855398, guid: 737af7b409249ed42867f9ee602d1cf7, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1055,6 +1067,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5459204842647657264, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1282,6 +1298,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7167574284354855398, guid: 737af7b409249ed42867f9ee602d1cf7, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2648,6 +2668,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1549240856}
     m_Modifications:
+    - target: {fileID: 3540569839970601906, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: player
       value: 
@@ -2796,6 +2820,10 @@ PrefabInstance:
       propertyPath: 'attackColliders.Array.data[0]'
       value: 
       objectReference: {fileID: 1594854261}
+    - target: {fileID: 5459204842647657264, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 7161485082279086792, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -2821,6 +2849,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1549240856}
     m_Modifications:
+    - target: {fileID: 3540569839970601906, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: player
       value: 
@@ -3714,6 +3746,10 @@ PrefabInstance:
       propertyPath: 'attackColliders.Array.data[0]'
       value: 
       objectReference: {fileID: 840543748}
+    - target: {fileID: 5459204842647657264, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 7161485082279086792, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -4251,6 +4287,10 @@ PrefabInstance:
       propertyPath: 'attackColliders.Array.data[0]'
       value: 
       objectReference: {fileID: 1400862853}
+    - target: {fileID: 5459204842647657264, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 7161485082279086792, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -4335,6 +4375,10 @@ PrefabInstance:
       propertyPath: 'attackColliders.Array.data[0]'
       value: 
       objectReference: {fileID: 68017401}
+    - target: {fileID: 7167574284354855398, guid: 737af7b409249ed42867f9ee602d1cf7, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4547,6 +4591,10 @@ PrefabInstance:
       propertyPath: 'attackColliders.Array.data[0]'
       value: 
       objectReference: {fileID: 153391278}
+    - target: {fileID: 5459204842647657264, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 7161485082279086792, guid: e2a69d0189e462243a399ac3eddc4cc9, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -5051,6 +5099,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1549240856}
     m_Modifications:
+    - target: {fileID: 553857716714043360, guid: 6ef9046df6593f94ab195ecdefc4e2e3, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 1423439291971568897, guid: 6ef9046df6593f94ab195ecdefc4e2e3, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -5547,6 +5599,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1549240856}
     m_Modifications:
+    - target: {fileID: 3540569839970601906, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 7594876465782089639, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: m_LocalPosition.x
       value: -281.80923
@@ -5986,6 +6042,10 @@ PrefabInstance:
       propertyPath: 'attackColliders.Array.data[0]'
       value: 
       objectReference: {fileID: 1737245064}
+    - target: {fileID: 7167574284354855398, guid: 737af7b409249ed42867f9ee602d1cf7, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6492,6 +6552,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1549240856}
     m_Modifications:
+    - target: {fileID: 3540569839970601906, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: effects.Array.size
       value: 0
@@ -6870,6 +6934,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1549240856}
     m_Modifications:
+    - target: {fileID: 3540569839970601906, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: attackColliders.Array.size
       value: 1
@@ -8476,6 +8544,10 @@ PrefabInstance:
       propertyPath: 'attackColliders.Array.data[0]'
       value: 
       objectReference: {fileID: 718525080}
+    - target: {fileID: 7167574284354855398, guid: 737af7b409249ed42867f9ee602d1cf7, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8840,6 +8912,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1549240856}
     m_Modifications:
+    - target: {fileID: 3540569839970601906, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
+      propertyPath: ownerPlayer
+      value: 
+      objectReference: {fileID: 170912482}
     - target: {fileID: 5108338245947953540, guid: cb15204b0b9e0dd4a9fbc2998793f642, type: 3}
       propertyPath: player
       value: 

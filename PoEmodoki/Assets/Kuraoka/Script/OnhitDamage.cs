@@ -26,7 +26,7 @@ public class OnHitDamage : MonoBehaviour
         PlayerCon player = other.GetComponent<PlayerCon>();
         if (player != null && ownerEnemy != null)
         {
-           
+
             float finalDamage = ownerEnemy.GetDamage();
             player.TakeDamage(new DamageData(finalDamage));
             Debug.Log("プレイヤーダメージ");
@@ -34,16 +34,5 @@ public class OnHitDamage : MonoBehaviour
             return;
         }
 
-        // ====================
-        // 敵に当たった
-        // ====================
-        Enemy enemy = other.GetComponent<Enemy>();
-        if (enemy != null && enemy != ownerEnemy && ownerPlayer != null)
-        {
-            float finalDamage = damage;
-            enemy.TakeDamage(new DamageData(finalDamage));
-            Debug.Log("敵ダメージ");
-            hasHit = true;
-        }
     }
 }

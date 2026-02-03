@@ -11,7 +11,7 @@ public class AOE : BaseSkill
     Vector3 forwardDirection;
     Vector3 offset;
     Vector3 point;
-    public LIistopen listopen;
+  
     public override void Setup(SkillStatus status)
     {
         effect = status.effect;

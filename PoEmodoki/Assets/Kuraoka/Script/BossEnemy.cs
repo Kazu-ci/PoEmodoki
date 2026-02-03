@@ -101,19 +101,7 @@ public class BossEnemy : Enemy
         stateMachine.OnUpdate();
     }
     public override void OnAttackSet()
-    {
-        attackColliders.ForEach(c => c.enabled = false);
-
-        var state = animator.GetCurrentAnimatorStateInfo(0);
-        foreach (var kv in colliderDict)
-        {
-            if (state.IsName(kv.Key))
-            {
-                kv.Value.enabled = true;
-                break;
-            }
-        }
-    }
+    => attackColliders.ForEach(c => c.enabled = true);
 
     public override void OnAttackEnd() => attackColliders.ForEach(c => c.enabled = false);
     private void OnEffects()
