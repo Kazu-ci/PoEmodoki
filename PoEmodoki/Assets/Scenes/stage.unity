@@ -6341,6 +6341,10 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 418783280}
+    - target: {fileID: 1401722557074482133, guid: 268b781c48268334a8c84621eb2e7a79, type: 3}
+      propertyPath: nodeRect.y
+      value: 139.23434
+      objectReference: {fileID: 0}
     - target: {fileID: 1503331431958250009, guid: 268b781c48268334a8c84621eb2e7a79, type: 3}
       propertyPath: character
       value: 
@@ -6473,6 +6477,10 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 1783722237}
+    - target: {fileID: 3759161874271355737, guid: 268b781c48268334a8c84621eb2e7a79, type: 3}
+      propertyPath: methodName
+      value: ChangeCombat
+      objectReference: {fileID: 0}
     - target: {fileID: 3759161874271355737, guid: 268b781c48268334a8c84621eb2e7a79, type: 3}
       propertyPath: targetObject
       value: 
@@ -6614,9 +6622,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 418783280}
     - target: {fileID: 6995263998238206586, guid: 268b781c48268334a8c84621eb2e7a79, type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 29745344, guid: 0791e452d1017754c955ed31ead1754a, type: 3}
+    - target: {fileID: 6995263998238206586, guid: 268b781c48268334a8c84621eb2e7a79, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 1598977389}
+      objectReference: {fileID: 1783722237}
     - target: {fileID: 7698471876818343388, guid: 268b781c48268334a8c84621eb2e7a79, type: 3}
       propertyPath: character
       value: 
@@ -6666,9 +6678,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 418783280}
     - target: {fileID: 8391813588426976626, guid: 268b781c48268334a8c84621eb2e7a79, type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 29745344, guid: 0791e452d1017754c955ed31ead1754a, type: 3}
+    - target: {fileID: 8391813588426976626, guid: 268b781c48268334a8c84621eb2e7a79, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 1598977389}
+      objectReference: {fileID: 1783722237}
     - target: {fileID: 8442241701319139638, guid: 268b781c48268334a8c84621eb2e7a79, type: 3}
       propertyPath: targetObject
       value: 
