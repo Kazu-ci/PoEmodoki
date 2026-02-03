@@ -19,7 +19,7 @@ public class CombatState : StateMachine<GameCon>.StateBase
             Owner.TriggerNextConversation();
             Owner.BossOut();
         }
-        if (Owner.eStatus.EnemyName == "Boss" && Owner.eStatus.EnemyHp <= 200)
+        if (Owner.eStatus.EnemyName == "Boss" && Owner.eStatus.EnemyHp <= 100)
         {
             Owner.TriggerNextConversation();
         }
