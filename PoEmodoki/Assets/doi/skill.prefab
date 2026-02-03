@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5551549223736471223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8025652435117295733}
+  - component: {fileID: 2337378769719215860}
+  m_Layer: 0
+  m_Name: skill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8025652435117295733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551549223736471223}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 389.758, y: 19.534372, z: 115.20619}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2337378769719215860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551549223736471223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad07f6d9565dac54bbaeba9aef20a1b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot1: {fileID: 0}
+  slot2: {fileID: 0}
+  slot3: {fileID: 0}
+  player: {fileID: 0}
+  slotData: {fileID: 11400000, guid: 4816e9c4c5a43ca438154a688b42a480, type: 2}
+  Tossin: {fileID: 11400000, guid: 395c28558edca6a478ab0f1816577246, type: 2}
+  AoE: {fileID: 11400000, guid: e2d84cba82228e54d8020fe03014518f, type: 2}
+  AOE: {fileID: 11400000, guid: 88076df0033a200418381a28944011c1, type: 2}
+  Jump: {fileID: 11400000, guid: 2f6748ec7739ae54f95b2f8f8348e4fc, type: 2}
+  Blink: {fileID: 11400000, guid: f4e239762575aaa4191ebca13a621f1b, type: 2}
+  mine: {fileID: 11400000, guid: f0f4d668bbf33194882fb23fafa52727, type: 2}
+  skill1: []
+  skill2: []
+  skill3: []

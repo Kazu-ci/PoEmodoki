@@ -240,63 +240,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1001 &75719080
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 130190, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_Name
-      value: FadeManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
 --- !u!1 &212870894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1052,142 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1217222648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1217222653}
+  - component: {fileID: 1217222652}
+  - component: {fileID: 1217222651}
+  - component: {fileID: 1217222650}
+  - component: {fileID: 1217222649}
+  m_Layer: 0
+  m_Name: Flowchart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1217222649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217222648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207aecf668a0345388087ccf522f9957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 1
+  indentLevel: 0
+  duration: 1
+  targetAlpha: 0
+  waitUntilFinished: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTexture: {fileID: 0}
+  fadeTweenType: 4
+--- !u!114 &1217222650
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217222648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1217222651}
+  suppressBlockAutoSelect: 0
+  waitForFrames: 1
+--- !u!114 &1217222651
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217222648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 67
+    y: 70
+    width: 110.19
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 0
+  blockName: New Block
+  description: 
+  eventHandler: {fileID: 1217222650}
+  commandList:
+  - {fileID: 1217222649}
+  suppressAllAutoSelections: 0
+--- !u!114 &1217222652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217222648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  scrollPos: {x: 0, y: 0}
+  variablesScrollPos: {x: 0, y: 0}
+  variablesExpanded: 1
+  blockViewHeight: 400
+  zoom: 1
+  scrollViewRect:
+    serializedVersion: 2
+    x: -343
+    y: -340
+    width: 1114
+    height: 859
+  selectedBlocks:
+  - {fileID: 1217222651}
+  selectedCommands:
+  - {fileID: 1217222649}
+  variables: []
+  description: 
+  stepPause: 0
+  colorCommands: 1
+  hideComponents: 1
+  saveSelection: 1
+  localizationId: 
+  showLineNumbers: 0
+  hideCommands: []
+  luaEnvironment: {fileID: 0}
+  luaBindingName: flowchart
+--- !u!4 &1217222653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217222648}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302988045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,7 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 0}
+  selectedFlowchart: {fileID: 1217222652}
 --- !u!4 &1304691079
 Transform:
   m_ObjectHideFlags: 1
@@ -1578,6 +1657,6 @@ SceneRoots:
   - {fileID: 1304691079}
   - {fileID: 1184005982}
   - {fileID: 212870896}
-  - {fileID: 75719080}
   - {fileID: 1302988047}
   - {fileID: 1612613650}
+  - {fileID: 1217222653}

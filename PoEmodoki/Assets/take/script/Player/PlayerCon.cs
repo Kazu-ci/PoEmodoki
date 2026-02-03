@@ -507,6 +507,11 @@ public class PlayerCon : MonoBehaviour,IStatusView
         mySkills.Add(data);
         Debug.Log(data.name + "‚ð“üŽè");
     }
+    public void AddallSkill(SkillStatus data)
+    {
+        allskill.Add(data);
+        Debug.Log(data.name + "‚ð“üŽè");
+    }
     public void UseSkill(int index)
     {
         SkillStatus status = mySkills[index];

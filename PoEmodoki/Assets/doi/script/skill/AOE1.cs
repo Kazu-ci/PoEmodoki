@@ -4,18 +4,17 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AOE : BaseSkill
+public class AOE1 : BaseSkill
 {
     GameObject effect;
     public float Distance;
     Vector3 forwardDirection;
     Vector3 offset;
     Vector3 point;
-    public LIistopen listopen;
+
     public override void Setup(SkillStatus status)
     {
         effect = status.effect;
-        listopen = status.listopen;
     }
     public override void EnemySetup(EnemyStatus Estatus)
     {
@@ -24,19 +23,15 @@ public class AOE : BaseSkill
 
     public override void UseSkill(PlayerCon con)
     {
-        //if(listopen.AoECount>0)
+        forwardDirection = con.transform.forward;
+        offset = forwardDirection * Distance;
+        point = con.transform.position /*+ offset*/;
+        point.y = 0;
+        con.InstanciateSkillEffect(effect, point, Quaternion.Euler(-90, 0, 0));
+        //サウンド
+        if (SoundManager.Instance != null)
         {
-            forwardDirection = con.transform.forward;
-            offset = forwardDirection * Distance;
-            point = con.transform.position /*+ offset*/;
-            point.y = 0;
-            --listopen.AoECount;
-            con.InstanciateSkillEffect(effect, point, Quaternion.Euler(-90, 0, 0));
-            //サウンド
-            if (SoundManager.Instance != null)
-            {
-                SoundManager.Instance.PlaySE(SoundManager.SE.AOE);
-            }
+            SoundManager.Instance.PlaySE(SoundManager.SE.AOE);
         }
     }
 

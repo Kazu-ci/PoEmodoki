@@ -24,7 +24,7 @@ public class Soul : MonoBehaviour, IInteractable, IStatusView
         if (data != null)
         {
             GameCon.Instance.rei = false;
-            player.AddSkill(data);
+            player.AddallSkill(data);
             Debug.Log(data + "“üŽè");
             if (SoundManager.Instance != null)
             {
