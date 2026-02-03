@@ -68,15 +68,7 @@ public class OrkEnemy : Enemy
     {
         attackColliders.ForEach(c => c.enabled = false);
 
-        var state = animator.GetCurrentAnimatorStateInfo(0);
-        foreach (var kv in colliderDict)
-        {
-            if (state.IsName(kv.Key))
-            {
-                kv.Value.enabled = true;
-                break;
-            }
-        }
+      
     }
 
     public override void OnAttackEnd() => attackColliders.ForEach(c => c.enabled = false);
