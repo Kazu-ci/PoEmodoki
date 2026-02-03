@@ -15,7 +15,6 @@ public class AOE : BaseSkill
     public override void Setup(SkillStatus status)
     {
         effect = status.effect;
-        listopen = status.listopen;
     }
     public override void EnemySetup(EnemyStatus Estatus)
     {
@@ -31,7 +30,6 @@ public class AOE : BaseSkill
             offset = forwardDirection * Distance;
             point = con.transform.position /*+ offset*/;
             point.y = 0;
-            --listopen.AoECount;
             con.InstanciateSkillEffect(effect, point, Quaternion.Euler(-90, 0, 0));
             //ƒTƒEƒ“ƒh
             if (SoundManager.Instance != null)
