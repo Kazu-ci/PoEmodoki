@@ -64,7 +64,22 @@ public class OrkEnemy : Enemy
         stateMachine.Onstart((int)State.Idle);
 
     }
+    public override void OnAttackSet()
+    {
+        attackColliders.ForEach(c => c.enabled = false);
 
+        var state = animator.GetCurrentAnimatorStateInfo(0);
+        foreach (var kv in colliderDict)
+        {
+            if (state.IsName(kv.Key))
+            {
+                kv.Value.enabled = true;
+                break;
+            }
+        }
+    }
+
+    public override void OnAttackEnd() => attackColliders.ForEach(c => c.enabled = false);
     // Update is called once per frame
     protected override void Update()
     {
@@ -171,7 +186,7 @@ public class OrkEnemy : Enemy
         {
             Owner.navMeshAgent.isStopped = true;
 
-
+            Owner.OnAttackSet();
            
             // Œü‚«‚ğ‡‚í‚¹‚é
             Vector3 lookPos = Owner.playerpos;
@@ -210,7 +225,7 @@ public class OrkEnemy : Enemy
         }
         public override void OnEnd()
         {
-            
+            Owner.OnAttackEnd();
         }
     }
     private class AttackIntervalState : StateMachine<OrkEnemy>.StateBase

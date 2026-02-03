@@ -71,7 +71,22 @@ public class BornEnemy : Enemy
         base.Update();
         stateMachine.OnUpdate();
     }
+    public override void OnAttackSet()
+    {
+        attackColliders.ForEach(c => c.enabled = false);
 
+        var state = animator.GetCurrentAnimatorStateInfo(0);
+        foreach (var kv in colliderDict)
+        {
+            if (state.IsName(kv.Key))
+            {
+                kv.Value.enabled = true;
+                break;
+            }
+        }
+    }
+
+    public override void OnAttackEnd() => attackColliders.ForEach(c => c.enabled = false);
     private class IdleState : StateMachine<BornEnemy>.StateBase
     {
         float cDis;
@@ -170,8 +185,8 @@ public class BornEnemy : Enemy
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
-
-
+            Owner.IsAttacking = true;
+            Owner.OnAttackSet();
 
             // å¸Ç´ÇçáÇÌÇπÇÈ
             Vector3 lookPos = Owner.playerpos;
@@ -210,7 +225,7 @@ public class BornEnemy : Enemy
         }
         public override void OnEnd()
         {
-
+           Owner.OnAttackEnd();
         }
     }
     private class AttackIntervalState : StateMachine<BornEnemy>.StateBase
@@ -234,13 +249,22 @@ public class BornEnemy : Enemy
 
     private class HitState : StateMachine<BornEnemy>.StateBase
     {
+        float timer;
+        const float hitDuration = 0.5f;
+
         public override void OnStart()
         {
+            timer = 0;
             Owner.animator.CrossFade(Owner.AnimHit, 0.1f);
         }
         public override void OnUpdate()
         {
+            timer += Time.deltaTime;
 
+            if (timer >= hitDuration)
+            {
+                StateMachine.ChangeState((int)State.Idle);
+            }
 
         }
         public override void OnEnd()

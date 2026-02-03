@@ -64,7 +64,22 @@ public class DemonEnemy : Enemy
         stateMachine.Onstart((int)State.Idle);
 
     }
+    public override void OnAttackSet()
+    {
+        attackColliders.ForEach(c => c.enabled = false);
 
+        var state = animator.GetCurrentAnimatorStateInfo(0);
+        foreach (var kv in colliderDict)
+        {
+            if (state.IsName(kv.Key))
+            {
+                kv.Value.enabled = true;
+                break;
+            }
+        }
+    }
+
+    public override void OnAttackEnd() => attackColliders.ForEach(c => c.enabled = false);
     // Update is called once per frame
     protected override void Update()
     {
@@ -167,12 +182,14 @@ public class DemonEnemy : Enemy
     private class AttackState : StateMachine<DemonEnemy>.StateBase
     {
         private bool _isSkillPlaying;
+       
+
         public override void OnStart()
         {
             Owner.navMeshAgent.isStopped = true;
 
 
-
+            Owner.OnAttackSet();
             // å¸Ç´ÇçáÇÌÇπÇÈ
             Vector3 lookPos = Owner.playerpos;
             lookPos.y = Owner.transform.position.y;
@@ -210,7 +227,7 @@ public class DemonEnemy : Enemy
         }
         public override void OnEnd()
         {
-
+            Owner.OnAttackEnd();
         }
     }
     private class AttackIntervalState : StateMachine<DemonEnemy>.StateBase
@@ -234,13 +251,21 @@ public class DemonEnemy : Enemy
 
     private class HitState : StateMachine<DemonEnemy>.StateBase
     {
+        float timer;
+        const float hitDuration = 0.5f;
         public override void OnStart()
         {
+            timer = 0;
             Owner.animator.CrossFade(Owner.AnimHit, 0.1f);
         }
         public override void OnUpdate()
         {
+            timer += Time.deltaTime;
 
+            if (timer >= hitDuration)
+            {
+                StateMachine.ChangeState((int)State.Idle);
+            }
 
         }
         public override void OnEnd()

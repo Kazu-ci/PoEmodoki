@@ -258,6 +258,7 @@ public class BossEnemy : Enemy
             Owner.transform.LookAt(Owner.playerpos);
             Owner.animator.CrossFade(Owner.AnimAttack, 0.1f);
             Owner.navMeshAgent.isStopped = true;
+            Owner.OnAttackSet();
         }
         public override void OnUpdate()
         {
@@ -279,7 +280,7 @@ public class BossEnemy : Enemy
         }
         public override void OnEnd()
         {
-            
+            Owner.OnAttackEnd();
         }
     }
     private class RotateState : StateMachine<BossEnemy>.StateBase
@@ -406,13 +407,21 @@ public class BossEnemy : Enemy
 
     private class HitState : StateMachine<BossEnemy>.StateBase
     {
+        float timer = 0;
+        const float hitDuration = 0.5f;
+
         public override void OnStart()
         {
             Owner.animator.CrossFade(Owner.AnimHit, 0.1f);
         }
         public override void OnUpdate()
         {
-            if (Owner.AnimationEnd("TakingDamage")) { StateMachine.ChangeState((int)EnemyState.Idle); }
+            timer += Time.deltaTime;
+
+            if (timer >= hitDuration)
+            {
+                StateMachine.ChangeState((int)EnemyState.Idle);
+            }
         }
         public override void OnEnd()
         {
